@@ -1,0 +1,25 @@
+{
+  "name": "clashplayer",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "main": "src/index.js",
+  "devDependencies": {
+    "@svgr/webpack": "^4.3.3",
+    "@wordpress/scripts": "^3.4.0",
+    "node-sass": "^4.14.1",
+    "stylelint-config-standard": "^20.0.0",
+    "url-loader": "^1.1.2"
+  },
+  "scripts": {
+    "watch": "node-sass src/sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format:js": "wp-scripts format-js",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css:src": "wp-scripts lint-style 'src/**/*.css'",
+    "compile:css": "node-sass src/sass/ -o ./build/ && stylelint '*.css' --fix || true && stylelint '*.css' --fix"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^5.2.1"
+  }
+}

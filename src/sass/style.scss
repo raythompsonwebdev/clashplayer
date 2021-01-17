@@ -1,0 +1,1324 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/base";
+
+@media only screen and (max-width: 1920px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio,
+      article.post {
+        width: 100%;
+
+        .entry-content {
+          div.wp-block-clashplayer-media {
+            width: 100%;
+
+            figure.clashplayer-logo{
+              width:50%;
+              display:block;
+              margin:auto;
+              background-color:#000;
+      
+            }
+
+            a.download_button {
+              display: block;
+              width: 30%;
+              height: auto;
+              line-height: 30px;
+              margin: 0 auto;
+              border: 2px solid $color2;
+              color: $color4;
+              text-align: center;
+            }
+
+            /* audio */
+            .wp-audio-shortcode {
+              width: 85%;
+              margin: 0 auto;
+              display: none;
+            }
+
+            /* controls -audio/video */
+            /* controls -audio/video */
+            div#audio_controls,
+            div#videocontrols {
+              height: auto;
+              width: 100%;
+              margin: 0 auto;
+              border: $color11 solid 1px;
+              padding: 0.5em;
+              background-color: $color4;
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              grid-template-rows: repeat(4, 25px);
+              grid-column-gap: 2px;
+              grid-row-gap: 2px;     
+              
+              #btns_box { grid-area: 1 / 1 / 3 / 3; }
+              div#progress { grid-area: 1 / 3 / 3 / 6; }
+              div#video_seek { grid-area: 2 / 3 / 2 / 6; }
+              div#time { grid-area: 3 / 1 / 4 / 6; }
+              div#video_volume { grid-area: 4 / 1 / 5 / 6; }
+
+              #btns_box {
+                height: 45px;
+                width: 100%;
+
+                button.player-button {
+                  width: 33.3%;
+                  display: block;
+                  height: 100%;
+                  outline: none;
+                  text-align: center;
+                  font-size: 1em;
+                  @include originTran(50% 50%);
+                  @include Transition(all 0.2s linear 0s);
+                  color: $color4;
+                  border: $color11 solid 1px;
+                  background-color: $color7;
+                  float: left;
+
+                  &:hover {
+                    background-color: $color4;
+                    color: $color;
+                    border: $color11 solid 1px;
+                    cursor: pointer;
+                  }
+
+                  &:active {
+                    background-color: $color4;
+                  }
+
+                  i.fa-pause,
+                  svg.fa-pause,
+                  i.fa-play,
+                  svg.fa-play,
+                  i.fa-forward,
+                  svg.fa-forward,
+                  i.fa-backward,
+                  svg.fa-backward {
+                    font-size: 2em;
+                    text-align: center;
+                    display: block;
+                    color: $color;
+                    line-height: 53px;
+                    margin: auto;
+
+                    &:hover {
+                      font-weight: bold;
+                      color: $color;
+                    }
+                  }
+                }
+              }
+
+              div#progress {
+                width: 100%;
+                display: inline-block;
+                background-color: $color;
+                position: relative;
+                height: 24px;
+
+                progress#playback {
+                  background-color: $color4;
+                  height: 12px;
+                  display: block;
+                  margin: 0;
+                  padding: 0;
+                  width: 100%;
+                }
+
+                span#play_progress {
+                  position: absolute;
+                  top: 0;
+                  z-index: 2;
+                  background-color: $color2;
+                  height: 12px;
+                  display: block;
+                  margin: 0;
+                  padding: 0;
+                  width: 100%;
+                  left: 0;
+                }
+
+                span#load_progress {
+                  background-color: $color8;
+                  height: 12px;
+                  display: block;
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+
+              div#time {
+                width: 100%;
+                color: $color4;
+                height: 25px;
+                display:flex;
+                span {
+                  width: 25%;
+                  line-height: 25px;
+                  text-align: center;
+                  font-size: 0.8em;
+                  display: block;
+                  background-color: $color;
+                  color: $color4;
+                  margin-right: 0;
+                  float: left;
+                }
+
+                span#duration_time {
+                  color: $color7;
+                  background-color: $color4;
+                  border: none;
+                  font-size: 1em;
+                  text-shadow: 1px 1px rgb(53, 51, 51);
+                }
+
+                span#current_time {
+                  color: $color7;
+                  background-color: $color4;
+                  border: none;
+                  font-size: 1em;
+                  text-shadow: 1px 1px rgb(53, 51, 51);
+                }
+              }
+
+              div#video_seek {
+                width: 100%;
+
+                label {
+                  width: 20%;
+                  display: none;
+                  float: left;
+                  line-height: 30px;
+                  color: $color4;
+                  background-color: $color;
+                  border: 1px solid $color4;
+                  margin-right: 0.5em;
+                  text-align: center;
+                  clear: both;
+                }
+
+                input[type="range"] {
+                  width: 100%;
+                  clear: both;
+                  display: inline-block;
+                  height: 20px;
+                }
+              }
+
+              div#video_volume {
+                width: 100%;
+
+                label {
+                  width: 20%;
+                  display: none;
+                  float: left;
+                  line-height: 30px;
+                  background-color: $color;
+                  color: $color4;
+                  border: 1px solid $color11;
+                  margin-right: 0.5em;
+                  text-align: center;
+                  clear: both;
+                }
+
+                input[type="range"] {
+                  width: 100%;
+                  clear: both;
+                  display: inline-block;
+                  height: 25px;
+                }
+              }
+              
+            }
+
+            #video_player {
+              width: 100%;
+              margin: 0 auto;
+              display: block;
+              padding: 1em 0;
+            }
+
+            /* video */
+            iframe {
+              width: 100%;
+              margin: 1em auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1440px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 30%;
+        }
+
+        #result_player {
+          width: 85%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            button.player-button {
+              width: 33.3%;
+
+              line-height: 53px;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 2em;
+                line-height: 53px;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 64%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 48%;
+
+            span {
+              font-size: 0.8em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+              line-height: 30px;
+            }
+
+            input[type="range"] {
+              width: 75%;
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 50%;
+
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              width: 75%;
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 64%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 48%;
+
+            span {
+              width: 25%;
+              font-size: 0.8em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 50%;
+
+            label {
+              font-size: 0.9em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          width: 75%;
+          height: 360px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          padding: 0.25em;
+
+          #btns_box {
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 62%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 48%;
+
+            span {
+              font-size: 0.7em;
+            }
+
+            span#duration_time {
+              font-size: 0.85em;
+            }
+
+            span#current_time {
+              font-size: 0.9em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 50%;
+
+            label {
+              width: 20%;
+              font-size: 0.9em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            width: 45%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 53%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.75em;
+            }
+
+            span#duration_time {
+              font-size: 0.9em;
+            }
+
+            span#current_time {
+              font-size: 0.9em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+            margin: 0;
+
+            label {
+              font-size: 1em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 667px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            width: 100%;
+            margin-bottom: 0.5em;
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 100%;
+            margin: 0;
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.9em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 1em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 100%;
+            margin: 0;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.9em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 1em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 536px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 100%;
+            margin: 0;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.9em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 1em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.8em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 0.9em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 414px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 98%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.8em;
+            }
+
+            span#duration_time {
+              font-size: 1em;
+            }
+
+            span#current_time {
+              font-size: 1em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              width: 74%;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 0.9em;
+            }
+
+            input[type="range"] {
+              width: 74%;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 360px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 90%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 98%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.7em;
+            }
+
+            span#duration_time {
+              font-size: 0.9em;
+            }
+
+            span#current_time {
+              font-size: 0.9em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 20%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 0.8em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  #page {
+    #primary {
+      article.clash-videos,
+      article.clash-audio {
+        a.download_button {
+          width: 40%;
+        }
+
+        #result_player {
+          width: 96%;
+        }
+
+        div#audio_controls,
+        div#videocontrols {
+          #btns_box {
+            width: 100%;
+
+            button.player-button {
+              width: 33.3%;
+
+              &:hover {
+                line-height: 53px;
+              }
+
+              i.fa-pause,
+              i.fa-play,
+              i.fa-forward,
+              i.fa-backward {
+                font-size: 1.9em;
+
+                &:hover {
+                  color: $color;
+                }
+              }
+            }
+          }
+
+          div#progress {
+            width: 98%;
+
+            span#play_progress {
+              display: block;
+            }
+
+            span#load_progress {
+              display: block;
+            }
+          }
+
+          div#time {
+            width: 100%;
+
+            span {
+              font-size: 0.7em;
+            }
+
+            span#duration_time {
+              font-size: 0.9em;
+            }
+
+            span#current_time {
+              font-size: 0.9em;
+            }
+          }
+
+          div#video_seek {
+            label {
+              width: 19%;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+
+          div#video_volume {
+            width: 100%;
+
+            label {
+              font-size: 0.8em;
+            }
+
+            input[type="range"] {
+              height: 32px;
+            }
+          }
+        }
+
+        iframe {
+          margin: 1em auto;
+        }
+      }
+    }
+  }
+}
