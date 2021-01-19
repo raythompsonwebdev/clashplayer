@@ -26,7 +26,6 @@ html[xmlns] .clearfix {
 
 html,
 body {
-  margin: 0;
   padding: 0;
   width: 100%; }
 
@@ -64,12 +63,6 @@ body {
 
 .sticky {
   margin: 0; }
-
-.gallery-caption {
-  font-size: 1em; }
-
-.bypostauthor {
-  font-size: 1em; }
 
 /* WordPress Image Classes */
 img.centered {
@@ -124,7 +117,7 @@ div.aligncenter {
   height: 0; }
 
 .clearfix::after {
-  content: '.';
+  content: ".";
   display: block;
   clear: both;
   visibility: hidden;
@@ -134,7 +127,7 @@ div.aligncenter {
 .clearfix::before,
 .group::before,
 .group::after {
-  content: '';
+  content: "";
   display: table; }
 
 .group::after {
@@ -143,10 +136,6 @@ div.aligncenter {
 .group {
   *zoom: 1; }
 
-img#wpstats {
-  display: none;
-  width: 1px; }
-
 img {
   width: 100%;
   max-width: 100%;
@@ -154,14 +143,6 @@ img {
   border: none;
   outline: none;
   vertical-align: middle; }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Titillium Web", arial, sans-serif, verdana, helvetica;
-  font-size: 1em;
-  background-color: #fff;
-  overflow-x: hidden; }
 
 h1,
 h2,

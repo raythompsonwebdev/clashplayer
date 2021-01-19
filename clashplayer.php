@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Load translations (if any) for the plugin from the /languages/ folder.
- * 
+ *
  * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
  */
 add_action( 'init', 'clashplayer_load_textdomain' );
@@ -32,7 +32,7 @@ function clashplayer_load_textdomain() {
 
 //   // Make paths variables so we don't write em twice 😉
 //   $blockPath = '/src/js/audio-es6.js';
-  
+
 //   // Enqueue the bundled block JS file
 //   wp_enqueue_script(
 //     'clashvibes-blocks-js',
@@ -41,27 +41,27 @@ function clashplayer_load_textdomain() {
 //     filemtime( plugin_dir_path( __FILE__ ) . $blockPath )
 //   );
 
-  
+
 
 // }
 // // Hook scripts function into block editor hook
 // add_action( 'enqueue_block_editor_assets', 'clashplayer_editor_scripts' );
 
 
-/** 
+/**
  * Add custom image size for block featured image.
- * 
+ *
  * @link https://developer.wordpress.org/reference/functions/add_image_size/
  */
 add_action( 'init', 'clashplayer_add_image_size' );
 
 function clashplayer_add_image_size() {
-	add_image_size( 'clashplayerFeatImg', 250, 250, array( 'center', 'center' ) ); 
+	add_image_size( 'clashplayerFeatImg', 250, 250, array( 'center', 'center' ) );
 }
 
-/** 
+/**
  * Register custom image size with sizes list to make it available.
- * 
+ *
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
  */
 add_filter( 'image_size_names_choose', 'clashplayer_custom_sizes' );
@@ -72,9 +72,9 @@ function clashplayer_custom_sizes( $sizes ) {
 	) );
 }
 
-/** 
+/**
  * Add custom "clashplayer" block category
- * 
+ *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
  */
 add_filter( 'block_categories', 'clashplayer_block_categories', 10, 2 );
@@ -134,26 +134,27 @@ function clashplayer_register_blocks() {
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/style.css' )	// set version as file last modified time
 	);
 
-	// Register the front-end stylesheet.
+	//Register the front-end stylesheet.
 	wp_register_script(
 		'clashplayer-audio-script',										// label
 		plugins_url( 'build/audio-ES6.js', __FILE__ ),						// JS file
 		array( ),														// dependencies
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/audio-ES6.js' )	// set version as file last modified time
 	);
-	
+
 	// Loop through $blocks and register each block with the same script and styles.
 
 		register_block_type( 'clashplayer/media', array(
 			'editor_script' => 'clashplayer-editor-script',					// Calls registered script above
 			'editor_style' => 'clashplayer-editor-styles',					// Calls registered stylesheet above
 			'style' => 'clashplayer-front-end-styles',						// Calls registered stylesheet above
-		) );	  
+			'script' => 'clashplayer-audio-script',
+		) );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 	/**
-	 * Adds internationalization support. 
-	 * 
+	 * Adds internationalization support.
+	 *
 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
 	 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
 	 */

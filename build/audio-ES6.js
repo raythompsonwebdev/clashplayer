@@ -9,13 +9,10 @@ let audio = document.querySelector('audio')
 
 // Play/Pause ============================//
 
-let playToggle = document.querySelector('#play_toggle')
+let playToggle = document.getElementById('play_toggle')
 
 playToggle.addEventListener('click', function () {
-	var isPlaying =
-		audio.currentTime > 0 && !audio.paused && !audio.ended && audio.readyState > 2
-
-	if (!isPlaying) {
+	if (audio.paused) {
 		audio.play()
 		audio.preload = 'metadata'
 		this.innerHTML =
@@ -82,7 +79,7 @@ let durationtime = document.getElementById('duration_time')
 let currenttime = document.getElementById('current_time')
 
 function formatTime(seconds) {
-	let seconds = Math.round(seconds)
+	seconds = Math.round(seconds)
 	let minutes = Math.floor(seconds / 60)
 	// Remaining seconds
 	seconds = Math.floor(seconds % 60)
