@@ -240,17 +240,18 @@ registerBlockType('clashplayer/media', {
 		function onSelectURL(newSrc) {
 			// Set the block's src from the edit component's state, and switch off
 			// the editing UI.
-			if (newSrc !== src) {
-				// Check if there's an embed block that handles this URL.
-				const embedBlock = createUpgradedEmbedBlock({
-					attributes: { url: newSrc },
-				})
-				if (undefined !== embedBlock) {
-					onReplace(embedBlock)
-					return
-				}
-				setAttributes({ src: newSrc, id: undefined })
-			}
+			// if (newSrc !== src) {
+			// 	// Check if there's an embed block that handles this URL.
+			// 	const embedBlock = createUpgradedEmbedBlock({
+			// 		attributes: { url: newSrc },
+			// 	})
+			// 	if (undefined !== embedBlock) {
+			// 		onReplace(embedBlock)
+			// 		return
+			// 	}
+
+			// }
+			setAttributes({ src: newSrc, id: undefined })
 		}
 
 		function onUploadError(message) {
@@ -331,15 +332,6 @@ registerBlockType('clashplayer/media', {
 					/>
 				)}
 				<BlockControls>
-					<MediaReplaceFlow
-						mediaId={id}
-						mediaURL={src}
-						allowedTypes={ALLOWED_MEDIA_TYPES}
-						accept="audio/*"
-						onSelect={onSelectAudio}
-						onSelectURL={onSelectURL}
-						onError={onUploadError}
-					/>
 					{/* <MediaUpload
 							onSelect={onSelectMedia}
 							allowedTypes={['image']}
@@ -354,6 +346,15 @@ registerBlockType('clashplayer/media', {
 							)}
 						/> */}
 					<Toolbar>
+						<MediaReplaceFlow
+							mediaId={id}
+							mediaURL={src}
+							allowedTypes={ALLOWED_MEDIA_TYPES}
+							accept="audio/*"
+							onSelect={onSelectAudio}
+							onSelectURL={onSelectURL}
+							onError={onUploadError}
+						/>
 						<MediaUpload
 							onSelect={onSelectMedia}
 							allowedTypes={['image']}
