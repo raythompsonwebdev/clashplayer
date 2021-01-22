@@ -175,9 +175,9 @@ a {
       /* controls -audio/video */
       /* controls -audio/video */
       /* video */ }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media .clashplayer-logo,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media .clashplayer-logo,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media .clashplayer-logo {
+      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div.clashplayer-logo,
+      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div.clashplayer-logo,
+      #page #primary article.post .entry-content div.wp-block-clashplayer-media div.clashplayer-logo {
         width: 50%;
         display: block;
         margin: auto;

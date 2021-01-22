@@ -7,9 +7,11 @@ if (!document.createElement('audio').canPlayType) {
 
 let audio = document.querySelector('audio')
 
+console.info(audio)
+
 // Play/Pause ============================//
 
-let playToggle = document.getElementById('play_toggle')
+var playToggle = document.getElementById('play_toggle')
 
 playToggle.addEventListener('click', function () {
 	if (audio.paused) {
@@ -78,16 +80,16 @@ audio.addEventListener('playing', function () {
 let durationtime = document.getElementById('duration_time')
 let currenttime = document.getElementById('current_time')
 
-function formatTime(seconds) {
-	seconds = Math.round(seconds)
-	let minutes = Math.floor(seconds / 60)
-	// Remaining seconds
-	seconds = Math.floor(seconds % 60)
-	// Add leading Zeros
-	minutes = minutes >= 10 ? minutes : '0' + minutes
-	seconds = seconds >= 10 ? seconds : '0' + seconds
-	return minutes + ':' + seconds
-}
+// function formatTime(seconds) {
+// 	seconds = Math.round(seconds)
+// 	let minutes = Math.floor(seconds / 60)
+// 	// Remaining seconds
+// 	seconds = Math.floor(seconds % 60)
+// 	// Add leading Zeros
+// 	minutes = minutes >= 10 ? minutes : '0' + minutes
+// 	seconds = seconds >= 10 ? seconds : '0' + seconds
+// 	return minutes + ':' + seconds
+// }
 
 audio.addEventListener('timeupdate', function () {
 	currenttime.innerHTML = formatTime(this.currentTime)

@@ -332,19 +332,6 @@ registerBlockType('clashplayer/media', {
 					/>
 				)}
 				<BlockControls>
-					{/* <MediaUpload
-							onSelect={onSelectMedia}
-							allowedTypes={['image']}
-							value={mediaUrl}
-							render={({ open }) => (
-								<IconButton
-									className="components-toolbar__control"
-									label={__('Edit media')}
-									icon="edit"
-									onClick={open}
-								/>
-							)}
-						/> */}
 					<Toolbar>
 						<MediaReplaceFlow
 							mediaId={id}
@@ -408,6 +395,7 @@ registerBlockType('clashplayer/media', {
 						/>
 					</PanelBody>
 				</InspectorControls>
+
 				<figure {...blockProps}>
 					{/*
 					Disable the audio tag so the user clicking on it won't play the
@@ -487,7 +475,7 @@ registerBlockType('clashplayer/media', {
 	},
 	save: (props) => {
 		const {
-			attributes: { src },
+			attributes: { src, imgUrl },
 			className,
 		} = props
 
@@ -499,7 +487,12 @@ registerBlockType('clashplayer/media', {
 					<source src={src} preload="metadata" type="audio/mp4" />
 					<p></p>
 				</audio>
-
+				<div
+					className="clashplayer-logo"
+					style={{
+						backgroundImage: `url(${imgUrl})`,
+					}}
+				></div>
 				<div id="audio_controls">
 					<div id="btns_box">
 						<button id="play_toggle" className="player-button">

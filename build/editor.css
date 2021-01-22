@@ -179,11 +179,12 @@ a {
       border: 2px solid #fdd015;
       color: #262626;
       text-align: center; }
-    div.wp-block-clashplayer-media figure.clashplayer-logo {
-      width: 50%;
+    div.wp-block-clashplayer-media div.clashplayer-logo {
+      width: auto;
       display: block;
       margin: auto;
-      background-color: #000; }
+      background-color: #000;
+      height: 100px; }
     div.wp-block-clashplayer-media .wp-audio-shortcode {
       width: 85%;
       margin: 0 auto;
@@ -370,8 +371,8 @@ a {
           margin-right: 0.5em;
           text-align: center;
           clear: both; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type="range"],
-        div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type="range"] {
+        div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
+        div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
           width: 100%;
           clear: both;
           display: inline-block;
@@ -391,8 +392,8 @@ a {
           margin-right: 0.5em;
           text-align: center;
           clear: both; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type="range"],
-        div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type="range"] {
+        div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
+        div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
           width: 100%;
           clear: both;
           display: inline-block;
@@ -944,8 +945,8 @@ a {
     div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
     div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type="range"],
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type="range"] {
+    div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
+    div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
       width: 74%; }
     div.wp-block-clashplayer-media div#audio_controls div#video_volume,
     div.wp-block-clashplayer-media div#videocontrols div#video_volume {
@@ -953,8 +954,8 @@ a {
       div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
       div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type="range"],
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type="range"] {
+      div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
+      div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
         width: 74%; }
     div.wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
