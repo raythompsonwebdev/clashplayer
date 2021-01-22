@@ -175,9 +175,9 @@ a {
       /* controls -audio/video */
       /* controls -audio/video */
       /* video */ }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media figure.clashplayer-logo,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media figure.clashplayer-logo,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media figure.clashplayer-logo {
+      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media .clashplayer-logo,
+      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media .clashplayer-logo,
+      #page #primary article.post .entry-content div.wp-block-clashplayer-media .clashplayer-logo {
         width: 50%;
         display: block;
         margin: auto;
@@ -525,12 +525,12 @@ a {
             margin-right: 0.5em;
             text-align: center;
             clear: both; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type="range"],
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type="range"],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type="range"],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type="range"],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type="range"],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type="range"] {
+          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
+          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'],
+          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
+          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'],
+          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
+          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
             width: 100%;
             clear: both;
             display: inline-block;
@@ -558,12 +558,12 @@ a {
             margin-right: 0.5em;
             text-align: center;
             clear: both; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type="range"],
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type="range"],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type="range"],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type="range"],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type="range"],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type="range"] {
+          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
+          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'],
+          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
+          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'],
+          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
+          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
             width: 100%;
             clear: both;
             display: inline-block;
@@ -675,10 +675,10 @@ a {
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%;
     line-height: 30px; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     width: 75%;
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
@@ -691,10 +691,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       width: 20%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       width: 75%;
       height: 32px; }
   #page #primary article.clash-videos iframe,
@@ -793,10 +793,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -808,10 +808,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -914,10 +914,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_seek label,
     #page #primary article.clash-audio div#videocontrols div#video_seek label {
       width: 20%; }
-    #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
       height: 32px; }
     #page #primary article.clash-videos div#audio_controls div#video_volume,
     #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -930,10 +930,10 @@ a {
       #page #primary article.clash-audio div#videocontrols div#video_volume label {
         width: 20%;
         font-size: 0.9em; }
-      #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-      #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-      #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-      #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+      #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+      #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+      #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+      #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
         height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1035,10 +1035,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1051,10 +1051,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1158,10 +1158,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1173,10 +1173,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1279,10 +1279,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1294,10 +1294,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1400,10 +1400,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1415,10 +1415,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1515,10 +1515,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1530,10 +1530,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1635,10 +1635,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     width: 74%; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1650,10 +1650,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       width: 74%; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1755,10 +1755,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1770,10 +1770,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {
@@ -1875,10 +1875,10 @@ a {
   #page #primary article.clash-audio div#audio_controls div#video_seek label,
   #page #primary article.clash-audio div#videocontrols div#video_seek label {
     width: 19%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type="range"],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type="range"] {
+  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
+  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
     height: 32px; }
   #page #primary article.clash-videos div#audio_controls div#video_volume,
   #page #primary article.clash-videos div#videocontrols div#video_volume,
@@ -1890,10 +1890,10 @@ a {
     #page #primary article.clash-audio div#audio_controls div#video_volume label,
     #page #primary article.clash-audio div#videocontrols div#video_volume label {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type="range"],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type="range"] {
+    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
+    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
       height: 32px; }
   #page #primary article.clash-videos iframe,
   #page #primary article.clash-audio iframe {

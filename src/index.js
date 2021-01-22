@@ -1,34 +1,72 @@
-// const { __ } = wp.i18n;
-// const { //InspectorControls, registerBlockType } = wp.blocks;
-// const { TextControl } = wp.components;
-
 import { __ } from '@wordpress/i18n'
 import { registerBlockType } from '@wordpress/blocks'
-import { InspectorControls } from '@wordpress/block-editor'
-import { TextControl } from '@wordpress/components'
-
+import {
+	BlockControls,
+	BlockIcon,
+	InspectorControls,
+	MediaPlaceholder,
+	MediaReplaceFlow,
+	// MediaUpload,
+	//useBlockProps,
+	//RichText,
+} from '@wordpress/block-editor'
+import {
+	PanelBody,
+	SelectControl,
+	ToggleControl,
+	// Toolbar,
+	// IconButton,
+} from '@wordpress/components'
 import { ReactComponent as Logo } from '../src/bv-logo.svg'
 import { useEffect } from 'react'
-//import from "../src/js/audio-es6";
+//import { useSelect } from '@wordpress/data'
+//import { get } from 'lodash'
+import { audio as icon } from '@wordpress/icons'
 
-console.info(wp.components)
+//console.info(wp.components)
 
 registerBlockType('clashplayer/media', {
 	title: __('ClashPlayer', 'clashplayer'),
 	icon: { src: Logo },
 	category: 'clashplayer',
 	attributes: {
-		urlaudio: {
+		src: {
 			type: 'string',
 			source: 'attribute',
 			selector: 'source',
 			attribute: 'src',
 		},
-		urlvideo: {
+		mediaUrl: {
 			type: 'string',
 			source: 'attribute',
 			selector: 'source',
 			attribute: 'src',
+		},
+		caption: {
+			type: 'string',
+			source: 'html',
+			selector: 'figcaption',
+		},
+		id: {
+			type: 'number',
+		},
+		autoplay: {
+			type: 'boolean',
+			source: 'attribute',
+			selector: 'audio',
+			attribute: 'autoplay',
+		},
+		loop: {
+			type: 'boolean',
+			source: 'attribute',
+			selector: 'audio',
+			attribute: 'loop',
+		},
+		preload: {
+			type: 'string',
+			source: 'attribute',
+			selector: 'audio',
+			attribute: 'preload',
 		},
 	},
 	supports: {
@@ -39,14 +77,16 @@ registerBlockType('clashplayer/media', {
 		console.log(props)
 
 		const {
-			attributes: { urlaudio },
+			attributes: { id, autoplay, loop, preload, src },
 			setAttributes,
 			className,
+			noticeOperations,
+			noticeUI,
 		} = props
 
-		function onChangeTextField(newValue) {
-			setAttributes({ urlaudio: newValue })
-		}
+		const ALLOWED_MEDIA_TYPES = ['audio']
+
+		//const blockProps = useBlockProps()
 
 		useEffect(() => {
 			let audioControls = document.getElementById('audio_controls')
@@ -186,23 +226,137 @@ registerBlockType('clashplayer/media', {
 			}
 
 			seek.addEventListener('change', seekhandler)
-		})
+		}, [])
+
+		function toggleAttribute(attribute) {
+			return (newValue) => {
+				setAttributes({ [attribute]: newValue })
+			}
+		}
+
+		function onUploadError(message) {
+			noticeOperations.removeAllNotices()
+			noticeOperations.createErrorNotice(message)
+		}
+
+		function getAutoplayHelp(checked) {
+			return checked
+				? __(
+						'Note: Autoplaying audio may cause usability issues for some visitors.'
+				  )
+				: null
+		}
+
+		// function onChangeTextField(newValue) {
+		// 	setAttributes({ mediaUrl: newValue })
+		// }
+
+		// const onSelectMedia = (media) => {
+		// 	// Try the "large" size URL, falling back to the "full" size URL below.
+		// 	let src =
+		// 		get(media, ['sizes', 'large', 'url']) ||
+		// 		get(media, ['media_details', 'sizes', 'large', 'source_url'])
+
+		// 	setAttributes({
+		// 		mediaUrl: src || media.url,
+		// 	})
+		// }
+
+		// const { setAttributes, isSelected, noticeUI } = this.props;
+		function onSelectAudio(media) {
+			if (!media || !media.url) {
+				// in this case there was an error and we should continue in the editing state
+				// previous attributes should be removed because they may be temporary blob urls
+				setAttributes({ src: undefined, id: undefined })
+				return
+			}
+			// sets the block's attribute and updates the edit component from the
+			// selected media, then switches off the editing UI
+			setAttributes({ src: media.url, id: media.id })
+		}
+
+		if (!src) {
+			return (
+				<MediaPlaceholder
+					icon={<BlockIcon icon={icon} />}
+					labels={{
+						title: __('Media area'),
+					}}
+					className="block-image"
+					onSelect={onSelectAudio}
+					//onSelectURL={onSelectURL}
+					accept="audio/*"
+					allowedTypes={ALLOWED_MEDIA_TYPES}
+					value={attributes}
+					notices={noticeUI}
+					onError={onUploadError}
+				/>
+			)
+		}
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
-				<InspectorControls>
-					<TextControl
-						label="Audio URL"
-						help="type audio url into this field"
-						value={urlaudio}
-						onChange={onChangeTextField}
+				<BlockControls>
+					<MediaReplaceFlow
+						mediaId={id}
+						mediaURL={src}
+						allowedTypes={ALLOWED_MEDIA_TYPES}
+						accept="audio/*"
+						onSelect={onSelectAudio}
+						//onSelectURL={onSelectURL}
+						onError={onUploadError}
 					/>
+					{/* <MediaUpload
+							onSelect={onSelectMedia}
+							allowedTypes={['image']}
+							value={mediaUrl}
+							render={({ open }) => (
+								<IconButton
+									className="components-toolbar__control"
+									label={__('Edit media')}
+									icon="edit"
+									onClick={open}
+								/>
+							)}
+						/> */}
+				</BlockControls>
+
+				<InspectorControls>
+					<PanelBody title={__('Audio settings')}>
+						<ToggleControl
+							label={__('Autoplay')}
+							onChange={toggleAttribute('autoplay')}
+							checked={autoplay}
+							help={getAutoplayHelp}
+						/>
+						<ToggleControl
+							label={__('Loop')}
+							onChange={toggleAttribute('loop')}
+							checked={loop}
+						/>
+						<SelectControl
+							label={__('Preload')}
+							value={preload || ''}
+							// `undefined` is required for the preload attribute to be unset.
+							onChange={(value) =>
+								setAttributes({
+									preload: value || undefined,
+								})
+							}
+							options={[
+								{ value: '', label: __('Browser default') },
+								{ value: 'auto', label: __('Auto') },
+								{ value: 'metadata', label: __('Metadata') },
+								{ value: 'none', label: __('None') },
+							]}
+						/>
+					</PanelBody>
 				</InspectorControls>
 
 				<audio id="result_player">
-					<source src={`${urlaudio}.mp3`} preload="metadata" type="audio/mpeg" />
-					<source src={urlaudio} preload="metadata" type="audio/ogg" />
-					<source src={urlaudio} preload="metadata" type="audio/mp4" />
+					<source src={src} preload="metadata" type="audio/mpeg" />
+					<source src={src} preload="metadata" type="audio/ogg" />
+					<source src={src} preload="metadata" type="audio/mp4" />
 					<p></p>
 				</audio>
 
@@ -255,16 +409,16 @@ registerBlockType('clashplayer/media', {
 	},
 	save: (props) => {
 		const {
-			attributes: { urlaudio },
+			attributes: { id, autoplay, caption, loop, preload, src },
 			className,
 		} = props
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
 				<audio id="result_player">
-					<source src={`${urlaudio}.mp3`} preload="metadata" type="audio/mpeg" />
-					<source src={urlaudio} preload="metadata" type="audio/ogg" />
-					<source src={urlaudio} preload="metadata" type="audio/mp4" />
+					<source src={src} preload="metadata" type="audio/mpeg" />
+					<source src={src} preload="metadata" type="audio/ogg" />
+					<source src={src} preload="metadata" type="audio/mp4" />
 					<p></p>
 				</audio>
 
