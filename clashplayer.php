@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', 'clashplayer_frontend_scripts' ); // Can be lo
  function clashplayer_frontend_scripts() {
 
 //   // Make paths variables so we don't write em twice 😉
-   $blockPath = '/build/audio-ES6.js';
+   $blockPath = '/build/audio-es6.js';
 
 //   // Enqueue the bundled block JS file
 			if ( has_block( 'clashplayer/media' ) ) {

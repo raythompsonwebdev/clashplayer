@@ -2,29 +2,18 @@ import { __ } from '@wordpress/i18n'
 import { registerBlockType } from '@wordpress/blocks'
 import {
 	BlockControls,
-	BlockIcon,
 	InspectorControls,
-	MediaPlaceholder,
 	MediaReplaceFlow,
-	MediaUpload,
-	useBlockProps,
-	RichText,
 } from '@wordpress/block-editor'
 import {
-	Disabled,
 	PanelBody,
 	SelectControl,
 	ToggleControl,
 	TextControl,
 	Toolbar,
-	IconButton,
 } from '@wordpress/components'
 import { ReactComponent as Logo } from '../src/bv-logo.svg'
 import { useEffect } from 'react'
-//import { useSelect } from '@wordpress/data'
-import { createBlock } from '@wordpress/blocks'
-import { get } from 'lodash'
-import { audio as icon } from '@wordpress/icons'
 
 //console.info(wp.components)
 
@@ -38,9 +27,6 @@ registerBlockType('clashplayer/media', {
 			source: 'attribute',
 			selector: 'source',
 			attribute: 'src',
-		},
-		imgUrl: {
-			type: 'string',
 		},
 		caption: {
 			type: 'string',
@@ -77,24 +63,17 @@ registerBlockType('clashplayer/media', {
 		console.log(props)
 
 		const {
-			attributes: { id, autoplay, loop, preload, src, caption, imgUrl },
+			attributes: { id, autoplay, loop, preload, src },
 			setAttributes,
 			className,
 			noticeOperations,
-			noticeUI,
-			insertBlocksAfter,
-			onReplace,
-			isSelected,
 		} = props
 
 		const ALLOWED_MEDIA_TYPES = ['audio']
 
-		const blockProps = useBlockProps()
-
 		useEffect(() => {
 			let audioControls = document.getElementById('audio_controls')
 
-			//Stop if HTML5 video isn't supported
 			if (!document.createElement('audio').canPlayType) {
 				audioControls.style.display = 'none'
 			}
@@ -238,19 +217,6 @@ registerBlockType('clashplayer/media', {
 		}
 
 		function onSelectURL(newSrc) {
-			// Set the block's src from the edit component's state, and switch off
-			// the editing UI.
-			// if (newSrc !== src) {
-			// 	// Check if there's an embed block that handles this URL.
-			// 	const embedBlock = createUpgradedEmbedBlock({
-			// 		attributes: { url: newSrc },
-			// 	})
-			// 	if (undefined !== embedBlock) {
-			// 		onReplace(embedBlock)
-			// 		return
-			// 	}
-
-			// }
 			setAttributes({ src: newSrc, id: undefined })
 		}
 
@@ -271,18 +237,6 @@ registerBlockType('clashplayer/media', {
 			setAttributes({ imgUrl: newValue })
 		}
 
-		const onSelectMedia = (media) => {
-			// Try the "large" size URL, falling back to the "full" size URL below.
-			let src =
-				get(media, ['sizes', 'large', 'url']) ||
-				get(media, ['media_details', 'sizes', 'large', 'source_url'])
-
-			setAttributes({
-				imgUrl: src || media.url,
-			})
-		}
-
-		// const { setAttributes, isSelected, noticeUI } = this.props;
 		function onSelectAudio(media) {
 			if (!media || !media.url) {
 				setAttributes({ src: undefined, id: undefined })
@@ -291,46 +245,8 @@ registerBlockType('clashplayer/media', {
 			setAttributes({ src: media.url, id: media.id })
 		}
 
-		if (!src) {
-			return (
-				<MediaPlaceholder
-					icon={<BlockIcon icon={icon} />}
-					labels={{
-						title: __('Media area'),
-					}}
-					className="block-image"
-					onSelect={onSelectAudio}
-					onSelectURL={onSelectURL}
-					accept="audio/*"
-					allowedTypes={ALLOWED_MEDIA_TYPES}
-					value={attributes}
-					notices={noticeUI}
-					onError={onUploadError}
-				/>
-			)
-		}
-
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
-				{imgUrl ? (
-					<div
-						className="clashplayer-logo"
-						style={{
-							backgroundImage: `url(${imgUrl})`,
-						}}
-					></div>
-				) : (
-					<MediaPlaceholder
-						icon="format-image"
-						labels={{
-							title: __('Media area'),
-						}}
-						className="block-image"
-						onSelect={onSelectMedia}
-						accept="image/*"
-						allowedTypes={['image']}
-					/>
-				)}
 				<BlockControls>
 					<Toolbar>
 						<MediaReplaceFlow
@@ -342,28 +258,15 @@ registerBlockType('clashplayer/media', {
 							onSelectURL={onSelectURL}
 							onError={onUploadError}
 						/>
-						<MediaUpload
-							onSelect={onSelectMedia}
-							allowedTypes={['image']}
-							value={imgUrl}
-							render={({ open }) => (
-								<IconButton
-									className="components-toolbar__control"
-									label={__('Edit media')}
-									icon="edit"
-									onClick={open}
-								/>
-							)}
-						/>
 					</Toolbar>
 				</BlockControls>
 
 				<InspectorControls>
 					<PanelBody title={__('Audio settings')}>
 						<TextControl
-							label="Image URL"
+							label="Audio URL"
 							help="type audio url into this field"
-							value={imgUrl}
+							value={src}
 							onChange={onChangeTextField}
 						/>
 						<ToggleControl
@@ -396,33 +299,28 @@ registerBlockType('clashplayer/media', {
 					</PanelBody>
 				</InspectorControls>
 
-				<figure {...blockProps}>
-					{/*
-					Disable the audio tag so the user clicking on it won't play the
-					file or change the position slider when the controls are enabled.
-				*/}
-					<Disabled>
-						<audio src={src} />
-					</Disabled>
-					{(!RichText.isEmpty(caption) || isSelected) && (
-						<RichText
-							tagName="figcaption"
-							aria-label={__('Audio caption text')}
-							placeholder={__('Write caption…')}
-							value={caption}
-							onChange={(value) => setAttributes({ caption: value })}
-							inlineToolbar
-							__unstableOnSplitAtEnd={() =>
-								insertBlocksAfter(createBlock('core/paragraph'))
-							}
-						/>
-					)}
-				</figure>
-
 				<audio id="result_player">
-					<source src={src} preload="metadata" type="audio/mpeg" />
-					<source src={src} preload="metadata" type="audio/ogg" />
-					<source src={src} preload="metadata" type="audio/mp4" />
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/mpeg"
+					/>
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/ogg"
+					/>
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/mp4"
+					/>
 					<p></p>
 				</audio>
 
@@ -475,24 +373,36 @@ registerBlockType('clashplayer/media', {
 	},
 	save: (props) => {
 		const {
-			attributes: { src, imgUrl },
+			attributes: { src, preload, loop, autoplay },
 			className,
 		} = props
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
 				<audio id="result_player">
-					<source src={src} preload="metadata" type="audio/mpeg" />
-					<source src={src} preload="metadata" type="audio/ogg" />
-					<source src={src} preload="metadata" type="audio/mp4" />
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/mpeg"
+					/>
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/ogg"
+					/>
+					<source
+						src={src}
+						preload={preload}
+						loop={loop}
+						autoplay={autoplay}
+						type="audio/mp4"
+					/>
 					<p></p>
 				</audio>
-				<div
-					className="clashplayer-logo"
-					style={{
-						backgroundImage: `url(${imgUrl})`,
-					}}
-				></div>
 				<div id="audio_controls">
 					<div id="btns_box">
 						<button id="play_toggle" className="player-button">
