@@ -166,13 +166,13 @@ a {
   #page #primary article.clash-videos,
   #page #primary article.clash-audio,
   #page #primary article.post {
-    width: 100%; }
+    width: 100%;
+    font-family: "Titillium Web", arial, sans-serif, verdana, helvetica; }
     #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media,
     #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media,
     #page #primary article.post .entry-content div.wp-block-clashplayer-media {
       width: 100%;
       /* audio */
-      /* controls -audio/video */
       /* controls -audio/video */
       /* video */ }
       #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div.clashplayer-logo,
@@ -479,7 +479,8 @@ a {
             background-color: #fff;
             color: #262626;
             margin-right: 0;
-            float: left; }
+            float: left;
+            font-family: "Titillium Web", arial, sans-serif, verdana, helvetica; }
           #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
           #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time,
           #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,

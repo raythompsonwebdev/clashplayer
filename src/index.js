@@ -26,10 +26,11 @@ registerBlockType('clashplayer/media', {
 			selector: 'source',
 			attribute: 'src',
 		},
-		caption: {
+		types: {
 			type: 'string',
-			source: 'html',
-			selector: 'figcaption',
+			source: 'attribute',
+			selector: 'source',
+			attribute: 'type',
 		},
 		id: {
 			type: 'number',
@@ -61,7 +62,7 @@ registerBlockType('clashplayer/media', {
 		console.log(props)
 
 		const {
-			attributes: { id, autoplay, loop, preload, src },
+			attributes: { id, autoplay, loop, preload, src, types },
 			setAttributes,
 			className,
 			noticeOperations,
@@ -294,6 +295,22 @@ registerBlockType('clashplayer/media', {
 								{ value: 'none', label: __('None') },
 							]}
 						/>
+						<SelectControl
+							label={__('Format')}
+							value={types || ''}
+							// `undefined` is required for the types attribute to be unset.
+							onChange={(value) =>
+								setAttributes({
+									types: value || undefined,
+								})
+							}
+							options={[
+								{ value: 'audio/mpeg', label: __('Browser default') },
+								{ value: 'audio/mpeg', label: __('mp3') },
+								{ value: 'audio/ogg', label: __('ogg') },
+								{ value: 'audio/mp4', label: __('mp4') },
+							]}
+						/>
 					</PanelBody>
 				</InspectorControls>
 
@@ -303,9 +320,9 @@ registerBlockType('clashplayer/media', {
 						preload={preload}
 						loop={loop}
 						autoplay={autoplay}
-						type="audio/mpeg"
+						type={types}
 					/>
-					<source
+					{/* <source
 						src={src}
 						preload={preload}
 						loop={loop}
@@ -318,7 +335,7 @@ registerBlockType('clashplayer/media', {
 						loop={loop}
 						autoplay={autoplay}
 						type="audio/mp4"
-					/>
+					/> */}
 					<p></p>
 				</audio>
 

@@ -9,6 +9,7 @@
 			article.clash-audio,
 			article.post {
 				width: 100%;
+				font-family: $font-main;
 
 				.entry-content {
 					div.wp-block-clashplayer-media {
@@ -175,6 +176,7 @@
 									color: $color4;
 									margin-right: 0;
 									float: left;
+									font-family: $font-main;
 								}
 
 								span#duration_time {
