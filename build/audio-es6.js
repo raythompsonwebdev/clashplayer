@@ -1,15 +1,15 @@
-let audioControls = document.getElementById('audio_controls')
+var audioControls = document.getElementById('audio_controls')
 
 //Stop if HTML5 video isn't supported
 if (!document.createElement('audio').canPlayType) {
 	audioControls.style.display = 'none'
 }
 
-let audio = document.querySelector('audio')
+var audio = document.querySelector('audio')
 
 // Play/Pause ============================//
 
-let playToggle = document.querySelector('#play_toggle')
+var playToggle = document.querySelector('#play_toggle')
 
 playToggle.addEventListener('click', function () {
 	var isPlaying =
@@ -27,7 +27,7 @@ playToggle.addEventListener('click', function () {
 })
 
 // Rewind ============================//
-let rewindBtn = document.getElementById('rewind')
+var rewindBtn = document.getElementById('rewind')
 
 rewindBtn.addEventListener('click', function () {
 	this.innerHTML =
@@ -36,7 +36,7 @@ rewindBtn.addEventListener('click', function () {
 })
 
 // Forward ============================//
-let forwardBtn = document.getElementById('forward')
+var forwardBtn = document.getElementById('forward')
 
 forwardBtn.addEventListener('click', function () {
 	this.innerHTML =
@@ -45,20 +45,20 @@ forwardBtn.addEventListener('click', function () {
 })
 
 // Play Progress ============================//
-let playProgress = document.getElementById('play_progress')
+var playProgress = document.getElementById('play_progress')
 
 audio.addEventListener('timeupdate', function () {
-	let timePercent = (this.currentTime / this.duration) * 100
+	var timePercent = (this.currentTime / this.duration) * 100
 	playProgress.style.width = timePercent + '%'
 })
 
 // Load Progress ============================//
 
-let loadProgress = document.getElementById('load_progress')
+var loadProgress = document.getElementById('load_progress')
 
 function updateLoadProgress() {
 	if (audio.buffered.length > 0) {
-		let percent = (audio.buffered.end(0) / audio.duration) * 100
+		var percent = (audio.buffered.end(0) / audio.duration) * 100
 		loadProgress.style.width = percent + '%'
 	}
 }
@@ -78,12 +78,12 @@ audio.addEventListener('playing', function () {
 
 // Time Display =============================//
 
-let durationtime = document.getElementById('duration_time')
-let currenttime = document.getElementById('current_time')
+var durationtime = document.getElementById('duration_time')
+var currenttime = document.getElementById('current_time')
 
 function formatTime(seconds) {
-	let seconds = Math.round(seconds)
-	let minutes = Math.floor(seconds / 60)
+	var seconds = Math.round(seconds)
+	var minutes = Math.floor(seconds / 60)
 	// Remaining seconds
 	seconds = Math.floor(seconds % 60)
 	// Add leading Zeros
@@ -101,14 +101,14 @@ audio.addEventListener('durationchange', function () {
 })
 
 //volume =============================//
-let volume = document.getElementById('volume')
+var volume = document.getElementById('volume')
 
 volume.addEventListener('change', function (event) {
 	audio.volume = event.target.value
 })
 
 //seeker =============================//
-let seek = document.getElementById('seek'),
+var seek = document.getElementById('seek'),
 	playback = document.getElementById('playback')
 
 //update seeker =============================//

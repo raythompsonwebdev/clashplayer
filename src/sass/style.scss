@@ -40,7 +40,6 @@
 						}
 
 						/* controls -audio/video */
-						/* controls -audio/video */
 						div#audio_controls,
 						div#videocontrols {
 							height: auto;
@@ -108,11 +107,11 @@
 									svg.fa-forward,
 									i.fa-backward,
 									svg.fa-backward {
-										font-size: 2em;
+										font-size: 1.5em;
 										text-align: center;
 										display: block;
 										color: $color;
-										line-height: 53px;
+										line-height: 25px;
 										margin: auto;
 
 										&:hover {
@@ -281,18 +280,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							line-height: 53px;
-
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 2em;
-								line-height: 53px;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.5em;
 
 								&:hover {
 									color: $color;
@@ -381,15 +377,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -479,15 +475,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -576,15 +572,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -673,15 +669,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -769,15 +765,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -866,15 +862,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.4em;
 
 								&:hover {
 									color: $color;
@@ -963,15 +959,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.3em;
 
 								&:hover {
 									color: $color;
@@ -1057,15 +1053,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.3em;
 
 								&:hover {
 									color: $color;
@@ -1153,15 +1149,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.3em;
 
 								&:hover {
 									color: $color;
@@ -1249,15 +1245,15 @@
 						button.player-button {
 							width: 33.3%;
 
-							&:hover {
-								line-height: 53px;
-							}
-
 							i.fa-pause,
+							svg.fa-pause,
 							i.fa-play,
+							svg.fa-play,
 							i.fa-forward,
-							i.fa-backward {
-								font-size: 1.9em;
+							svg.fa-forward,
+							i.fa-backward,
+							svg.fa-backward {
+								font-size: 1.3em;
 
 								&:hover {
 									color: $color;

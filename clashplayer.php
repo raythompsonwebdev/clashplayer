@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'clashplayer_frontend_scripts' ); // Can be lo
 */
  function clashplayer_frontend_scripts() {
 
-//   // Make paths variables so we don't write em twice 😉
+  // Make paths variables so we don't write em twice 😉
    $blockPath = '/build/audio-es6.js';
 
 //   // Enqueue the bundled block JS file
@@ -39,34 +39,11 @@ add_action( 'wp_enqueue_scripts', 'clashplayer_frontend_scripts' ); // Can be lo
 						'clashvibes-blocks-js',
 						plugins_url( $blockPath, __FILE__ ),
 						array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data" ),
-						filemtime( plugin_dir_path( __FILE__ ) . $blockPath )
+						filemtime( plugin_dir_path( __FILE__ ) . $blockPath ),
+						true
 				);
 			}
  }
-
-/**
- * Add custom image size for block featured image.
- *
- * @link https://developer.wordpress.org/reference/functions/add_image_size/
- */
-add_action( 'init', 'clashplayer_add_image_size' );
-
-function clashplayer_add_image_size() {
-	add_image_size( 'clashplayerFeatImg', 250, 250, array( 'center', 'center' ) );
-}
-
-/**
- * Register custom image size with sizes list to make it available.
- *
- * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
- */
-add_filter( 'image_size_names_choose', 'clashplayer_custom_sizes' );
-
-function clashplayer_custom_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'clashplayerFeatImg' => __('clashplayer Featured Image'),
-	) );
-}
 
 /**
  * Add custom "clashplayer" block category
@@ -130,21 +107,13 @@ function clashplayer_register_blocks() {
 		filemtime( plugin_dir_path( __FILE__ ) . 'build/style.css' )	// set version as file last modified time
 	);
 
-	//Register the front-end stylesheet.
-	// wp_register_script(
-	// 	'clashplayer-audio-script',										// label
-	// 	plugins_url( 'build/audio-ES6.js', __FILE__ ),						// JS file
-	// 	[  'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n' ],														// dependencies
-	// 	filemtime( plugin_dir_path( __FILE__ ) . 'build/audio-ES6.js' )	// set version as file last modified time
-	// );
-
-	// Loop through $blocks and register each block with the same script and styles.
+		// Loop through $blocks and register each block with the same script and styles.
 
 		register_block_type( 'clashplayer/media', array(
 			'editor_script' => 'clashplayer-editor-script',					// Calls registered script above
 			'editor_style' => 'clashplayer-editor-styles',					// Calls registered stylesheet above
-			'style' => 'clashplayer-front-end-styles',						// Calls registered stylesheet above
-			//'script' => 'clashplayer-audio-script',
+			'style' => 'clashplayer-front-end-styles',					// Calls registered stylesheet above
+
 		) );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {

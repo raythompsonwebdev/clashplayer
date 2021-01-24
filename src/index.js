@@ -15,8 +15,6 @@ import {
 import { ReactComponent as Logo } from '../src/bv-logo.svg'
 import { useEffect } from 'react'
 
-//console.info(wp.components)
-
 registerBlockType('clashplayer/media', {
 	title: __('ClashPlayer', 'clashplayer'),
 	icon: { src: Logo },
@@ -72,14 +70,14 @@ registerBlockType('clashplayer/media', {
 		const ALLOWED_MEDIA_TYPES = ['audio']
 
 		useEffect(() => {
-			let audioControls = document.getElementById('audio_controls')
+			var audioControls = document.getElementById('audio_controls')
 
 			if (!document.createElement('audio').canPlayType) {
 				audioControls.style.display = 'none'
 			}
 
-			let audio = document.querySelector('audio')
-			let playToggle = document.getElementById('play_toggle')
+			var audio = document.querySelector('audio')
+			var playToggle = document.getElementById('play_toggle')
 
 			playToggle.addEventListener('click', function () {
 				var isPlaying =
@@ -100,7 +98,7 @@ registerBlockType('clashplayer/media', {
 				}
 			})
 			// Rewind ============================//
-			let rewindBtn = document.getElementById('rewind')
+			var rewindBtn = document.getElementById('rewind')
 
 			rewindBtn.addEventListener('click', function () {
 				this.innerHTML =
@@ -109,7 +107,7 @@ registerBlockType('clashplayer/media', {
 			})
 
 			// Forward ============================//
-			let forwardBtn = document.getElementById('forward')
+			var forwardBtn = document.getElementById('forward')
 
 			forwardBtn.addEventListener('click', function () {
 				this.innerHTML =
@@ -118,10 +116,10 @@ registerBlockType('clashplayer/media', {
 			})
 
 			// Play Progress ============================//
-			let playProgress = document.getElementById('play_progress')
+			var playProgress = document.getElementById('play_progress')
 
 			audio.addEventListener('timeupdate', function () {
-				let timePercent = (this.currentTime / this.duration) * 100
+				var timePercent = (this.currentTime / this.duration) * 100
 				playProgress.style.width = timePercent + '%'
 			})
 
@@ -208,7 +206,7 @@ registerBlockType('clashplayer/media', {
 			}
 
 			seek.addEventListener('change', seekhandler)
-		}, [])
+		})
 
 		function toggleAttribute(attribute) {
 			return (newValue) => {
