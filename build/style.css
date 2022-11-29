@@ -163,2034 +163,706 @@ a {
 
 /* Text meant only for screen readers. */
 @media only screen and (max-width: 1920px) {
-  #page #primary article.clash-videos,
-  #page #primary article.clash-audio,
-  #page #primary article.post {
+  .wp-block-clashplayer-media {
+    width: 80%;
+    display: block;
+    margin: auto; }
+  .download-button {
+    display: block;
+    width: 30%;
+    height: auto;
+    line-height: 30px;
+    margin: 0 auto;
+    border: 2px solid #fdd015;
+    color: #262626;
+    text-align: center; }
+  .clashplayer-logo {
+    width: auto;
+    display: block;
+    margin: auto;
+    background-color: #000;
+    height: 100px; }
+  /* controls -audio/video */
+  div#audio-controls,
+  #video-controls {
+    height: auto;
     width: 100%;
-    font-family: "Titillium Web", arial, sans-serif, verdana, helvetica; }
-    #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media,
-    #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media,
-    #page #primary article.post .entry-content div.wp-block-clashplayer-media {
-      width: 100%;
-      /* audio */
-      /* controls -audio/video */
-      /* video */ }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div.clashplayer-logo,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div.clashplayer-logo,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media div.clashplayer-logo {
-        width: 50%;
-        display: block;
-        margin: auto;
-        background-color: #000; }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media a.download_button,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media a.download_button,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media a.download_button {
-        display: block;
-        width: 30%;
-        height: auto;
-        line-height: 30px;
-        margin: 0 auto;
-        border: 2px solid #fdd015;
-        color: #262626;
-        text-align: center; }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media .wp-audio-shortcode,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media .wp-audio-shortcode,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media .wp-audio-shortcode {
-        width: 85%;
-        margin: 0 auto;
-        display: none; }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls,
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols {
-        height: auto;
-        width: 100%;
-        margin: 0 auto;
-        border: #ebeadd solid 1px;
-        padding: 0.5em;
+    margin: 0 auto;
+    border: #ebeadd solid 1px;
+    padding: 0.5em;
+    background-color: #262626;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 25px);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px; }
+  #btns-box {
+    grid-area: 1 / 1 / 3 / 3; }
+  #progress {
+    grid-area: 1 / 3 / 3 / 6; }
+  #video-seek {
+    grid-area: 2 / 3 / 2 / 6; }
+  #time {
+    grid-area: 3 / 1 / 4 / 6; }
+  #video-volume {
+    grid-area: 4 / 1 / 5 / 6; }
+  #btns-box {
+    height: 45px;
+    width: 100%; }
+    #btns-box button.player-button {
+      width: 33.3%;
+      display: block;
+      height: 100%;
+      outline: none;
+      text-align: center;
+      font-size: 1em;
+      -webkit-transform-origin: 50% 50%;
+      -moz-transform-origin: 50% 50%;
+      -o-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transition: all 0.2s linear 0s;
+      -moz-transition: all 0.2s linear 0s;
+      -o-transition: all 0.2s linear 0s;
+      -ms-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
+      color: #262626;
+      border: #ebeadd solid 1px;
+      background-color: #658905;
+      float: left; }
+      #btns-box button.player-button:hover {
         background-color: #262626;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(4, 25px);
-        grid-column-gap: 2px;
-        grid-row-gap: 2px; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box {
-          grid-area: 1 / 1 / 3 / 3; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress {
-          grid-area: 1 / 3 / 3 / 6; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek {
-          grid-area: 2 / 3 / 2 / 6; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#time,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#time {
-          grid-area: 3 / 1 / 4 / 6; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume {
-          grid-area: 4 / 1 / 5 / 6; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box {
-          height: 45px;
-          width: 100%; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
-            width: 33.3%;
-            display: block;
-            height: 100%;
-            outline: none;
-            text-align: center;
-            font-size: 1em;
-            -webkit-transform-origin: 50% 50%;
-            -moz-transform-origin: 50% 50%;
-            -o-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-            -webkit-transition: all 0.2s linear 0s;
-            -moz-transition: all 0.2s linear 0s;
-            -o-transition: all 0.2s linear 0s;
-            -ms-transition: all 0.2s linear 0s;
-            transition: all 0.2s linear 0s;
-            color: #262626;
-            border: #ebeadd solid 1px;
-            background-color: #658905;
-            float: left; }
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:hover,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:hover,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:hover,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:hover,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:hover,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:hover {
-              background-color: #262626;
-              color: #fff;
-              border: #ebeadd solid 1px;
-              cursor: pointer; }
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:active,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:active,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:active,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:active,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:active,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:active {
-              background-color: #262626; }
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward,
-            #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward,
-            #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward,
-            #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward {
-              font-size: 1.5em;
-              text-align: center;
-              display: block;
-              color: #fff;
-              line-height: 25px;
-              margin: auto; }
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-              #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
-                font-weight: bold;
-                color: #fff; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress {
-          width: 100%;
-          display: inline-block;
-          background-color: #fff;
-          position: relative;
-          height: 24px; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress progress#playback,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress progress#playback,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress progress#playback,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress progress#playback,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress progress#playback,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress progress#playback {
-            background-color: #262626;
-            height: 12px;
-            display: block;
-            margin: 0;
-            padding: 0;
-            width: 100%; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
-            position: absolute;
-            top: 0;
-            z-index: 2;
-            background-color: #fdd015;
-            height: 12px;
-            display: block;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            left: 0; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
-            background-color: #cc6;
-            height: 12px;
-            display: block;
-            margin: 0;
-            padding: 0; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#time,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#time,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#time {
-          width: 100%;
-          color: #262626;
-          height: 25px;
-          display: flex; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span {
-            width: 25%;
-            line-height: 25px;
-            text-align: center;
-            font-size: 0.8em;
-            display: block;
-            background-color: #fff;
-            color: #262626;
-            margin-right: 0;
-            float: left;
-            font-family: "Titillium Web", arial, sans-serif, verdana, helvetica; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
-            color: #658905;
-            background-color: #262626;
-            border: none;
-            font-size: 1em;
-            text-shadow: 1px 1px #353333; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#current_time,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#current_time,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
-            color: #658905;
-            background-color: #262626;
-            border: none;
-            font-size: 1em;
-            text-shadow: 1px 1px #353333; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek {
-          width: 100%; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek label,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek label,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
-            width: 20%;
-            display: none;
-            float: left;
-            line-height: 30px;
-            color: #262626;
-            background-color: #fff;
-            border: 1px solid #262626;
-            margin-right: 0.5em;
-            text-align: center;
-            clear: both; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
-            width: 100%;
-            clear: both;
-            display: inline-block;
-            height: 20px; }
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-        #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume {
-          width: 100%; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume label,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume label,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
-            width: 20%;
-            display: none;
-            float: left;
-            line-height: 30px;
-            background-color: #fff;
-            color: #262626;
-            border: 1px solid #ebeadd;
-            margin-right: 0.5em;
-            text-align: center;
-            clear: both; }
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
-          #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
-          #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
-          #page #primary article.post .entry-content div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
-            width: 100%;
-            clear: both;
-            display: inline-block;
-            height: 25px; }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media #video_player,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media #video_player,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media #video_player {
-        width: 100%;
-        margin: 0 auto;
+        color: #fff;
+        border: #ebeadd solid 1px;
+        cursor: pointer; }
+      #btns-box button.player-button:active {
+        background-color: #262626; }
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button svg.fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button svg.fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button svg.fa-forward,
+      #btns-box button.player-button .fa-backward,
+      #btns-box button.player-button svg.fa-backward {
+        font-size: 2em;
+        text-align: center;
         display: block;
-        padding: 1em 0; }
-      #page #primary article.clash-videos .entry-content div.wp-block-clashplayer-media iframe,
-      #page #primary article.clash-audio .entry-content div.wp-block-clashplayer-media iframe,
-      #page #primary article.post .entry-content div.wp-block-clashplayer-media iframe {
-        width: 100%;
-        margin: 1em auto; } }
+        color: #fff;
+        line-height: 53px;
+        margin: auto; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button svg.fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button svg.fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button svg.fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover,
+        #btns-box button.player-button svg.fa-backward:hover {
+          font-weight: bold;
+          color: #fff; }
+  #progress {
+    width: 100%;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    height: 24px; }
+    #progress progress#playback {
+      background-color: #262626;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+    #progress #play-progress {
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      background-color: #fdd015;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      left: 0; }
+    #progress span#load-progress {
+      background-color: #cc6;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0; }
+  #time {
+    width: 100%;
+    color: #262626;
+    height: 25px;
+    display: flex; }
+    #time span {
+      width: 25%;
+      line-height: 25px;
+      text-align: center;
+      font-size: 0.8em;
+      display: block;
+      background-color: #fff;
+      color: #262626;
+      margin-right: 0;
+      float: left; }
+    #time #duration-time {
+      color: #658905;
+      background-color: #262626;
+      border: none;
+      font-size: 1em;
+      text-shadow: 1px 1px #353333; }
+    #time #current-time {
+      color: #658905;
+      background-color: #262626;
+      border: none;
+      font-size: 1em;
+      text-shadow: 1px 1px #353333; }
+  #video-seek {
+    width: 100%; }
+    #video-seek label {
+      width: 20%;
+      display: none;
+      float: left;
+      line-height: 30px;
+      color: #262626;
+      background-color: #fff;
+      border: 1px solid #262626;
+      margin-right: 0.5em;
+      text-align: center;
+      clear: both; }
+    #video-seek input[type="range"] {
+      width: 100%;
+      clear: both;
+      display: inline-block;
+      height: 20px; }
+  #video-volume {
+    width: 100%; }
+    #video-volume label {
+      width: 20%;
+      display: none;
+      float: left;
+      line-height: 30px;
+      background-color: #fff;
+      color: #262626;
+      border: 1px solid #ebeadd;
+      margin-right: 0.5em;
+      text-align: center;
+      clear: both; }
+    #video-volume input[type="range"] {
+      width: 100%;
+      clear: both;
+      display: inline-block;
+      height: 25px; }
+  #video_player {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 1em 0; }
+  /* video */
+  iframe {
+    width: 100%;
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 1440px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 30%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 85%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-  #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-  #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-  #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #audio-controls,
+  #video-controls {
+    width: 100%; }
+  #btns-box button.player-button {
     width: 33.3%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-      font-size: 1.5em; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+    #btns-box button.player-button .fa-pause,
+    #btns-box button.player-button .fa-play,
+    #btns-box button.player-button .fa-forward,
+    #btns-box button.player-button .fa-backward {
+      font-size: 2em;
+      line-height: 53px; }
+      #btns-box button.player-button .fa-pause:hover,
+      #btns-box button.player-button .fa-play:hover,
+      #btns-box button.player-button .fa-forward:hover,
+      #btns-box button.player-button .fa-backward:hover {
         color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
-    width: 64%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
-      display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
-      display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
-    width: 48%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
-      font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
-      font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
-      font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #progress #play-progress {
+    display: block; }
+  #progress span#load-progress {
+    display: block; }
+  #time span {
+    font-size: 0.8em; }
+  #time #duration-time {
+    font-size: 1em; }
+  #time #current-time {
+    font-size: 1em; }
+  #video-seek label {
     width: 20%;
     line-height: 30px; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    width: 75%;
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
-    width: 50%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
-      width: 20%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      width: 75%;
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  #video-volume label {
+    width: 20%; }
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 1280px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-  #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-  #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-  #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #audio-controls,
+  #video-controls {
+    width: 100%; }
+  #btns-box button.player-button {
     width: 33.3%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-      font-size: 1.4em; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+    #btns-box button.player-button .fa-pause,
+    #btns-box button.player-button .fa-play,
+    #btns-box button.player-button .fa-forward,
+    #btns-box button.player-button .fa-backward {
+      font-size: 1.9em; }
+      #btns-box button.player-button .fa-pause:hover,
+      #btns-box button.player-button .fa-play:hover,
+      #btns-box button.player-button .fa-forward:hover,
+      #btns-box button.player-button .fa-backward:hover {
         color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
-    width: 64%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
-      display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
-      display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
-    width: 48%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
-      width: 25%;
-      font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
-      font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
-      font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #progress #play-progress {
+    display: block; }
+  #progress span#load-progress {
+    display: block; }
+  #time span {
+    width: 25%;
+    font-size: 0.8em; }
+  #time #duration-time {
+    font-size: 1em; }
+  #time #current-time {
+    font-size: 1em; }
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
-    width: 50%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
-      font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  #video-volume label {
+    font-size: 0.9em; }
+  iframe {
     width: 75%;
     height: 360px; } }
 
 @media only screen and (max-width: 1024px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls,
-  #page #primary article.clash-videos div#videocontrols,
-  #page #primary article.clash-audio div#audio_controls,
-  #page #primary article.clash-audio div#videocontrols {
-    padding: 0.25em; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
-      width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.4em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
-          color: #fff; }
-    #page #primary article.clash-videos div#audio_controls div#progress,
-    #page #primary article.clash-videos div#videocontrols div#progress,
-    #page #primary article.clash-audio div#audio_controls div#progress,
-    #page #primary article.clash-audio div#videocontrols div#progress {
-      width: 62%; }
-      #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-      #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-      #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-      #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
-        display: block; }
-      #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-      #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-      #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-      #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
-        display: block; }
-    #page #primary article.clash-videos div#audio_controls div#time,
-    #page #primary article.clash-videos div#videocontrols div#time,
-    #page #primary article.clash-audio div#audio_controls div#time,
-    #page #primary article.clash-audio div#videocontrols div#time {
-      width: 48%; }
-      #page #primary article.clash-videos div#audio_controls div#time span,
-      #page #primary article.clash-videos div#videocontrols div#time span,
-      #page #primary article.clash-audio div#audio_controls div#time span,
-      #page #primary article.clash-audio div#videocontrols div#time span {
-        font-size: 0.7em; }
-      #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-      #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-      #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-      #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
-        font-size: 0.85em; }
-      #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-      #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-      #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-      #page #primary article.clash-audio div#videocontrols div#time span#current_time {
-        font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_seek label,
-    #page #primary article.clash-videos div#videocontrols div#video_seek label,
-    #page #primary article.clash-audio div#audio_controls div#video_seek label,
-    #page #primary article.clash-audio div#videocontrols div#video_seek label {
-      width: 20%; }
-    #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-      height: 32px; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume,
-    #page #primary article.clash-videos div#videocontrols div#video_volume,
-    #page #primary article.clash-audio div#audio_controls div#video_volume,
-    #page #primary article.clash-audio div#videocontrols div#video_volume {
-      width: 50%; }
-      #page #primary article.clash-videos div#audio_controls div#video_volume label,
-      #page #primary article.clash-videos div#videocontrols div#video_volume label,
-      #page #primary article.clash-audio div#audio_controls div#video_volume label,
-      #page #primary article.clash-audio div#videocontrols div#video_volume label {
-        width: 20%;
-        font-size: 0.9em; }
-      #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-      #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-      #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-      #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-        height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  #audio-controls,
+  #video-controls {
+    padding: 0.25em;
+    width: 100%; }
+  #btns-box button.player-button {
+    width: 33.3%; }
+    #btns-box button.player-button .fa-pause,
+    #btns-box button.player-button .fa-play,
+    #btns-box button.player-button .fa-forward,
+    #btns-box button.player-button .fa-backward {
+      font-size: 1.9em; }
+      #btns-box button.player-button .fa-pause:hover,
+      #btns-box button.player-button .fa-play:hover,
+      #btns-box button.player-button .fa-forward:hover,
+      #btns-box button.player-button .fa-backward:hover {
+        color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress span#load-progress {
+    display: block; }
+  #time span {
+    font-size: 0.7em; }
+  #time #duration-time {
+    font-size: 0.85em; }
+  #time #current-time {
+    font-size: 0.9em; }
+  #video-seek label {
+    width: 20%; }
+  #video-volume label {
+    width: 20%;
+    font-size: 0.9em; }
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 800px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
-    width: 45%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
-      width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.4em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
-          color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
-    width: 53%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
-      display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
-      display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+  #btns-box {
+    width: 45%; }
+    #btns-box button.player-button {
+      width: 33.3%; }
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
+          color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress span#load-progress {
+    display: block; }
+  #time {
+    width: 100%; }
+    #time span {
       font-size: 0.75em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 0.9em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%;
     margin: 0; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 667px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
+    width: 100%; }
+  #btns-box {
     width: 100%;
     margin-bottom: 0.5em; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.4em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 100%;
     margin: 0; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 640px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.4em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 100%;
     margin: 0; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     width: 80%; } }
 
 @media only screen and (max-width: 536px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.4em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 100%;
     margin: 0; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     width: 80%; } }
 
 @media only screen and (max-width: 480px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.3em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-  #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-  #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-  #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+  #progress #play-progress {
     display: block; }
-  #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-  #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-  #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-  #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+  #progress span#load-progress {
     display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 414px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.3em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 98%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 1em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 1em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
+  #video-seek input[type="range"] {
     width: 74%; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
+    #video-volume input[type="range"] {
       width: 74%; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 360px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 90%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.3em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 98%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.7em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 0.9em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 20%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }
 
 @media only screen and (max-width: 320px) {
-  #page #primary article.clash-videos a.download_button,
-  #page #primary article.clash-audio a.download_button {
+  .wp-block-clashplayer-media {
+    width: 80%; }
+  .download-button {
     width: 40%; }
-  #page #primary article.clash-videos #result_player,
-  #page #primary article.clash-audio #result_player {
+  #result_player {
     width: 96%; }
-  #page #primary article.clash-videos div#audio_controls #btns_box,
-  #page #primary article.clash-videos div#videocontrols #btns_box,
-  #page #primary article.clash-audio div#audio_controls #btns_box,
-  #page #primary article.clash-audio div#videocontrols #btns_box {
+  #audio-controls,
+  #video-controls {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-videos div#videocontrols #btns_box button.player-button,
-    #page #primary article.clash-audio div#audio_controls #btns_box button.player-button,
-    #page #primary article.clash-audio div#videocontrols #btns_box button.player-button {
+  #btns-box {
+    width: 100%; }
+    #btns-box button.player-button {
       width: 33.3%; }
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward,
-      #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward {
-        font-size: 1.3em; }
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-videos div#videocontrols #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-        #page #primary article.clash-audio div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+      #btns-box button.player-button .fa-pause,
+      #btns-box button.player-button .fa-play,
+      #btns-box button.player-button .fa-forward,
+      #btns-box button.player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box button.player-button .fa-pause:hover,
+        #btns-box button.player-button .fa-play:hover,
+        #btns-box button.player-button .fa-forward:hover,
+        #btns-box button.player-button .fa-backward:hover {
           color: #fff; }
-  #page #primary article.clash-videos div#audio_controls div#progress,
-  #page #primary article.clash-videos div#videocontrols div#progress,
-  #page #primary article.clash-audio div#audio_controls div#progress,
-  #page #primary article.clash-audio div#videocontrols div#progress {
+  #progress {
     width: 98%; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#play_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#play_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#play_progress {
+    #progress #play-progress {
       display: block; }
-    #page #primary article.clash-videos div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-videos div#videocontrols div#progress span#load_progress,
-    #page #primary article.clash-audio div#audio_controls div#progress span#load_progress,
-    #page #primary article.clash-audio div#videocontrols div#progress span#load_progress {
+    #progress span#load-progress {
       display: block; }
-  #page #primary article.clash-videos div#audio_controls div#time,
-  #page #primary article.clash-videos div#videocontrols div#time,
-  #page #primary article.clash-audio div#audio_controls div#time,
-  #page #primary article.clash-audio div#videocontrols div#time {
+  #time {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#time span,
-    #page #primary article.clash-videos div#videocontrols div#time span,
-    #page #primary article.clash-audio div#audio_controls div#time span,
-    #page #primary article.clash-audio div#videocontrols div#time span {
+    #time span {
       font-size: 0.7em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#duration_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#duration_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#duration_time {
+    #time #duration-time {
       font-size: 0.9em; }
-    #page #primary article.clash-videos div#audio_controls div#time span#current_time,
-    #page #primary article.clash-videos div#videocontrols div#time span#current_time,
-    #page #primary article.clash-audio div#audio_controls div#time span#current_time,
-    #page #primary article.clash-audio div#videocontrols div#time span#current_time {
+    #time #current-time {
       font-size: 0.9em; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek label,
-  #page #primary article.clash-videos div#videocontrols div#video_seek label,
-  #page #primary article.clash-audio div#audio_controls div#video_seek label,
-  #page #primary article.clash-audio div#videocontrols div#video_seek label {
+  #video-seek label {
     width: 19%; }
-  #page #primary article.clash-videos div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-videos div#videocontrols div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#audio_controls div#video_seek input[type='range'],
-  #page #primary article.clash-audio div#videocontrols div#video_seek input[type='range'] {
-    height: 32px; }
-  #page #primary article.clash-videos div#audio_controls div#video_volume,
-  #page #primary article.clash-videos div#videocontrols div#video_volume,
-  #page #primary article.clash-audio div#audio_controls div#video_volume,
-  #page #primary article.clash-audio div#videocontrols div#video_volume {
+  #video-volume {
     width: 100%; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume label,
-    #page #primary article.clash-videos div#videocontrols div#video_volume label,
-    #page #primary article.clash-audio div#audio_controls div#video_volume label,
-    #page #primary article.clash-audio div#videocontrols div#video_volume label {
+    #video-volume label {
       font-size: 0.8em; }
-    #page #primary article.clash-videos div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-videos div#videocontrols div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#audio_controls div#video_volume input[type='range'],
-    #page #primary article.clash-audio div#videocontrols div#video_volume input[type='range'] {
-      height: 32px; }
-  #page #primary article.clash-videos iframe,
-  #page #primary article.clash-audio iframe {
+  iframe {
     margin: 1em auto; } }

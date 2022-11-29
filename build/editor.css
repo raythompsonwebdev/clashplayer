@@ -163,14 +163,14 @@ a {
 
 /* Text meant only for screen readers. */
 @media only screen and (max-width: 1920px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%;
     display: block;
     margin: auto;
     /* audio */
     /* controls -audio/video */
     /* video */ }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       display: block;
       width: 30%;
       height: auto;
@@ -179,18 +179,18 @@ a {
       border: 2px solid #fdd015;
       color: #262626;
       text-align: center; }
-    div.wp-block-clashplayer-media div.clashplayer-logo {
+    .wp-block-clashplayer-media div.clashplayer-logo {
       width: auto;
       display: block;
       margin: auto;
       background-color: #000;
       height: 100px; }
-    div.wp-block-clashplayer-media .wp-audio-shortcode {
+    .wp-block-clashplayer-media .wp-audio-shortcode {
       width: 85%;
       margin: 0 auto;
       display: none; }
-    div.wp-block-clashplayer-media div#audio_controls,
-    div.wp-block-clashplayer-media div#videocontrols {
+    .wp-block-clashplayer-media #audio-controls,
+    .wp-block-clashplayer-media #video-controls {
       height: auto;
       width: 100%;
       margin: 0 auto;
@@ -202,27 +202,27 @@ a {
       grid-template-rows: repeat(4, 25px);
       grid-column-gap: 2px;
       grid-row-gap: 2px; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box {
+      .wp-block-clashplayer-media #audio-controls #btns-box,
+      .wp-block-clashplayer-media #video-controls #btns-box {
         grid-area: 1 / 1 / 3 / 3; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress {
+      .wp-block-clashplayer-media #audio-controls #progress,
+      .wp-block-clashplayer-media #video-controls #progress {
         grid-area: 1 / 3 / 3 / 6; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-      div.wp-block-clashplayer-media div#videocontrols div#video_seek {
+      .wp-block-clashplayer-media #audio-controls #video-seek,
+      .wp-block-clashplayer-media #video-controls #video-seek {
         grid-area: 2 / 3 / 2 / 6; }
-      div.wp-block-clashplayer-media div#audio_controls div#time,
-      div.wp-block-clashplayer-media div#videocontrols div#time {
+      .wp-block-clashplayer-media #audio-controls #time,
+      .wp-block-clashplayer-media #video-controls #time {
         grid-area: 3 / 1 / 4 / 6; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+      .wp-block-clashplayer-media #audio-controls #video-volume,
+      .wp-block-clashplayer-media #video-controls #video-volume {
         grid-area: 4 / 1 / 5 / 6; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box {
+      .wp-block-clashplayer-media #audio-controls #btns-box,
+      .wp-block-clashplayer-media #video-controls #btns-box {
         height: 45px;
         width: 100%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button {
           width: 33.3%;
           display: block;
           height: 100%;
@@ -233,81 +233,77 @@ a {
           -moz-transform-origin: 50% 50%;
           -o-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
-          -webkit-transition: all 0.2s linear 0s;
-          -moz-transition: all 0.2s linear 0s;
-          -o-transition: all 0.2s linear 0s;
-          -ms-transition: all 0.2s linear 0s;
           transition: all 0.2s linear 0s;
           color: #262626;
           border: #ebeadd solid 1px;
           background-color: #658905;
           float: left; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button:hover {
             background-color: #262626;
             color: #fff;
             border: #ebeadd solid 1px;
             cursor: pointer; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button:active,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button:active {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button:active,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button:active {
             background-color: #262626; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-pause,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-play,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-forward,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-backward,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-pause,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-play,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-forward,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-backward {
             font-size: 2em;
             text-align: center;
             display: block;
             color: #fff;
             line-height: 53px;
             margin: auto; }
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-pause:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-play:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-forward:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-            div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button svg.fa-backward:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-pause:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-play:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-forward:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover,
-            div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button svg.fa-backward:hover {
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-pause:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-play:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-forward:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-backward:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-pause:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-play:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-forward:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover,
+            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-backward:hover {
               font-weight: bold;
               color: #fff; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress {
+      .wp-block-clashplayer-media #audio-controls #progress,
+      .wp-block-clashplayer-media #video-controls #progress {
         width: 100%;
         display: inline-block;
         background-color: #fff;
         position: relative;
         height: 24px; }
-        div.wp-block-clashplayer-media div#audio_controls div#progress progress#playback,
-        div.wp-block-clashplayer-media div#videocontrols div#progress progress#playback {
+        .wp-block-clashplayer-media #audio-controls #progress progress#playback,
+        .wp-block-clashplayer-media #video-controls #progress progress#playback {
           background-color: #262626;
           height: 12px;
           display: block;
           margin: 0;
           padding: 0;
           width: 100%; }
-        div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-        div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+        .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+        .wp-block-clashplayer-media #video-controls #progress #play-progress {
           position: absolute;
           top: 0;
           z-index: 2;
@@ -318,21 +314,21 @@ a {
           padding: 0;
           width: 100%;
           left: 0; }
-        div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-        div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+        .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+        .wp-block-clashplayer-media #video-controls #progress #load-progress {
           background-color: #cc6;
           height: 12px;
           display: block;
           margin: 0;
           padding: 0; }
-      div.wp-block-clashplayer-media div#audio_controls div#time,
-      div.wp-block-clashplayer-media div#videocontrols div#time {
+      .wp-block-clashplayer-media #audio-controls #time,
+      .wp-block-clashplayer-media #video-controls #time {
         width: 100%;
         color: #262626;
         height: 25px;
         display: flex; }
-        div.wp-block-clashplayer-media div#audio_controls div#time span,
-        div.wp-block-clashplayer-media div#videocontrols div#time span {
+        .wp-block-clashplayer-media #audio-controls #time span,
+        .wp-block-clashplayer-media #video-controls #time span {
           width: 25%;
           line-height: 25px;
           text-align: center;
@@ -342,25 +338,25 @@ a {
           color: #262626;
           margin-right: 0;
           float: left; }
-        div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-        div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+        .wp-block-clashplayer-media #audio-controls #time #duration-time,
+        .wp-block-clashplayer-media #video-controls #time #duration-time {
           color: #658905;
           background-color: #262626;
           border: none;
           font-size: 1em;
           text-shadow: 1px 1px #353333; }
-        div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-        div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+        .wp-block-clashplayer-media #audio-controls #time #current-time,
+        .wp-block-clashplayer-media #video-controls #time #current-time {
           color: #658905;
           background-color: #262626;
           border: none;
           font-size: 1em;
           text-shadow: 1px 1px #353333; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_seek,
-      div.wp-block-clashplayer-media div#videocontrols div#video_seek {
+      .wp-block-clashplayer-media #audio-controls #video-seek,
+      .wp-block-clashplayer-media #video-controls #video-seek {
         width: 100%; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-        div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+        .wp-block-clashplayer-media #audio-controls #video-seek label,
+        .wp-block-clashplayer-media #video-controls #video-seek label {
           width: 20%;
           display: none;
           float: left;
@@ -371,17 +367,17 @@ a {
           margin-right: 0.5em;
           text-align: center;
           clear: both; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
-        div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
+        .wp-block-clashplayer-media #audio-controls #video-seek input[type="range"],
+        .wp-block-clashplayer-media #video-controls #video-seek input[type="range"] {
           width: 100%;
           clear: both;
           display: inline-block;
           height: 20px; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+      .wp-block-clashplayer-media #audio-controls #video-volume,
+      .wp-block-clashplayer-media #video-controls #video-volume {
         width: 100%; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-        div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+        .wp-block-clashplayer-media #audio-controls #video-volume label,
+        .wp-block-clashplayer-media #video-controls #video-volume label {
           width: 20%;
           display: none;
           float: left;
@@ -392,698 +388,698 @@ a {
           margin-right: 0.5em;
           text-align: center;
           clear: both; }
-        div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
-        div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
+        .wp-block-clashplayer-media #audio-controls #video-volume input[type="range"],
+        .wp-block-clashplayer-media #video-controls #video-volume input[type="range"] {
           width: 100%;
           clear: both;
           display: inline-block;
           height: 25px; }
-    div.wp-block-clashplayer-media #video_player {
+    .wp-block-clashplayer-media #video-player {
       width: 100%;
       margin: 0 auto;
       display: block;
       padding: 1em 0; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       width: 100%;
       margin: 1em auto; } }
 
 @media only screen and (max-width: 1440px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 30%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 85%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+    .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+    .wp-block-clashplayer-media #video-controls #btns-box .player-button {
       width: 33.3%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
         font-size: 2em;
         line-height: 53px; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
           color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+    .wp-block-clashplayer-media #video-controls #progress #play-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+    .wp-block-clashplayer-media #video-controls #progress #load-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span,
-    div.wp-block-clashplayer-media div#videocontrols div#time span {
+    .wp-block-clashplayer-media #audio-controls #time span,
+    .wp-block-clashplayer-media #video-controls #time span {
       font-size: 0.8em; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-    div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+    .wp-block-clashplayer-media #audio-controls #time #duration-time,
+    .wp-block-clashplayer-media #video-controls #time #duration-time {
       font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-    div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+    .wp-block-clashplayer-media #audio-controls #time #current-time,
+    .wp-block-clashplayer-media #video-controls #time #current-time {
       font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%;
       line-height: 30px; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+    .wp-block-clashplayer-media #audio-controls #video-volume label,
+    .wp-block-clashplayer-media #video-controls #video-volume label {
       width: 20%; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 1280px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+    .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+    .wp-block-clashplayer-media #video-controls #btns-box .player-button {
       width: 33.3%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
           color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+    .wp-block-clashplayer-media #video-controls #progress #play-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+    .wp-block-clashplayer-media #video-controls #progress #load-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span,
-    div.wp-block-clashplayer-media div#videocontrols div#time span {
+    .wp-block-clashplayer-media #audio-controls #time span,
+    .wp-block-clashplayer-media #video-controls #time span {
       width: 25%;
       font-size: 0.8em; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-    div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+    .wp-block-clashplayer-media #audio-controls #time #duration-time,
+    .wp-block-clashplayer-media #video-controls #time #duration-time {
       font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-    div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+    .wp-block-clashplayer-media #audio-controls #time #current-time,
+    .wp-block-clashplayer-media #video-controls #time #current-time {
       font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+    .wp-block-clashplayer-media #audio-controls #video-volume label,
+    .wp-block-clashplayer-media #video-controls #video-volume label {
       font-size: 0.9em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       width: 75%;
       height: 360px; } }
 
 @media only screen and (max-width: 1024px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls,
-    div.wp-block-clashplayer-media div#videocontrols {
+    .wp-block-clashplayer-media #audio-controls,
+    .wp-block-clashplayer-media #video-controls {
       padding: 0.25em; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.7em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 0.85em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+      .wp-block-clashplayer-media #audio-controls #video-seek label,
+      .wp-block-clashplayer-media #video-controls #video-seek label {
         width: 20%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         width: 20%;
         font-size: 0.9em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 800px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 45%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+    .wp-block-clashplayer-media #video-controls #progress #play-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+    .wp-block-clashplayer-media #video-controls #progress #load-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.75em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 0.9em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%;
       margin: 0; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 1em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 667px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%;
       margin-bottom: 0.5em; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 100%;
       margin: 0; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 1em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 1em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 640px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 100%;
       margin: 0; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 1em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 1em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       width: 80%; } }
 
 @media only screen and (max-width: 536px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 100%;
       margin: 0; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 1em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 1em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       width: 80%; } }
 
 @media only screen and (max-width: 480px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+    .wp-block-clashplayer-media #video-controls #progress #play-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+    .wp-block-clashplayer-media #video-controls #progress #load-progress {
       display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.8em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 1em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 0.9em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 414px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 98%; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.8em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 1em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 1em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek input[type='range'],
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek input[type='range'] {
+    .wp-block-clashplayer-media #audio-controls #video-seek input[type="range"],
+    .wp-block-clashplayer-media #video-controls #video-seek input[type="range"] {
       width: 74%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume input[type='range'],
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume input[type='range'] {
+      .wp-block-clashplayer-media #audio-controls #video-volume input[type="range"],
+      .wp-block-clashplayer-media #video-controls #video-volume input[type="range"] {
         width: 74%; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 360px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 90%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 98%; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.7em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 0.9em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 20%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 0.8em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
 
 @media only screen and (max-width: 320px) {
-  div.wp-block-clashplayer-media {
+  .wp-block-clashplayer-media {
     width: 100%; }
-    div.wp-block-clashplayer-media a.download_button {
+    .wp-block-clashplayer-media .download-button {
       width: 40%; }
-    div.wp-block-clashplayer-media #result_player {
+    .wp-block-clashplayer-media #result_player {
       width: 96%; }
-    div.wp-block-clashplayer-media div#audio_controls #btns_box,
-    div.wp-block-clashplayer-media div#videocontrols #btns_box {
+    .wp-block-clashplayer-media #audio-controls #btns-box,
+    .wp-block-clashplayer-media #video-controls #btns-box {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button,
-      div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button {
+      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
+      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
         width: 33.3%; }
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward,
-        div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward {
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
+        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
           font-size: 1.9em; }
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#audio_controls #btns_box button.player-button i.fa-backward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-pause:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-play:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-forward:hover,
-          div.wp-block-clashplayer-media div#videocontrols #btns_box button.player-button i.fa-backward:hover {
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
+          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
             color: #fff; }
-    div.wp-block-clashplayer-media div#audio_controls div#progress,
-    div.wp-block-clashplayer-media div#videocontrols div#progress {
+    .wp-block-clashplayer-media #audio-controls #progress,
+    .wp-block-clashplayer-media #video-controls #progress {
       width: 98%; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#play_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#play_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
+      .wp-block-clashplayer-media #video-controls #progress #play-progress {
         display: block; }
-      div.wp-block-clashplayer-media div#audio_controls div#progress span#load_progress,
-      div.wp-block-clashplayer-media div#videocontrols div#progress span#load_progress {
+      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
+      .wp-block-clashplayer-media #video-controls #progress #load-progress {
         display: block; }
-    div.wp-block-clashplayer-media div#audio_controls div#time,
-    div.wp-block-clashplayer-media div#videocontrols div#time {
+    .wp-block-clashplayer-media #audio-controls #time,
+    .wp-block-clashplayer-media #video-controls #time {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span,
-      div.wp-block-clashplayer-media div#videocontrols div#time span {
+      .wp-block-clashplayer-media #audio-controls #time span,
+      .wp-block-clashplayer-media #video-controls #time span {
         font-size: 0.7em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#duration_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#duration_time {
+      .wp-block-clashplayer-media #audio-controls #time #duration-time,
+      .wp-block-clashplayer-media #video-controls #time #duration-time {
         font-size: 0.9em; }
-      div.wp-block-clashplayer-media div#audio_controls div#time span#current_time,
-      div.wp-block-clashplayer-media div#videocontrols div#time span#current_time {
+      .wp-block-clashplayer-media #audio-controls #time #current-time,
+      .wp-block-clashplayer-media #video-controls #time #current-time {
         font-size: 0.9em; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_seek label,
-    div.wp-block-clashplayer-media div#videocontrols div#video_seek label {
+    .wp-block-clashplayer-media #audio-controls #video-seek label,
+    .wp-block-clashplayer-media #video-controls #video-seek label {
       width: 19%; }
-    div.wp-block-clashplayer-media div#audio_controls div#video_volume,
-    div.wp-block-clashplayer-media div#videocontrols div#video_volume {
+    .wp-block-clashplayer-media #audio-controls #video-volume,
+    .wp-block-clashplayer-media #video-controls #video-volume {
       width: 100%; }
-      div.wp-block-clashplayer-media div#audio_controls div#video_volume label,
-      div.wp-block-clashplayer-media div#videocontrols div#video_volume label {
+      .wp-block-clashplayer-media #audio-controls #video-volume label,
+      .wp-block-clashplayer-media #video-controls #video-volume label {
         font-size: 0.8em; }
-    div.wp-block-clashplayer-media iframe {
+    .wp-block-clashplayer-media iframe {
       margin: 1em auto; } }
