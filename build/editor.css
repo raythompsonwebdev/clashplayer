@@ -166,920 +166,707 @@ a {
   .wp-block-clashplayer-media {
     width: 100%;
     display: block;
+    margin: auto; }
+  #result-player {
+    width: 100%; }
+  .download-button {
+    display: block;
+    width: 30%;
+    height: auto;
+    line-height: 30px;
+    margin: 0 auto;
+    border: 2px solid #fdd015;
+    color: #262626;
+    text-align: center; }
+  .clashplayer-logo {
+    width: auto;
+    display: block;
     margin: auto;
-    /* audio */
-    /* controls -audio/video */
-    /* video */ }
-    .wp-block-clashplayer-media .download-button {
-      display: block;
-      width: 30%;
-      height: auto;
-      line-height: 30px;
-      margin: 0 auto;
-      border: 2px solid #fdd015;
-      color: #262626;
-      text-align: center; }
-    .wp-block-clashplayer-media div.clashplayer-logo {
-      width: auto;
-      display: block;
-      margin: auto;
-      background-color: #000;
-      height: 100px; }
-    .wp-block-clashplayer-media .wp-audio-shortcode {
-      width: 85%;
-      margin: 0 auto;
-      display: none; }
-    .wp-block-clashplayer-media #audio-controls,
-    .wp-block-clashplayer-media #video-controls {
-      height: auto;
-      width: 100%;
-      margin: 0 auto;
-      border: #ebeadd solid 1px;
-      padding: 0.5em;
+    background-color: #000;
+    height: 100px; }
+  /* controls -audio/video */
+  div.audio-controls,
+  .video-controls {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    border: #ebeadd solid 1px;
+    padding: 0.5em;
+    background-color: #262626;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 25px);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px; }
+  #btns-box {
+    grid-area: 1 / 1 / 3 / 3; }
+  #progress {
+    grid-area: 1 / 3 / 3 / 6; }
+  .audio-seek .video-seek {
+    grid-area: 2 / 3 / 2 / 6;
+    width: 100%; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    display: block; }
+  #seek {
+    width: 100%;
+    display: block;
+    height: 25px;
+    margin: 0;
+    padding: 0; }
+  #time {
+    grid-area: 3 / 1 / 4 / 6; }
+  .audio-volume,
+  .video-volume {
+    grid-area: 4 / 1 / 5 / 6; }
+  .player-button {
+    width: 33.3%;
+    display: block;
+    height: 100%;
+    outline: none;
+    text-align: center;
+    font-size: 1em;
+    transform-origin: 50% 50%;
+    transition: all 0.2s linear 0s;
+    color: #262626;
+    border: #ebeadd solid 1px;
+    background-color: #658905;
+    float: left; }
+    .player-button:hover {
       background-color: #262626;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(4, 25px);
-      grid-column-gap: 2px;
-      grid-row-gap: 2px; }
-      .wp-block-clashplayer-media #audio-controls #btns-box,
-      .wp-block-clashplayer-media #video-controls #btns-box {
-        grid-area: 1 / 1 / 3 / 3; }
-      .wp-block-clashplayer-media #audio-controls #progress,
-      .wp-block-clashplayer-media #video-controls #progress {
-        grid-area: 1 / 3 / 3 / 6; }
-      .wp-block-clashplayer-media #audio-controls #video-seek,
-      .wp-block-clashplayer-media #video-controls #video-seek {
-        grid-area: 2 / 3 / 2 / 6; }
-      .wp-block-clashplayer-media #audio-controls #time,
-      .wp-block-clashplayer-media #video-controls #time {
-        grid-area: 3 / 1 / 4 / 6; }
-      .wp-block-clashplayer-media #audio-controls #video-volume,
-      .wp-block-clashplayer-media #video-controls #video-volume {
-        grid-area: 4 / 1 / 5 / 6; }
-      .wp-block-clashplayer-media #audio-controls #btns-box,
-      .wp-block-clashplayer-media #video-controls #btns-box {
-        height: 45px;
-        width: 100%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-          width: 33.3%;
-          display: block;
-          height: 100%;
-          outline: none;
-          text-align: center;
-          font-size: 1em;
-          -webkit-transform-origin: 50% 50%;
-          -moz-transform-origin: 50% 50%;
-          -o-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-          transition: all 0.2s linear 0s;
-          color: #262626;
-          border: #ebeadd solid 1px;
-          background-color: #658905;
-          float: left; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button:hover {
-            background-color: #262626;
-            color: #fff;
-            border: #ebeadd solid 1px;
-            cursor: pointer; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button:active,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button:active {
-            background-color: #262626; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-pause,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-play,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-forward,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-backward,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-pause,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-play,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-forward,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-backward {
-            font-size: 2em;
-            text-align: center;
-            display: block;
-            color: #fff;
-            line-height: 53px;
-            margin: auto; }
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-pause:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-play:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-forward:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-            .wp-block-clashplayer-media #audio-controls #btns-box .player-button svg.fa-backward:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-pause:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-play:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-forward:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover,
-            .wp-block-clashplayer-media #video-controls #btns-box .player-button svg.fa-backward:hover {
-              font-weight: bold;
-              color: #fff; }
-      .wp-block-clashplayer-media #audio-controls #progress,
-      .wp-block-clashplayer-media #video-controls #progress {
-        width: 100%;
-        display: inline-block;
-        background-color: #fff;
-        position: relative;
-        height: 24px; }
-        .wp-block-clashplayer-media #audio-controls #progress progress#playback,
-        .wp-block-clashplayer-media #video-controls #progress progress#playback {
-          background-color: #262626;
-          height: 12px;
-          display: block;
-          margin: 0;
-          padding: 0;
-          width: 100%; }
-        .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-        .wp-block-clashplayer-media #video-controls #progress #play-progress {
-          position: absolute;
-          top: 0;
-          z-index: 2;
-          background-color: #fdd015;
-          height: 12px;
-          display: block;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          left: 0; }
-        .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-        .wp-block-clashplayer-media #video-controls #progress #load-progress {
-          background-color: #cc6;
-          height: 12px;
-          display: block;
-          margin: 0;
-          padding: 0; }
-      .wp-block-clashplayer-media #audio-controls #time,
-      .wp-block-clashplayer-media #video-controls #time {
-        width: 100%;
-        color: #262626;
-        height: 25px;
-        display: flex; }
-        .wp-block-clashplayer-media #audio-controls #time span,
-        .wp-block-clashplayer-media #video-controls #time span {
-          width: 25%;
-          line-height: 25px;
-          text-align: center;
-          font-size: 0.8em;
-          display: block;
-          background-color: #fff;
-          color: #262626;
-          margin-right: 0;
-          float: left; }
-        .wp-block-clashplayer-media #audio-controls #time #duration-time,
-        .wp-block-clashplayer-media #video-controls #time #duration-time {
-          color: #658905;
-          background-color: #262626;
-          border: none;
-          font-size: 1em;
-          text-shadow: 1px 1px #353333; }
-        .wp-block-clashplayer-media #audio-controls #time #current-time,
-        .wp-block-clashplayer-media #video-controls #time #current-time {
-          color: #658905;
-          background-color: #262626;
-          border: none;
-          font-size: 1em;
-          text-shadow: 1px 1px #353333; }
-      .wp-block-clashplayer-media #audio-controls #video-seek,
-      .wp-block-clashplayer-media #video-controls #video-seek {
-        width: 100%; }
-        .wp-block-clashplayer-media #audio-controls #video-seek label,
-        .wp-block-clashplayer-media #video-controls #video-seek label {
-          width: 20%;
-          display: none;
-          float: left;
-          line-height: 30px;
-          color: #262626;
-          background-color: #fff;
-          border: 1px solid #262626;
-          margin-right: 0.5em;
-          text-align: center;
-          clear: both; }
-        .wp-block-clashplayer-media #audio-controls #video-seek input[type="range"],
-        .wp-block-clashplayer-media #video-controls #video-seek input[type="range"] {
-          width: 100%;
-          clear: both;
-          display: inline-block;
-          height: 20px; }
-      .wp-block-clashplayer-media #audio-controls #video-volume,
-      .wp-block-clashplayer-media #video-controls #video-volume {
-        width: 100%; }
-        .wp-block-clashplayer-media #audio-controls #video-volume label,
-        .wp-block-clashplayer-media #video-controls #video-volume label {
-          width: 20%;
-          display: none;
-          float: left;
-          line-height: 30px;
-          background-color: #fff;
-          color: #262626;
-          border: 1px solid #ebeadd;
-          margin-right: 0.5em;
-          text-align: center;
-          clear: both; }
-        .wp-block-clashplayer-media #audio-controls #video-volume input[type="range"],
-        .wp-block-clashplayer-media #video-controls #video-volume input[type="range"] {
-          width: 100%;
-          clear: both;
-          display: inline-block;
-          height: 25px; }
-    .wp-block-clashplayer-media #video-player {
-      width: 100%;
-      margin: 0 auto;
+      color: #fff;
+      border: #ebeadd solid 1px;
+      cursor: pointer; }
+    .player-button:active {
+      background-color: #262626; }
+    .player-button .fa-pause,
+    .player-button svg.fa-pause,
+    .player-button .fa-play,
+    .player-button svg.fa-play,
+    .player-button .fa-forward,
+    .player-button svg.fa-forward,
+    .player-button .fa-backward,
+    .player-button svg.fa-backward {
+      font-size: 2em;
+      text-align: center;
       display: block;
-      padding: 1em 0; }
-    .wp-block-clashplayer-media iframe {
+      color: #fff;
+      line-height: 53px;
+      margin: auto; }
+      .player-button .fa-pause:hover,
+      .player-button svg.fa-pause:hover,
+      .player-button .fa-play:hover,
+      .player-button svg.fa-play:hover,
+      .player-button .fa-forward:hover,
+      .player-button svg.fa-forward:hover,
+      .player-button .fa-backward:hover,
+      .player-button svg.fa-backward:hover {
+        font-weight: bold;
+        color: #fff; }
+  #progress {
+    width: 100%;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    height: 24px; }
+    #progress progress#playback {
+      background-color: #262626;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+    #progress #play-progress {
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      background-color: #fdd015;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0;
       width: 100%;
-      margin: 1em auto; } }
+      left: 0; }
+    #progress #load-progress {
+      background-color: #cc6;
+      height: 12px;
+      display: block;
+      margin: 0;
+      padding: 0; }
+  #time {
+    width: 100%;
+    color: #262626;
+    height: 25px;
+    display: flex; }
+    #time span {
+      width: 25%;
+      line-height: 25px;
+      text-align: center;
+      font-size: 0.8em;
+      display: block;
+      background-color: #fff;
+      color: #262626;
+      margin-right: 0;
+      float: left; }
+    #time #duration-time {
+      color: #658905;
+      background-color: #262626;
+      border: none;
+      font-size: 1em;
+      text-shadow: 1px 1px #353333; }
+    #time #current-time {
+      color: #658905;
+      background-color: #262626;
+      border: none;
+      font-size: 1em;
+      text-shadow: 1px 1px #353333; }
+  label[for="seek"] {
+    line-height: 25px;
+    color: #262626; }
+  #seek {
+    width: 100%;
+    display: block; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%;
+    display: block;
+    line-height: 25px;
+    margin: 0; }
+  input[type="range"] {
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    height: 25px; }
+  #video_player {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 1em 0; }
+  /* video */
+  iframe {
+    width: 100%;
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 1440px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 30%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 85%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-    .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-      width: 33.3%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-        font-size: 2em;
-        line-height: 53px; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-          color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-    .wp-block-clashplayer-media #video-controls #progress #play-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-    .wp-block-clashplayer-media #video-controls #progress #load-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #time span,
-    .wp-block-clashplayer-media #video-controls #time span {
-      font-size: 0.8em; }
-    .wp-block-clashplayer-media #audio-controls #time #duration-time,
-    .wp-block-clashplayer-media #video-controls #time #duration-time {
-      font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #time #current-time,
-    .wp-block-clashplayer-media #video-controls #time #current-time {
-      font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%;
-      line-height: 30px; }
-    .wp-block-clashplayer-media #audio-controls #video-volume label,
-    .wp-block-clashplayer-media #video-controls #video-volume label {
-      width: 20%; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 30%; }
+  #result-player {
+    width: 100%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box .player-button {
+    width: 33.3%; }
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
+      font-size: 2em;
+      line-height: 53px; }
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
+        color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress #load-progress {
+    display: block; }
+  #time span {
+    font-size: 0.8em; }
+  #time #duration-time {
+    font-size: 1em; }
+  #time #current-time {
+    font-size: 1em; }
+  label[for="seek"] {
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 1280px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-    .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-      width: 33.3%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-        font-size: 1.9em; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-          color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-    .wp-block-clashplayer-media #video-controls #progress #play-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-    .wp-block-clashplayer-media #video-controls #progress #load-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #time span,
-    .wp-block-clashplayer-media #video-controls #time span {
-      width: 25%;
-      font-size: 0.8em; }
-    .wp-block-clashplayer-media #audio-controls #time #duration-time,
-    .wp-block-clashplayer-media #video-controls #time #duration-time {
-      font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #time #current-time,
-    .wp-block-clashplayer-media #video-controls #time #current-time {
-      font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume label,
-    .wp-block-clashplayer-media #video-controls #video-volume label {
-      font-size: 0.9em; }
-    .wp-block-clashplayer-media iframe {
-      width: 75%;
-      height: 360px; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 100%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box .player-button {
+    width: 33.3%; }
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
+      font-size: 1.9em; }
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
+        color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress #load-progress {
+    display: block; }
+  #time span {
+    width: 25%;
+    font-size: 0.8em; }
+  #time #duration-time {
+    font-size: 1em; }
+  #time #current-time {
+    font-size: 1em; }
+  label[for="seek"] {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    width: 75%;
+    height: 360px; } }
 
 @media only screen and (max-width: 1024px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls,
-    .wp-block-clashplayer-media #video-controls {
-      padding: 0.25em; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.7em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 0.85em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #video-seek label,
-      .wp-block-clashplayer-media #video-controls #video-seek label {
-        width: 20%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        width: 20%;
-        font-size: 0.9em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    padding: 0.25em;
+    width: 100%; }
+  #btns-box .player-button {
+    width: 33.3%; }
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
+      font-size: 1.9em; }
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
+        color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress #load-progress {
+    display: block; }
+  #time span {
+    font-size: 0.7em; }
+  #time #duration-time {
+    font-size: 0.85em; }
+  #time #current-time {
+    font-size: 0.9em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 800px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 45%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-    .wp-block-clashplayer-media #video-controls #progress #play-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-    .wp-block-clashplayer-media #video-controls #progress #load-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.75em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 0.9em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%;
-      margin: 0; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 1em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 45%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress #load-progress {
+    display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.75em; }
+    #time #duration-time {
+      font-size: 0.9em; }
+    #time #current-time {
+      font-size: 0.9em; }
+  label[for="seek"] {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%;
+    margin: 0; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 667px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%;
-      margin-bottom: 0.5em; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 100%;
-      margin: 0; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 1em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 1em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%;
+    margin-bottom: 0.5em; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 100%;
+    margin: 0; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.9em; }
+    #time #duration-time {
+      font-size: 1em; }
+    #time #current-time {
+      font-size: 1em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 640px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 100%;
-      margin: 0; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 1em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 1em; }
-    .wp-block-clashplayer-media iframe {
-      width: 80%; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 100%;
+    margin: 0; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.9em; }
+    #time #duration-time {
+      font-size: 1em; }
+    #time #current-time {
+      font-size: 1em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    width: 80%; } }
 
 @media only screen and (max-width: 536px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 100%;
-      margin: 0; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 1em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 1em; }
-    .wp-block-clashplayer-media iframe {
-      width: 80%; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 100%;
+    margin: 0; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.9em; }
+    #time #duration-time {
+      font-size: 1em; }
+    #time #current-time {
+      font-size: 1em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    width: 80%; } }
 
 @media only screen and (max-width: 480px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-    .wp-block-clashplayer-media #video-controls #progress #play-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-    .wp-block-clashplayer-media #video-controls #progress #load-progress {
-      display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.8em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 1em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 0.9em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress #play-progress {
+    display: block; }
+  #progress #load-progress {
+    display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.8em; }
+    #time #duration-time {
+      font-size: 1em; }
+    #time #current-time {
+      font-size: 1em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 414px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 98%; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.8em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 1em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 1em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-seek input[type="range"],
-    .wp-block-clashplayer-media #video-controls #video-seek input[type="range"] {
-      width: 74%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #video-volume input[type="range"],
-      .wp-block-clashplayer-media #video-controls #video-volume input[type="range"] {
-        width: 74%; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 98%; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.8em; }
+    #time #duration-time {
+      font-size: 1em; }
+    #time #current-time {
+      font-size: 1em; }
+  label[for="seek"]l {
+    width: 100%; }
+  #seek {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  input[type="range"] {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 360px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 90%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 98%; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.7em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 0.9em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 20%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 0.8em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 90%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 98%; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.7em; }
+    #time #duration-time {
+      font-size: 0.9em; }
+    #time #current-time {
+      font-size: 0.9em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }
 
 @media only screen and (max-width: 320px) {
   .wp-block-clashplayer-media {
     width: 100%; }
-    .wp-block-clashplayer-media .download-button {
-      width: 40%; }
-    .wp-block-clashplayer-media #result_player {
-      width: 96%; }
-    .wp-block-clashplayer-media #audio-controls #btns-box,
-    .wp-block-clashplayer-media #video-controls #btns-box {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #btns-box .player-button,
-      .wp-block-clashplayer-media #video-controls #btns-box .player-button {
-        width: 33.3%; }
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward,
-        .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward {
-          font-size: 1.9em; }
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #audio-controls #btns-box .player-button .fa-backward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-pause:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-play:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-forward:hover,
-          .wp-block-clashplayer-media #video-controls #btns-box .player-button .fa-backward:hover {
-            color: #fff; }
-    .wp-block-clashplayer-media #audio-controls #progress,
-    .wp-block-clashplayer-media #video-controls #progress {
-      width: 98%; }
-      .wp-block-clashplayer-media #audio-controls #progress #play-progress,
-      .wp-block-clashplayer-media #video-controls #progress #play-progress {
-        display: block; }
-      .wp-block-clashplayer-media #audio-controls #progress #load-progress,
-      .wp-block-clashplayer-media #video-controls #progress #load-progress {
-        display: block; }
-    .wp-block-clashplayer-media #audio-controls #time,
-    .wp-block-clashplayer-media #video-controls #time {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #time span,
-      .wp-block-clashplayer-media #video-controls #time span {
-        font-size: 0.7em; }
-      .wp-block-clashplayer-media #audio-controls #time #duration-time,
-      .wp-block-clashplayer-media #video-controls #time #duration-time {
-        font-size: 0.9em; }
-      .wp-block-clashplayer-media #audio-controls #time #current-time,
-      .wp-block-clashplayer-media #video-controls #time #current-time {
-        font-size: 0.9em; }
-    .wp-block-clashplayer-media #audio-controls #video-seek label,
-    .wp-block-clashplayer-media #video-controls #video-seek label {
-      width: 19%; }
-    .wp-block-clashplayer-media #audio-controls #video-volume,
-    .wp-block-clashplayer-media #video-controls #video-volume {
-      width: 100%; }
-      .wp-block-clashplayer-media #audio-controls #video-volume label,
-      .wp-block-clashplayer-media #video-controls #video-volume label {
-        font-size: 0.8em; }
-    .wp-block-clashplayer-media iframe {
-      margin: 1em auto; } }
+  .download-button {
+    width: 40%; }
+  #result-player {
+    width: 96%; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box {
+    width: 100%; }
+    #btns-box .player-button {
+      width: 33.3%; }
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
+        font-size: 1.9em; }
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
+          color: #fff; }
+  #progress {
+    width: 98%; }
+    #progress #play-progress {
+      display: block; }
+    #progress #load-progress {
+      display: block; }
+  #time {
+    width: 100%; }
+    #time span {
+      font-size: 0.7em; }
+    #time #duration-time {
+      font-size: 0.9em; }
+    #time #current-time {
+      font-size: 0.9em; }
+  label[for="seek"]l {
+    width: 100%; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
+  iframe {
+    margin: 1em auto; } }

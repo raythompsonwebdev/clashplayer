@@ -1,4 +1,4 @@
-const videoControls = document.getElementById("video-controls");
+const videoControls = document.querySelector(".video-controls");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
@@ -9,9 +9,9 @@ const video = document.querySelector("video");
 
 // Play/Pause ============================//
 
-const playToggle = document.querySelector("#play-toggle");
+const playToggleVid = document.querySelector(".video-toggle");
 
-playToggle.addEventListener("click", (e) => {
+playToggleVid.addEventListener("click", (e) => {
 	if (video.paused) {
 		video.play();
 		video.preload = "metadata";
@@ -27,61 +27,59 @@ playToggle.addEventListener("click", (e) => {
 });
 
 // Rewind ============================//
-const rewindBtn = document.getElementById("rewind");
+const rewindBtnVid = document.querySelector(".video-rewind");
 
-rewindBtn.addEventListener("click", (e) => {
+rewindBtnVid.addEventListener("click", (e) => {
 	e.target.innerHTML =
 		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
 	video.currentTime -= 10.0;
 });
 
 // Forward ============================//
-const forwardBtn = document.getElementById("forward");
+const forwardBtnVid = document.querySelector(".video-forward");
 
-forwardBtn.addEventListener("click", (e) => {
+forwardBtnVid.addEventListener("click", (e) => {
 	e.target.innerHTML =
 		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
 	video.currentTime += 10.0;
 });
 
 // Play Progress ============================//
-const playProgress = document.getElementById("play_progress");
+const playProgressVid = document.querySelector(".video-play-progress");
 
 video.addEventListener("timeupdate", (e) => {
-	const timePercent = (e.target.currentTime / e.target.duration) * 100;
-	playProgress.style.width = `${timePercent}%`;
+	const timePercentVid = (e.target.currentTime / e.target.duration) * 100;
+	playProgressVid.style.width = `${timePercentVid}%`;
 });
 
 // Load Progress ============================//
+const loadProgressVid = document.querySelector(".video-load-progress");
 
-const loadProgress = document.getElementById("load-progress");
-
-function updateLoadProgress() {
+function updateLoadProgressVid() {
 	if (video.buffered.length > 0) {
-		const percent = (video.buffered.end(0) / video.duration) * 100;
-		loadProgress.style.width = `${percent}%`;
+		const percentVid = (video.buffered.end(0) / video.duration) * 100;
+		loadProgressVid.style.width = `${percentVid}%`;
 	}
 }
 
 video.addEventListener("progress", () => {
-	updateLoadProgress();
+	updateLoadProgressVid();
 });
 video.addEventListener("loadeddata", () => {
-	updateLoadProgress();
+	updateLoadProgressVid();
 });
 video.addEventListener("canplaythrough", () => {
-	updateLoadProgress();
+	updateLoadProgressVid();
 });
 video.addEventListener("playing", () => {
-	updateLoadProgress();
+	updateLoadProgressVid();
 });
 
 // Time Display =============================//
+const durationtimeVid = document.querySelector(".video-duration");
+const currenttimeVid = document.querySelector(".video-current");
 
-const durationtime = document.getElementById("duration-time");
-const currenttime = document.getElementById("current-time");
-
-function formatTime(seconds) {
+function formatTimeVid(seconds) {
 	// eslint-disable-next-line no-var, no-redeclare
 	var seconds = Math.round(seconds);
 	let minutes = Math.floor(seconds / 60);
@@ -97,45 +95,45 @@ function formatTime(seconds) {
 
 video.addEventListener("timeupdate", () => {
 	// eslint-disable-next-line no-invalid-this
-	currenttime.innerHTML = formatTime(this.currentTime);
+	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
 });
 
 video.addEventListener("durationchange", () => {
 	// eslint-disable-next-line no-invalid-this
-	durationtime.innerHTML = formatTime(this.duration);
+	durationtimeVid.innerHTML = formatTimeVid(this.duration);
 });
 
 // volume =============================//
-const volume = document.getElementById("volume");
-volume.addEventListener("change", (event) => {
+const volumeVid = document.querySelector(".video-volume");
+volumeVid.addEventListener("change", (event) => {
 	video.volume = event.target.value;
 });
 
 // seeker =============================//
-const seek = document.getElementById("seek");
-const playback = document.getElementById("playback");
+const seekVid = document.querySelector(".video-seek");
+const playbackVid = document.querySelector(".video-playback");
 
 // update seeker =============================//
-function updateseekmax(event) {
+function updateseekmaxVid(event) {
 	if (event.target.duration) {
-		seek.max = event.target.duration;
+		seekVid.max = event.target.duration;
 	}
 }
 
 // update playback =============================//
-function updateplaybackmax(event) {
+function updateplaybackmaxVid(event) {
 	if (event.target.duration) {
-		playback.max = event.target.duration;
+		playbackVid.max = event.target.duration;
 	}
 }
 
-video.addEventListener("durationchange", updateseekmax);
-video.addEventListener("durationchange", updateplaybackmax);
+video.addEventListener("durationchange", updateseekmaxVid);
+video.addEventListener("durationchange", updateplaybackmaxVid);
 
 // seeker hander =============================//
-function seekhandler(event) {
+function seekhandlerVid(event) {
 	video.currentTime = event.target.value;
-	playback.value = event.target.value;
+	playbackVid.value = event.target.value;
 }
 
-seek.addEventListener("change", seekhandler);
+seekVid.addEventListener("change", seekhandlerVid);

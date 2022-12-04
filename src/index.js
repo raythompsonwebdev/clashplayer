@@ -114,45 +114,52 @@ registerBlockType("clashplayer/media", {
 			setAttributes({ src: media.url, id: media.id });
 		};
 
-		function funny(t) {
-			const o = (
-				<audio
-					id="result-player"
-					preload={preload}
-					loop={loop}
-					autoPlay={autoplay}
-				>
-					<source src={src} type={types} />
+		const audioTag = (
+			<audio
+				id="clashaudio-player"
+				preload={preload}
+				loop={loop}
+				autoPlay={autoplay}
+			>
+				<source src={src} type={types} />
+				<track
+					src="fgsubtitles_en.vtt"
+					kind="captions"
+					srcLang="en"
+					label="English"
+				/>
+			</audio>
+		);
 
-					<track
-						src="fgsubtitles_en.vtt"
-						kind="captions"
-						srcLang="en"
-						label="English"
-					/>
-				</audio>
-			);
+		const videoTag = (
+			<video
+				id="clashvideo-player"
+				preload={preload}
+				loop={loop}
+				autoPlay={autoplay}
+			>
+				<source src={src} type={types} />
+				<track
+					src="fgsubtitles_en.vtt"
+					kind="captions"
+					srcLang="en"
+					label="English"
+				/>
+			</video>
+		);
 
-			const p = (
-				<video
-					id="result-player"
-					preload={preload}
-					loop={loop}
-					autoPlay={autoplay}
-				>
-					<source src={src} type={types} />
+		// eslint-disable-next-line no-console
+		console.log(types);
 
-					<track
-						src="fgsubtitles_en.vtt"
-						kind="captions"
-						srcLang="en"
-						label="English"
-					/>
-				</video>
-			);
+		const switchType = () => {
+			if (types.includes("video")) {
+				return videoTag;
+			}
+			return audioTag;
+		};
 
-			return t === "video/m4a" ? o : p;
-		}
+		// eslint-disable-next-line no-console
+		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
@@ -236,68 +243,52 @@ registerBlockType("clashplayer/media", {
 					</PanelBody>
 				</InspectorControls>
 
-				<audio
-					id="result-player"
-					preload={preload}
-					loop={loop}
-					autoPlay={autoplay}
-				>
-					<source src={src} type={types} />
-
-					<track
-						src="fgsubtitles_en.vtt"
-						kind="captions"
-						srcLang="en"
-						label="English"
-					/>
-				</audio>
-
-				{funny(types)}
-				<div id="audio-controls">
+				{switchType()}
+				<div className="audio-controls video-controls">
 					<div id="btns-box">
-						<button id="play-toggle" className="player-button" type="button">
+						<button
+							id="play-toggle"
+							className="player-button audio-toggle video-toggle"
+							type="button"
+						>
 							<i className="fa fa-play" aria-hidden="true" title="Play" />
 						</button>
-						<button id="rewind" className="player-button" type="button">
+						<button
+							id="rewind"
+							className="player-button audio-rewind video-rewind"
+							type="button"
+						>
 							<i
 								className="fa fa-backward"
 								aria-hidden="true"
 								title="Backward"
 							/>
 						</button>
-						<button id="forward" className="player-button" type="button">
+						<button
+							id="forward"
+							className="player-button audio-forward video-forward"
+							type="button"
+						>
 							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
 						</button>
 					</div>
 
 					<div id="progress">
-						<progress value="0" id="playback" />
-						<span id="load-progress" />
-						<span id="play-progress" />
+						<progress
+							value="0"
+							id="playback"
+							className="audio-playback video-playback"
+						/>
+						<span
+							id="load-progress"
+							className="audio-load-progress video-load-progress"
+						/>
+						<span
+							id="play-progress"
+							className="audio-play-progress video-play-progress"
+						/>
 					</div>
-
-					<div id="time">
-						<span>current time</span>
-						<span id="current-time">00:00</span>
-						<span>duration</span>
-						<span id="duration-time">00:00</span>
-					</div>
-
-					<div id="video-volume">
-						<label id="volume-bar" htmlFor="volume">
-							<input
-								type="range"
-								id="volume"
-								title="volume"
-								min="0"
-								max="1"
-								step="0.1"
-								value="1"
-							/>
-						</label>
-					</div>
-
-					<div id="video-seek">
+					<div className="video-seek audio-seek">
 						<label htmlFor="seek">
 							<input
 								type="range"
@@ -306,6 +297,32 @@ registerBlockType("clashplayer/media", {
 								min="0"
 								value="0"
 								max="0"
+							/>
+						</label>
+					</div>
+
+					<div id="time" className="audio-time video-time">
+						<span>current time</span>
+						<span id="current-time" className="audio-current video-current">
+							00:00
+						</span>
+						<span>duration</span>
+						<span id="duration-time" className="audio-duration video-duration">
+							00:00
+						</span>
+					</div>
+
+					<div className="video-volume audio-volume">
+						<label id="volume-bar" htmlFor="volume">
+							<input
+								type="range"
+								className="audio-volume video-volume"
+								id="volume"
+								title="volume"
+								min="0"
+								max="1"
+								step="0.1"
+								value="1"
 							/>
 						</label>
 					</div>
@@ -319,68 +336,103 @@ registerBlockType("clashplayer/media", {
 			className,
 		} = props;
 
+		const audioTag = (
+			<audio
+				id="clashaudio-player"
+				preload={preload}
+				loop={loop}
+				autoPlay={autoplay}
+			>
+				<source src={src} type={types} />
+
+				<track
+					src="fgsubtitles_en.vtt"
+					kind="captions"
+					srcLang="en"
+					label="English"
+				/>
+			</audio>
+		);
+
+		const videoTag = (
+			<video
+				id="clashvideo-player"
+				preload={preload}
+				loop={loop}
+				autoPlay={autoplay}
+			>
+				<source src={src} type={types} />
+
+				<track
+					src="fgsubtitles_en.vtt"
+					kind="captions"
+					srcLang="en"
+					label="English"
+				/>
+			</video>
+		);
+
+		// eslint-disable-next-line no-console
+		console.log(types);
+
+		const switchType = () => {
+			if (types.includes("video")) {
+				return videoTag;
+			}
+			return audioTag;
+		};
+
+		// eslint-disable-next-line no-console
+		console.log(switchType);
+
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
-				<audio
-					id="result-player"
-					preload={preload}
-					loop={loop}
-					autoPlay={autoplay}
-				>
-					<source src={src} type={types} />
-					<track
-						src="fgsubtitles_en.vtt"
-						kind="captions"
-						srcLang="en"
-						label="English"
-					/>
-				</audio>
-
-				<div id="audio-controls">
+				{switchType()}
+				<div className="audio-controls video-controls">
 					<div id="btns-box">
-						<button id="play-toggle" className="player-button" type="button">
+						<button
+							id="play-toggle"
+							className="player-button audio-toggle video-toggle"
+							type="button"
+						>
 							<i className="fa fa-play" aria-hidden="true" title="Play" />
 						</button>
-						<button id="rewind" className="player-button" type="button">
+						<button
+							id="rewind"
+							className="player-button audio-rewind video-rewind"
+							type="button"
+						>
 							<i
 								className="fa fa-backward"
 								aria-hidden="true"
 								title="Backward"
 							/>
 						</button>
-						<button id="forward" className="player-button" type="button">
+						<button
+							id="forward"
+							className="player-button audio-forward video-forward"
+							type="button"
+						>
 							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
 						</button>
 					</div>
 
 					<div id="progress">
-						<progress value="0" id="playback" />
-						<span id="load-progress" />
-						<span id="play-progress" />
+						<progress
+							value="0"
+							id="playback"
+							className="audio-playback video-playback"
+						/>
+						<span
+							id="load-progress"
+							className="audio-load-progress video-load-progress"
+						/>
+						<span
+							id="play-progress"
+							className="audio-play-progress video-play-progress"
+						/>
 					</div>
-
-					<div id="time">
-						<span>Current Time</span>
-						<span id="current-time">00:00</span>
-						<span>Duration</span>
-						<span id="duration-time">00:00</span>
-					</div>
-
-					<div id="video-volume">
-						<label id="volume-bar" htmlFor="volume">
-							<input
-								type="range"
-								id="volume"
-								title="volume"
-								min="0"
-								max="1"
-								step="0.1"
-								value="1"
-							/>
-						</label>
-					</div>
-
-					<div id="video-seek">
+					<div className="video-seek audio-seek">
 						<label htmlFor="seek">
 							<input
 								type="range"
@@ -389,6 +441,32 @@ registerBlockType("clashplayer/media", {
 								min="0"
 								value="0"
 								max="0"
+							/>
+						</label>
+					</div>
+
+					<div id="time" className="audio-time video-time">
+						<span>current time</span>
+						<span id="current-time" className="audio-current video-current">
+							00:00
+						</span>
+						<span>duration</span>
+						<span id="duration-time" className="audio-duration video-duration">
+							00:00
+						</span>
+					</div>
+
+					<div className="video-volume audio-volume">
+						<label id="volume-bar" htmlFor="volume">
+							<input
+								type="range"
+								className="audio-volume video-volume"
+								id="volume"
+								title="volume"
+								min="0"
+								max="1"
+								step="0.1"
+								value="1"
 							/>
 						</label>
 					</div>

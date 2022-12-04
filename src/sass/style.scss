@@ -18,6 +18,13 @@
 		color: $color4;
 		text-align: center;
 	}
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
+	}
 
 	.clashplayer-logo {
 		width: auto;
@@ -28,8 +35,8 @@
 	}
 
 	/* controls -audio/video */
-	div#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		height: auto;
 		width: 100%;
 		margin: 0 auto;
@@ -48,13 +55,31 @@
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 	}
-	#video-seek {
+	.audio-seek,
+	.video-seek {
 		grid-area: 2 / 3 / 2 / 6;
+		width: 100%;
+	}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+		color: $color4;
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+	#seek {
+		width: 100%;
+		display: block;
+		height: 25px;
+		margin: 0;
+		padding: 0;
 	}
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
 	}
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		grid-area: 4 / 1 / 5 / 6;
 	}
 
@@ -62,15 +87,15 @@
 		height: 45px;
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 			display: block;
 			height: 100%;
 			outline: none;
 			text-align: center;
 			font-size: 1em;
-			@include originTran(50% 50%);
-			@include Transition(all 0.2s linear 0s);
+			transform-origin: 50% 50%;
+			transition: all 0.2s linear 0s;
 			color: $color4;
 			border: $color11 solid 1px;
 			background-color: $color7;
@@ -139,7 +164,7 @@
 			left: 0;
 		}
 
-		span#load-progress {
+		#load-progress {
 			background-color: $color8;
 			height: 12px;
 			display: block;
@@ -182,52 +207,22 @@
 		}
 	}
 
-	#video-seek {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			width: 20%;
-			display: none;
-			float: left;
-			line-height: 30px;
-			color: $color4;
-			background-color: $color;
-			border: 1px solid $color4;
-			margin-right: 0.5em;
-			text-align: center;
-			clear: both;
-		}
-
-		input[type="range"] {
-			width: 100%;
-			clear: both;
-			display: inline-block;
-			height: 20px;
-		}
+	}
+	#volume-bar {
+		width: 100%;
+		display: block;
+		line-height: 25px;
+		margin: 0;
 	}
 
-	#video-volume {
+	input[type="range"] {
 		width: 100%;
-
-		label {
-			width: 20%;
-			display: none;
-			float: left;
-			line-height: 30px;
-			background-color: $color;
-			color: $color4;
-			border: 1px solid $color11;
-			margin-right: 0.5em;
-			text-align: center;
-			clear: both;
-		}
-
-		input[type="range"] {
-			width: 100%;
-			clear: both;
-			display: inline-block;
-			height: 25px;
-		}
+		clear: both;
+		display: inline-block;
+		height: 25px;
 	}
 
 	#video_player {
@@ -251,16 +246,21 @@
 		width: 30%;
 	}
 
-	#result_player {
-		width: 85%;
+	#clashaudio-player {
+		width: 100%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
+	}
+
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -282,7 +282,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -301,17 +301,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-			line-height: 30px;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
-		label {
-			width: 20%;
-		}
+	.audio-volume,
+	.video-volume {
+		width: 100%;
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -326,16 +326,20 @@
 		width: 40%;
 	}
 
-	#result_player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -356,7 +360,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -376,16 +380,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
-		label {
-			font-size: 0.9em;
-		}
+	.audio-volume,
+	.video-volume {
+		width: 100%;
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -401,18 +406,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		padding: 0.25em;
 		width: 100%;
 	}
 
 	#btns-box {
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -433,7 +438,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -452,17 +457,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
-		label {
-			width: 20%;
-			font-size: 0.9em;
-		}
+	.audio-volume,
+	.video-volume {
+		width: 100%;
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -477,18 +482,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 45%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -509,7 +514,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -530,19 +535,18 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
 		margin: 0;
-
-		label {
-			font-size: 1em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -557,18 +561,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 		margin-bottom: 0.5em;
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -591,7 +595,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -612,18 +616,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 1em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -638,18 +641,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -673,7 +676,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -694,18 +697,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 1em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -720,18 +722,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -755,7 +757,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -776,18 +778,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 1em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -802,18 +803,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -834,7 +835,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -855,18 +856,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 0.9em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -881,18 +881,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -915,7 +915,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -936,26 +936,21 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
-
-		input[type="range"] {
-			width: 74%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
+	}
+	#volume-bar {
+		width: 100%;
+	}
 
-		label {
-			font-size: 0.9em;
-		}
-
-		input[type="range"] {
-			width: 74%;
-		}
+	input[type="range"] {
+		width: 100%;
 	}
 
 	iframe {
@@ -970,18 +965,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -1004,7 +999,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -1025,18 +1020,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 20%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 0.8em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {
@@ -1051,18 +1045,18 @@
 		width: 40%;
 	}
 
-	#result_player {
+	#clashaudio-player {
 		width: 96%;
 	}
 
-	#audio-controls,
-	#video-controls {
+	.audio-controls,
+	.video-controls {
 		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 
-		button.player-button {
+		.player-button {
 			width: 33.3%;
 
 			.fa-pause,
@@ -1085,7 +1079,7 @@
 			display: block;
 		}
 
-		span#load-progress {
+		#load-progress {
 			display: block;
 		}
 	}
@@ -1106,18 +1100,17 @@
 		}
 	}
 
-	#video-seek {
-		label {
-			width: 19%;
-		}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
 	}
 
-	#video-volume {
+	.audio-volume,
+	.video-volume {
 		width: 100%;
-
-		label {
-			font-size: 0.8em;
-		}
+	}
+	#volume-bar {
+		width: 100%;
 	}
 
 	iframe {

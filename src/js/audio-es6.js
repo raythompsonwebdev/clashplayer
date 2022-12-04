@@ -1,4 +1,4 @@
-const audioControls = document.getElementById("audio-controls");
+const audioControls = document.querySelector(".audio-controls");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
@@ -8,7 +8,7 @@ if (!document.createElement("audio").canPlayType) {
 const audio = document.querySelector("audio");
 
 // Play/Pause ============================//
-const playToggle = document.querySelector("#play-toggle");
+const playToggle = document.querySelector(".audio-toggle");
 
 playToggle.addEventListener("click", (e) => {
 	const isPlaying =
@@ -30,7 +30,7 @@ playToggle.addEventListener("click", (e) => {
 });
 
 // Rewind ============================//
-const rewindBtn = document.getElementById("rewind");
+const rewindBtn = document.querySelector(".audio-rewind");
 
 rewindBtn.addEventListener("click", (e) => {
 	// eslint-disable-next-line no-invalid-this
@@ -40,7 +40,7 @@ rewindBtn.addEventListener("click", (e) => {
 });
 
 // Forward ============================//
-const forwardBtn = document.getElementById("forward");
+const forwardBtn = document.querySelector(".audio-forward");
 
 forwardBtn.addEventListener("click", (e) => {
 	// eslint-disable-next-line no-invalid-this
@@ -50,7 +50,7 @@ forwardBtn.addEventListener("click", (e) => {
 });
 
 // Play Progress ============================//
-const playProgress = document.getElementById("play-progress");
+const playProgress = document.querySelector(".audio-play-progress");
 
 audio.addEventListener("timeupdate", (e) => {
 	// eslint-disable-next-line no-invalid-this
@@ -60,7 +60,7 @@ audio.addEventListener("timeupdate", (e) => {
 
 // Load Progress ============================//
 
-const loadProgress = document.getElementById("load-progress");
+const loadProgress = document.querySelector(".audio-load-progress");
 
 function updateLoadProgress() {
 	if (audio.buffered.length > 0) {
@@ -84,8 +84,8 @@ audio.addEventListener("playing", () => {
 
 // Time Display =============================//
 
-const durationtime = document.getElementById("duration-time");
-const currenttime = document.getElementById("current-time");
+const durationtime = document.querySelector(".audio-duration");
+const currenttime = document.querySelector(".audio-current");
 
 function formatTime(seconds) {
 	// eslint-disable-next-line no-param-reassign
@@ -112,15 +112,15 @@ audio.addEventListener("durationchange", (e) => {
 });
 
 // volume =============================//
-const volume = document.getElementById("volume");
+const volume = document.querySelector(".audio-volume");
 
 volume.addEventListener("change", (event) => {
 	audio.volume = event.target.value;
 });
 
 // seeker =============================//
-const seek = document.getElementById("seek");
-const playback = document.getElementById("playback");
+const seek = document.querySelector(".audio-seek");
+const playback = document.querySelector(".audio-playback");
 
 // update seeker =============================//
 function updateseekmax(event) {

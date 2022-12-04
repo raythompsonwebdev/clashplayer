@@ -176,6 +176,11 @@ a {
     border: 2px solid #fdd015;
     color: #262626;
     text-align: center; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 85%;
+    height: 250px; }
   .clashplayer-logo {
     width: auto;
     display: block;
@@ -183,8 +188,8 @@ a {
     background-color: #000;
     height: 100px; }
   /* controls -audio/video */
-  div#audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     height: auto;
     width: 100%;
     margin: 0 auto;
@@ -200,64 +205,73 @@ a {
     grid-area: 1 / 1 / 3 / 3; }
   #progress {
     grid-area: 1 / 3 / 3 / 6; }
-  #video-seek {
-    grid-area: 2 / 3 / 2 / 6; }
+  .audio-seek,
+  .video-seek {
+    grid-area: 2 / 3 / 2 / 6;
+    width: 100%; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px;
+    color: #262626;
+    margin: 0;
+    padding: 0;
+    display: block; }
+  #seek {
+    width: 100%;
+    display: block;
+    height: 25px;
+    margin: 0;
+    padding: 0; }
   #time {
     grid-area: 3 / 1 / 4 / 6; }
-  #video-volume {
+  .audio-volume,
+  .video-volume {
     grid-area: 4 / 1 / 5 / 6; }
   #btns-box {
     height: 45px;
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%;
       display: block;
       height: 100%;
       outline: none;
       text-align: center;
       font-size: 1em;
-      -webkit-transform-origin: 50% 50%;
-      -moz-transform-origin: 50% 50%;
-      -o-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
-      -webkit-transition: all 0.2s linear 0s;
-      -moz-transition: all 0.2s linear 0s;
-      -o-transition: all 0.2s linear 0s;
-      -ms-transition: all 0.2s linear 0s;
       transition: all 0.2s linear 0s;
       color: #262626;
       border: #ebeadd solid 1px;
       background-color: #658905;
       float: left; }
-      #btns-box button.player-button:hover {
+      #btns-box .player-button:hover {
         background-color: #262626;
         color: #fff;
         border: #ebeadd solid 1px;
         cursor: pointer; }
-      #btns-box button.player-button:active {
+      #btns-box .player-button:active {
         background-color: #262626; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button svg.fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button svg.fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button svg.fa-forward,
-      #btns-box button.player-button .fa-backward,
-      #btns-box button.player-button svg.fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button svg.fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button svg.fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button svg.fa-forward,
+      #btns-box .player-button .fa-backward,
+      #btns-box .player-button svg.fa-backward {
         font-size: 2em;
         text-align: center;
         display: block;
         color: #fff;
         line-height: 53px;
         margin: auto; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button svg.fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button svg.fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button svg.fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover,
-        #btns-box button.player-button svg.fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button svg.fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button svg.fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button svg.fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover,
+        #btns-box .player-button svg.fa-backward:hover {
           font-weight: bold;
           color: #fff; }
   #progress {
@@ -284,7 +298,7 @@ a {
       padding: 0;
       width: 100%;
       left: 0; }
-    #progress span#load-progress {
+    #progress #load-progress {
       background-color: #cc6;
       height: 12px;
       display: block;
@@ -317,42 +331,19 @@ a {
       border: none;
       font-size: 1em;
       text-shadow: 1px 1px #353333; }
-  #video-seek {
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-seek label {
-      width: 20%;
-      display: none;
-      float: left;
-      line-height: 30px;
-      color: #262626;
-      background-color: #fff;
-      border: 1px solid #262626;
-      margin-right: 0.5em;
-      text-align: center;
-      clear: both; }
-    #video-seek input[type="range"] {
-      width: 100%;
-      clear: both;
-      display: inline-block;
-      height: 20px; }
-  #video-volume {
-    width: 100%; }
-    #video-volume label {
-      width: 20%;
-      display: none;
-      float: left;
-      line-height: 30px;
-      background-color: #fff;
-      color: #262626;
-      border: 1px solid #ebeadd;
-      margin-right: 0.5em;
-      text-align: center;
-      clear: both; }
-    #video-volume input[type="range"] {
-      width: 100%;
-      clear: both;
-      display: inline-block;
-      height: 25px; }
+  #volume-bar {
+    width: 100%;
+    display: block;
+    line-height: 25px;
+    margin: 0; }
+  input[type="range"] {
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    height: 25px; }
   #video_player {
     width: 100%;
     margin: 0 auto;
@@ -368,27 +359,30 @@ a {
     width: 80%; }
   .download-button {
     width: 30%; }
-  #result_player {
-    width: 85%; }
-  #audio-controls,
-  #video-controls {
+  #clashaudio-player {
     width: 100%; }
-  #btns-box button.player-button {
+  #clashvideo-player {
+    width: 85%;
+    height: 250px; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box .player-button {
     width: 33.3%; }
-    #btns-box button.player-button .fa-pause,
-    #btns-box button.player-button .fa-play,
-    #btns-box button.player-button .fa-forward,
-    #btns-box button.player-button .fa-backward {
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
       font-size: 2em;
       line-height: 53px; }
-      #btns-box button.player-button .fa-pause:hover,
-      #btns-box button.player-button .fa-play:hover,
-      #btns-box button.player-button .fa-forward:hover,
-      #btns-box button.player-button .fa-backward:hover {
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
         color: #fff; }
   #progress #play-progress {
     display: block; }
-  #progress span#load-progress {
+  #progress #load-progress {
     display: block; }
   #time span {
     font-size: 0.8em; }
@@ -396,11 +390,14 @@ a {
     font-size: 1em; }
   #time #current-time {
     font-size: 1em; }
-  #video-seek label {
-    width: 20%;
-    line-height: 30px; }
-  #video-volume label {
-    width: 20%; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -409,26 +406,29 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
-    width: 90%; }
-  #audio-controls,
-  #video-controls {
+  #clashaudio-player {
     width: 100%; }
-  #btns-box button.player-button {
+  #clashvideo-player {
+    width: 85%;
+    height: 250px; }
+  .audio-controls,
+  .video-controls {
+    width: 100%; }
+  #btns-box .player-button {
     width: 33.3%; }
-    #btns-box button.player-button .fa-pause,
-    #btns-box button.player-button .fa-play,
-    #btns-box button.player-button .fa-forward,
-    #btns-box button.player-button .fa-backward {
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
       font-size: 1.9em; }
-      #btns-box button.player-button .fa-pause:hover,
-      #btns-box button.player-button .fa-play:hover,
-      #btns-box button.player-button .fa-forward:hover,
-      #btns-box button.player-button .fa-backward:hover {
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
         color: #fff; }
   #progress #play-progress {
     display: block; }
-  #progress span#load-progress {
+  #progress #load-progress {
     display: block; }
   #time span {
     width: 25%;
@@ -437,10 +437,14 @@ a {
     font-size: 1em; }
   #time #current-time {
     font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume label {
-    font-size: 0.9em; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     width: 75%;
     height: 360px; } }
@@ -450,27 +454,27 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     padding: 0.25em;
     width: 100%; }
-  #btns-box button.player-button {
+  #btns-box .player-button {
     width: 33.3%; }
-    #btns-box button.player-button .fa-pause,
-    #btns-box button.player-button .fa-play,
-    #btns-box button.player-button .fa-forward,
-    #btns-box button.player-button .fa-backward {
+    #btns-box .player-button .fa-pause,
+    #btns-box .player-button .fa-play,
+    #btns-box .player-button .fa-forward,
+    #btns-box .player-button .fa-backward {
       font-size: 1.9em; }
-      #btns-box button.player-button .fa-pause:hover,
-      #btns-box button.player-button .fa-play:hover,
-      #btns-box button.player-button .fa-forward:hover,
-      #btns-box button.player-button .fa-backward:hover {
+      #btns-box .player-button .fa-pause:hover,
+      #btns-box .player-button .fa-play:hover,
+      #btns-box .player-button .fa-forward:hover,
+      #btns-box .player-button .fa-backward:hover {
         color: #fff; }
   #progress #play-progress {
     display: block; }
-  #progress span#load-progress {
+  #progress #load-progress {
     display: block; }
   #time span {
     font-size: 0.7em; }
@@ -478,11 +482,14 @@ a {
     font-size: 0.85em; }
   #time #current-time {
     font-size: 0.9em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume label {
-    width: 20%;
-    font-size: 0.9em; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
+    width: 100%; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -491,28 +498,28 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 45%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress #play-progress {
     display: block; }
-  #progress span#load-progress {
+  #progress #load-progress {
     display: block; }
   #time {
     width: 100%; }
@@ -522,13 +529,15 @@ a {
       font-size: 0.9em; }
     #time #current-time {
       font-size: 0.9em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%;
     margin: 0; }
-    #video-volume label {
-      font-size: 1em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -537,32 +546,32 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%;
     margin-bottom: 0.5em; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 100%;
     margin: 0; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -572,12 +581,14 @@ a {
       font-size: 1em; }
     #time #current-time {
       font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 1em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -586,31 +597,31 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 100%;
     margin: 0; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -620,12 +631,14 @@ a {
       font-size: 1em; }
     #time #current-time {
       font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 1em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     width: 80%; } }
 
@@ -634,31 +647,31 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 100%;
     margin: 0; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -668,12 +681,14 @@ a {
       font-size: 1em; }
     #time #current-time {
       font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 1em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     width: 80%; } }
 
@@ -682,28 +697,28 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress #play-progress {
     display: block; }
-  #progress span#load-progress {
+  #progress #load-progress {
     display: block; }
   #time {
     width: 100%; }
@@ -713,12 +728,14 @@ a {
       font-size: 1em; }
     #time #current-time {
       font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 0.9em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -727,30 +744,30 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 98%; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -760,16 +777,16 @@ a {
       font-size: 1em; }
     #time #current-time {
       font-size: 1em; }
-  #video-seek label {
-    width: 20%; }
-  #video-seek input[type="range"] {
-    width: 74%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 0.9em; }
-    #video-volume input[type="range"] {
-      width: 74%; }
+  #volume-bar {
+    width: 100%; }
+  input[type="range"] {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -778,30 +795,30 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 90%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 98%; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -811,12 +828,14 @@ a {
       font-size: 0.9em; }
     #time #current-time {
       font-size: 0.9em; }
-  #video-seek label {
-    width: 20%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 0.8em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -825,30 +844,30 @@ a {
     width: 80%; }
   .download-button {
     width: 40%; }
-  #result_player {
+  #clashaudio-player {
     width: 96%; }
-  #audio-controls,
-  #video-controls {
+  .audio-controls,
+  .video-controls {
     width: 100%; }
   #btns-box {
     width: 100%; }
-    #btns-box button.player-button {
+    #btns-box .player-button {
       width: 33.3%; }
-      #btns-box button.player-button .fa-pause,
-      #btns-box button.player-button .fa-play,
-      #btns-box button.player-button .fa-forward,
-      #btns-box button.player-button .fa-backward {
+      #btns-box .player-button .fa-pause,
+      #btns-box .player-button .fa-play,
+      #btns-box .player-button .fa-forward,
+      #btns-box .player-button .fa-backward {
         font-size: 1.9em; }
-        #btns-box button.player-button .fa-pause:hover,
-        #btns-box button.player-button .fa-play:hover,
-        #btns-box button.player-button .fa-forward:hover,
-        #btns-box button.player-button .fa-backward:hover {
+        #btns-box .player-button .fa-pause:hover,
+        #btns-box .player-button .fa-play:hover,
+        #btns-box .player-button .fa-forward:hover,
+        #btns-box .player-button .fa-backward:hover {
           color: #fff; }
   #progress {
     width: 98%; }
     #progress #play-progress {
       display: block; }
-    #progress span#load-progress {
+    #progress #load-progress {
       display: block; }
   #time {
     width: 100%; }
@@ -858,11 +877,13 @@ a {
       font-size: 0.9em; }
     #time #current-time {
       font-size: 0.9em; }
-  #video-seek label {
-    width: 19%; }
-  #video-volume {
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px; }
+  .audio-volume,
+  .video-volume {
     width: 100%; }
-    #video-volume label {
-      font-size: 0.8em; }
+  #volume-bar {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
