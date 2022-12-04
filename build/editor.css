@@ -167,8 +167,13 @@ a {
     width: 100%;
     display: block;
     margin: auto; }
-  #result-player {
+  #clashaudio-player {
     width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin: 2em auto; }
   .download-button {
     display: block;
     width: 30%;
@@ -357,8 +362,11 @@ a {
     width: 100%; }
   .download-button {
     width: 30%; }
-  #result-player {
+  #clashaudio-player {
     width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -400,8 +408,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
+  #clashaudio-player {
     width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -444,8 +455,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     padding: 0.25em;
@@ -487,8 +501,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -534,8 +551,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -584,8 +604,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -633,8 +656,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -682,8 +708,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -728,8 +757,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -780,8 +812,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 90%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -828,8 +863,11 @@ a {
     width: 100%; }
   .download-button {
     width: 40%; }
-  #result-player {
-    width: 96%; }
+  #clashaudio-player {
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }

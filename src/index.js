@@ -18,6 +18,7 @@ import {
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
 import { ReactComponent as Logo } from "./bv-logo.svg";
+import "./fontawesome-free-6.1.1-web/css/fontawesome.css";
 
 const replaceMediaUpload = () => MediaUpload;
 

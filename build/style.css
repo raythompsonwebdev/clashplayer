@@ -179,8 +179,10 @@ a {
   #clashaudio-player {
     width: 100%; }
   #clashvideo-player {
-    width: 85%;
-    height: 250px; }
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin: 2em auto; }
   .clashplayer-logo {
     width: auto;
     display: block;
@@ -409,8 +411,8 @@ a {
   #clashaudio-player {
     width: 100%; }
   #clashvideo-player {
-    width: 85%;
-    height: 250px; }
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -455,7 +457,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     padding: 0.25em;
@@ -499,7 +504,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -547,7 +555,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -598,7 +609,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -648,7 +662,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -698,7 +715,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -745,7 +765,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -796,7 +819,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 90%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }
@@ -845,7 +871,10 @@ a {
   .download-button {
     width: 40%; }
   #clashaudio-player {
-    width: 96%; }
+    width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px; }
   .audio-controls,
   .video-controls {
     width: 100%; }

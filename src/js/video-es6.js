@@ -1,31 +1,32 @@
 const videoControls = document.querySelector(".video-controls");
 
+const video = document.querySelector("video");
+
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
 
-const video = document.querySelector("video");
-
 // Play/Pause ============================//
 
 const playToggleVid = document.querySelector(".video-toggle");
 
-playToggleVid.addEventListener("click", (e) => {
-	if (video.paused) {
-		video.play();
-		video.preload = "metadata";
+if (video !== null) {
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			video.preload = "metadata";
 
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
-	} else {
-		video.pause();
+			e.target.innerHTML =
+				'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		} else {
+			video.pause();
 
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
-	}
-});
-
+			e.target.innerHTML =
+				'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		}
+	});
+}
 // Rewind ============================//
 const rewindBtnVid = document.querySelector(".video-rewind");
 
@@ -46,12 +47,12 @@ forwardBtnVid.addEventListener("click", (e) => {
 
 // Play Progress ============================//
 const playProgressVid = document.querySelector(".video-play-progress");
-
-video.addEventListener("timeupdate", (e) => {
-	const timePercentVid = (e.target.currentTime / e.target.duration) * 100;
-	playProgressVid.style.width = `${timePercentVid}%`;
-});
-
+if (video !== null) {
+	video.addEventListener("timeupdate", (e) => {
+		const timePercentVid = (e.target.currentTime / e.target.duration) * 100;
+		playProgressVid.style.width = `${timePercentVid}%`;
+	});
+}
 // Load Progress ============================//
 const loadProgressVid = document.querySelector(".video-load-progress");
 
@@ -61,20 +62,20 @@ function updateLoadProgressVid() {
 		loadProgressVid.style.width = `${percentVid}%`;
 	}
 }
-
-video.addEventListener("progress", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("loadeddata", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("canplaythrough", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("playing", () => {
-	updateLoadProgressVid();
-});
-
+if (video !== null) {
+	video.addEventListener("progress", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("loadeddata", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("canplaythrough", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("playing", () => {
+		updateLoadProgressVid();
+	});
+}
 // Time Display =============================//
 const durationtimeVid = document.querySelector(".video-duration");
 const currenttimeVid = document.querySelector(".video-current");
@@ -92,17 +93,17 @@ function formatTimeVid(seconds) {
 	seconds = seconds >= 10 ? seconds : `0${seconds}`;
 	return `${minutes}:${seconds}`;
 }
+if (video !== null) {
+	video.addEventListener("timeupdate", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
+	});
 
-video.addEventListener("timeupdate", () => {
-	// eslint-disable-next-line no-invalid-this
-	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
-});
-
-video.addEventListener("durationchange", () => {
-	// eslint-disable-next-line no-invalid-this
-	durationtimeVid.innerHTML = formatTimeVid(this.duration);
-});
-
+	video.addEventListener("durationchange", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	});
+}
 // volume =============================//
 const volumeVid = document.querySelector(".video-volume");
 volumeVid.addEventListener("change", (event) => {
@@ -126,10 +127,10 @@ function updateplaybackmaxVid(event) {
 		playbackVid.max = event.target.duration;
 	}
 }
-
-video.addEventListener("durationchange", updateseekmaxVid);
-video.addEventListener("durationchange", updateplaybackmaxVid);
-
+if (video !== null) {
+	video.addEventListener("durationchange", updateseekmaxVid);
+	video.addEventListener("durationchange", updateplaybackmaxVid);
+}
 // seeker hander =============================//
 function seekhandlerVid(event) {
 	video.currentTime = event.target.value;

@@ -8,8 +8,14 @@
 		display: block;
 		margin: auto;
 	}
-	#result-player {
+	#clashaudio-player {
 		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
+		display: block;
+		margin: 2em auto;
 	}
 	.download-button {
 		display: block;
@@ -62,7 +68,6 @@
 		padding: 0;
 		display: block;
 	}
-
 	#seek {
 		width: 100%;
 		display: block;
@@ -73,6 +78,7 @@
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
 	}
+
 	.audio-volume,
 	.video-volume {
 		grid-area: 4 / 1 / 5 / 6;
@@ -246,8 +252,12 @@
 		width: 30%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -320,8 +330,12 @@
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -395,8 +409,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -470,8 +488,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -548,8 +570,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -627,8 +653,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -707,8 +737,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -787,8 +821,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -864,8 +902,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -951,8 +993,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 90%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
@@ -1030,8 +1076,12 @@
 		width: 40%;
 	}
 
-	#result-player {
-		width: 96%;
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	.audio-controls,
