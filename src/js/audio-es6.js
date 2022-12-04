@@ -1,18 +1,17 @@
-var audioControls = document.getElementById("audio-controls");
+const audioControls = document.getElementById("audio-controls");
 
-//Stop if HTML5 video isn't supported
+// Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
 
-var audio = document.querySelector("audio");
+const audio = document.querySelector("audio");
 
 // Play/Pause ============================//
+const playToggle = document.querySelector("#play-toggle");
 
-var playToggle = document.querySelector("#play-toggle");
-
-playToggle.addEventListener("click", function () {
-	var isPlaying =
+playToggle.addEventListener("click", (e) => {
+	const isPlaying =
 		audio.currentTime > 0 &&
 		!audio.paused &&
 		!audio.ended &&
@@ -21,108 +20,116 @@ playToggle.addEventListener("click", function () {
 	if (!isPlaying) {
 		audio.play();
 		audio.preload = "metadata";
-		this.innerHTML =
+		e.target.innerHTML =
 			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
 	} else {
 		audio.pause();
-		this.innerHTML =
+		e.target.innerHTML =
 			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
 	}
 });
 
 // Rewind ============================//
-var rewindBtn = document.getElementById("rewind");
+const rewindBtn = document.getElementById("rewind");
 
-rewindBtn.addEventListener("click", function () {
-	this.innerHTML =
+rewindBtn.addEventListener("click", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	e.target.innerHTML =
 		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
 	audio.currentTime -= 10.0;
 });
 
 // Forward ============================//
-var forwardBtn = document.getElementById("forward");
+const forwardBtn = document.getElementById("forward");
 
-forwardBtn.addEventListener("click", function () {
-	this.innerHTML =
+forwardBtn.addEventListener("click", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	e.target.innerHTML =
 		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
 	audio.currentTime += 10.0;
 });
 
 // Play Progress ============================//
-var playProgress = document.getElementById("play-progress");
+const playProgress = document.getElementById("play-progress");
 
-audio.addEventListener("timeupdate", function () {
-	var timePercent = (this.currentTime / this.duration) * 100;
-	playProgress.style.width = timePercent + "%";
+audio.addEventListener("timeupdate", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	const timePercent = (e.target.currentTime / e.target.duration) * 100;
+	playProgress.style.width = `${timePercent}%`;
 });
 
 // Load Progress ============================//
 
-var loadProgress = document.getElementById("load-progress");
+const loadProgress = document.getElementById("load-progress");
 
 function updateLoadProgress() {
 	if (audio.buffered.length > 0) {
-		var percent = (audio.buffered.end(0) / audio.duration) * 100;
-		loadProgress.style.width = percent + "%";
+		const percent = (audio.buffered.end(0) / audio.duration) * 100;
+		loadProgress.style.width = `${percent}%`;
 	}
 }
 
-audio.addEventListener("progress", function () {
+audio.addEventListener("progress", () => {
 	updateLoadProgress();
 });
-audio.addEventListener("loadeddata", function () {
+audio.addEventListener("loadeddata", () => {
 	updateLoadProgress();
 });
-audio.addEventListener("canplaythrough", function () {
+audio.addEventListener("canplaythrough", () => {
 	updateLoadProgress();
 });
-audio.addEventListener("playing", function () {
+audio.addEventListener("playing", () => {
 	updateLoadProgress();
 });
 
 // Time Display =============================//
 
-var durationtime = document.getElementById("duration-time");
-var currenttime = document.getElementById("current-time");
+const durationtime = document.getElementById("duration-time");
+const currenttime = document.getElementById("current-time");
 
 function formatTime(seconds) {
-	var seconds = Math.round(seconds);
-	var minutes = Math.floor(seconds / 60);
+	// eslint-disable-next-line no-param-reassign
+	seconds = Math.round(seconds);
+	let minutes = Math.floor(seconds / 60);
 	// Remaining seconds
+	// eslint-disable-next-line no-param-reassign
 	seconds = Math.floor(seconds % 60);
 	// Add leading Zeros
-	minutes = minutes >= 10 ? minutes : "0" + minutes;
-	seconds = seconds >= 10 ? seconds : "0" + seconds;
-	return minutes + ":" + seconds;
+	minutes = minutes >= 10 ? minutes : `0${minutes}`;
+	// eslint-disable-next-line no-param-reassign
+	seconds = seconds >= 10 ? seconds : `0${seconds}`;
+	return `${minutes}:${seconds}`;
 }
 
-audio.addEventListener("timeupdate", function () {
-	currenttime.innerHTML = formatTime(this.currentTime);
+audio.addEventListener("timeupdate", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	currenttime.innerHTML = formatTime(e.target.currentTime);
 });
 
-audio.addEventListener("durationchange", function () {
-	durationtime.innerHTML = formatTime(this.duration);
+audio.addEventListener("durationchange", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	durationtime.innerHTML = formatTime(e.target.duration);
 });
 
-//volume =============================//
-var volume = document.getElementById("volume");
+// volume =============================//
+const volume = document.getElementById("volume");
 
-volume.addEventListener("change", function (event) {
+volume.addEventListener("change", (event) => {
 	audio.volume = event.target.value;
 });
 
-//seeker =============================//
-var seek = document.getElementById("seek"),
-	playback = document.getElementById("playback");
+// seeker =============================//
+const seek = document.getElementById("seek");
+const playback = document.getElementById("playback");
 
-//update seeker =============================//
+// update seeker =============================//
 function updateseekmax(event) {
 	if (event.target.duration) {
 		seek.max = event.target.duration;
 	}
 }
 
-//update playback =============================//
+// update playback =============================//
 function updateplaybackmax(event) {
 	if (event.target.duration) {
 		playback.max = event.target.duration;
@@ -132,7 +139,7 @@ function updateplaybackmax(event) {
 audio.addEventListener("durationchange", updateseekmax);
 audio.addEventListener("durationchange", updateplaybackmax);
 
-//seeker hander =============================//
+// seeker hander =============================//
 function seekhandler(event) {
 	audio.currentTime = event.target.value;
 	playback.value = event.target.value;

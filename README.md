@@ -1,10 +1,5 @@
 # Clashvibes Audio/Video Plugin
 
-## Instructions
-
-
-## Branches
-
 ## Installing
 
 1. To use these exercise files, you must have the following installed:

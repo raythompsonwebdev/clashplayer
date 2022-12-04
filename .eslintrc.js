@@ -28,6 +28,7 @@ module.exports = {
 		SharedArrayBuffer: "readonly",
 	},
 	rules: {
+		"react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
 		"new-cap": "error",
 		"no-invalid-this": "error",
 		"prefer-const": "error",

@@ -34,6 +34,7 @@ function clashplayer_frontend_scripts()
 
 	// Make paths variables so we don't write em twice 😉
 	$blockPath = '/build/audio-es6.js';
+	$blockPathtwo = '/build/video-es6.js';
 
 	//   // Enqueue the bundled block JS file
 	if (has_block('clashplayer/media')) {
@@ -42,6 +43,13 @@ function clashplayer_frontend_scripts()
 			plugins_url($blockPath, __FILE__),
 			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
 			filemtime(plugin_dir_path(__FILE__) . $blockPath),
+			true
+		);
+		wp_enqueue_script(
+			'clashvibes-blockstwo-js',
+			plugins_url($blockPathtwo, __FILE__),
+			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
+			filemtime(plugin_dir_path(__FILE__) . $blockPathtwo),
 			true
 		);
 	}
@@ -63,7 +71,7 @@ function clashplayer_block_categories($categories, $post)
 		$categories,
 		array(
 			array(
-				'slug' => 'clashplayer',
+				'slug' => 'clash-player',
 				'title' => __('ClashPlayer', 'clashplayer'),
 				'icon'  => 'microphone',
 			),
