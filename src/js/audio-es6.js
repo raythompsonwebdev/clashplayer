@@ -37,7 +37,9 @@
 		// eslint-disable-next-line no-invalid-this
 		e.target.innerHTML =
 			'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
-		audio.currentTime -= 10.0;
+		if (audio !== null) {
+			audio.currentTime -= 10.0;
+		}
 	});
 
 	// Forward ============================//
@@ -47,7 +49,9 @@
 		// eslint-disable-next-line no-invalid-this
 		e.target.innerHTML =
 			'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
-		audio.currentTime += 10.0;
+		if (audio !== null) {
+			audio.currentTime += 10.0;
+		}
 	});
 
 	// Play Progress ============================//
@@ -105,7 +109,7 @@
 		return `${minutes}:${seconds}`;
 	}
 
-	if (audio !== null) {
+	if (audio) {
 		audio.addEventListener("timeupdate", (e) => {
 			// eslint-disable-next-line no-invalid-this
 			currenttime.innerHTML = formatTime(e.target.currentTime);
@@ -120,7 +124,9 @@
 	const volume = document.querySelector(".audio-volume");
 
 	volume.addEventListener("change", (event) => {
-		audio.volume = event.target.value;
+		if (audio !== null) {
+			audio.volume = event.target.value;
+		}
 	});
 
 	// seeker =============================//
@@ -147,7 +153,9 @@
 	}
 	// seeker hander =============================//
 	function seekhandler(event) {
-		audio.currentTime = event.target.value;
+		if (audio !== null) {
+			audio.currentTime = event.target.value;
+		}
 		playback.value = event.target.value;
 	}
 

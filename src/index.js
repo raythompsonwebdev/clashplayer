@@ -18,7 +18,6 @@ import {
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
 import { ReactComponent as Logo } from "./bv-logo.svg";
-import "./fontawesome-free-6.1.1-web/css/fontawesome.css";
 
 const replaceMediaUpload = () => MediaUpload;
 
@@ -32,6 +31,7 @@ registerBlockType("clashplayer/media", {
 	title: __("ClashPlayer", "clashplayer"),
 	icon: { src: Logo },
 	category: "media",
+	description: __("Audio & Video Player."),
 	attributes: {
 		src: {
 			type: "string",
@@ -68,7 +68,7 @@ registerBlockType("clashplayer/media", {
 		},
 	},
 	supports: {
-		align: ["wide", "full", "none"],
+		align: ["left", "right", "full"],
 	},
 
 	edit: (props) => {
@@ -149,18 +149,12 @@ registerBlockType("clashplayer/media", {
 			</video>
 		);
 
-		// eslint-disable-next-line no-console
-		console.log(types);
-
 		const switchType = () => {
 			if (types.includes("video")) {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>

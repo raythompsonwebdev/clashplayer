@@ -33,7 +33,9 @@ const rewindBtnVid = document.querySelector(".video-rewind");
 rewindBtnVid.addEventListener("click", (e) => {
 	e.target.innerHTML =
 		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
-	video.currentTime -= 10.0;
+	if (video !== null) {
+		video.currentTime -= 10.0;
+	}
 });
 
 // Forward ============================//
@@ -42,7 +44,9 @@ const forwardBtnVid = document.querySelector(".video-forward");
 forwardBtnVid.addEventListener("click", (e) => {
 	e.target.innerHTML =
 		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
-	video.currentTime += 10.0;
+	if (video !== null) {
+		video.currentTime += 10.0;
+	}
 });
 
 // Play Progress ============================//
@@ -98,7 +102,6 @@ if (video !== null) {
 		// eslint-disable-next-line no-invalid-this
 		currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
 	});
-
 	video.addEventListener("durationchange", (e) => {
 		// eslint-disable-next-line no-invalid-this
 		durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
@@ -107,7 +110,9 @@ if (video !== null) {
 // volume =============================//
 const volumeVid = document.querySelector(".video-volume");
 volumeVid.addEventListener("change", (event) => {
-	video.volume = event.target.value;
+	if (video !== null) {
+		video.volume = event.target.value;
+	}
 });
 
 // seeker =============================//
@@ -133,7 +138,9 @@ if (video !== null) {
 }
 // seeker hander =============================//
 function seekhandlerVid(event) {
-	video.currentTime = event.target.value;
+	if (video !== null) {
+		video.currentTime = event.target.value;
+	}
 	playbackVid.value = event.target.value;
 }
 
