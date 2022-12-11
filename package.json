@@ -29,7 +29,7 @@
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
 		"lint:js": "wp-scripts lint-js",
-		"lint:css:src": "wp-scripts lint-style 'src/**/*.scss'",
+		"lint:css:src": "wp-scripts lint-style 'src/sass/*.scss'",
 		"compile:css": "node-sass src/sass/ -o ./build/ && stylelint '*.scss' --fix || true && stylelint '*.scss' --fix"
 	},
 	"dependencies": {

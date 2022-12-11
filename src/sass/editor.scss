@@ -1,7 +1,5 @@
 @import "partials/variables";
-@import "partials/mixins";
 @import "partials/base";
-@import "../fontawesome-free-6.1.1-web/scss/fontawesome.scss";
 
 @media only screen and (max-width: 1920px) {
 	.wp-block-clashplayer-media {
@@ -33,12 +31,12 @@
 		width: auto;
 		display: block;
 		margin: auto;
-		background-color: #000;
+		background-color: $color4;
 		height: 100px;
 	}
 
 	/* controls -audio/video */
-	div.audio-controls,
+	.audio-controls,
 	.video-controls {
 		height: auto;
 		width: 100%;
@@ -49,15 +47,92 @@
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 25px);
-		grid-column-gap: 2px;
-		grid-row-gap: 2px;
+		grid-gap: 2px;
 	}
+
+	/* controls -buttons */
 	#btns-box {
 		grid-area: 1 / 1 / 3 / 3;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 0.2em;
 	}
+	.player-button {
+		width: 32%;
+		flex: 1 0 auto;
+		outline: none;
+		text-align: center;
+		font-size: 1em;
+		transition: all 0.2s linear 0s;
+		color: $color4;
+		border: $color11 solid 1px;
+		background-color: $color7;
+		line-height: 50px;
+		height: 50px;
+
+		&:hover {
+			background-color: $color4;
+			color: $color;
+			border: $color11 solid 1px;
+			cursor: pointer;
+		}
+
+		&:active {
+			background-color: $color4;
+		}
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 2em;
+		text-align: center;
+		color: $color;
+
+		&:hover {
+			font-weight: bold;
+			color: $color;
+		}
+	}
+
+	/* controls - progress bar */
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+		position: relative;
+		height: 24px;
 	}
+	#playback {
+		background-color: $color4;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	#play-progress {
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		background-color: $color2;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		left: 0;
+	}
+	#load-progress {
+		background-color: $color8;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* controls - seek */
 	.audio-seek .video-seek {
 		grid-area: 2 / 3 / 2 / 6;
 		width: 100%;
@@ -76,101 +151,10 @@
 		margin: 0;
 		padding: 0;
 	}
+
+	/* controls - time */
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
-	}
-
-	.audio-volume,
-	.video-volume {
-		grid-area: 4 / 1 / 5 / 6;
-	}
-
-	.player-button {
-		width: 33.3%;
-		display: block;
-		height: 100%;
-		outline: none;
-		text-align: center;
-		font-size: 1em;
-		transform-origin: 50% 50%;
-		transition: all 0.2s linear 0s;
-		color: $color4;
-		border: $color11 solid 1px;
-		background-color: $color7;
-		float: left;
-
-		&:hover {
-			background-color: $color4;
-			color: $color;
-			border: $color11 solid 1px;
-			cursor: pointer;
-		}
-
-		&:active {
-			background-color: $color4;
-		}
-
-		.fa-pause,
-		svg.fa-pause,
-		.fa-play,
-		svg.fa-play,
-		.fa-forward,
-		svg.fa-forward,
-		.fa-backward,
-		svg.fa-backward {
-			font-size: 2em;
-			text-align: center;
-			display: block;
-			color: $color;
-			line-height: 53px;
-			margin: auto;
-
-			&:hover {
-				font-weight: bold;
-				color: $color;
-			}
-		}
-	}
-
-	#progress {
-		width: 100%;
-		display: inline-block;
-		background-color: $color;
-		position: relative;
-		height: 24px;
-
-		progress#playback {
-			background-color: $color4;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-		}
-
-		#play-progress {
-			position: absolute;
-			top: 0;
-			z-index: 2;
-			background-color: $color2;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			left: 0;
-		}
-
-		#load-progress {
-			background-color: $color8;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-		}
-	}
-
-	#time {
 		width: 100%;
 		color: $color4;
 		height: 25px;
@@ -181,41 +165,31 @@
 			text-align: center;
 			font-size: 0.8em;
 			display: block;
-			background-color: $color;
+		}
+		span:nth-child(odd) {
 			color: $color4;
-			margin-right: 0;
-			float: left;
-		}
-
-		#duration-time {
-			color: $color7;
-			background-color: $color4;
-			border: none;
-			font-size: 1em;
-			text-shadow: 1px 1px rgb(53, 51, 51);
-		}
-
-		#current-time {
-			color: $color7;
-			background-color: $color4;
-			border: none;
-			font-size: 1em;
-			text-shadow: 1px 1px rgb(53, 51, 51);
+			background-color: $color3;
 		}
 	}
-
-	label[for="seek"] {
-		line-height: 25px;
-		color: $color4;
+	#duration-time {
+		color: $color7;
+		background-color: $color4;
+		border: none;
+		font-size: 1em;
+		text-shadow: 1px 1px $color4;
+	}
+	#current-time {
+		color: $color7;
+		background-color: $color4;
+		border: none;
+		font-size: 1em;
+		text-shadow: 1px 1px $color4;
 	}
 
-	#seek {
-		width: 100%;
-		display: block;
-	}
-
+	/* controls - volume */
 	.audio-volume,
 	.video-volume {
+		grid-area: 4 / 1 / 5 / 6;
 		width: 100%;
 	}
 	#volume-bar {
@@ -224,19 +198,10 @@
 		line-height: 25px;
 		margin: 0;
 	}
-
 	input[type="range"] {
 		width: 100%;
-		clear: both;
-		display: inline-block;
-		height: 25px;
-	}
-
-	#video_player {
-		width: 100%;
-		margin: 0 auto;
 		display: block;
-		padding: 1em 0;
+		height: 25px;
 	}
 
 	/* video */
@@ -266,45 +231,47 @@
 		width: 100%;
 	}
 	#btns-box {
-		.player-button {
-			width: 33.3%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 2em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 2em;
-				line-height: 53px;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#play-progress {
+		display: block;
+	}
+
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -316,6 +283,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -344,45 +314,47 @@
 		width: 100%;
 	}
 	#btns-box {
-		.player-button {
-			width: 33.3%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			width: 25%;
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -394,6 +366,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -425,47 +400,48 @@
 	}
 
 	#btns-box {
-		.player-button {
-			width: 33.3%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 33.3%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.7em;
 		}
-
-		#duration-time {
-			font-size: 0.85em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	}
+	#duration-time {
+		font-size: 0.85em;
+	}
+	#current-time {
+		font-size: 0.9em;
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -474,6 +450,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -503,47 +482,47 @@
 	}
 	#btns-box {
 		width: 45%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.75em;
 		}
+	}
+	#duration-time {
+		font-size: 0.9em;
+	}
 
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	#current-time {
+		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
@@ -556,6 +535,9 @@
 		margin: 0;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -586,51 +568,50 @@
 	#btns-box {
 		width: 100%;
 		margin-bottom: 0.5em;
-		.player-button {
-			width: 33.3%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 100%;
-		margin: 0;
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.9em;
 		}
-
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	}
+	#duration-time {
+		font-size: 1em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -639,6 +620,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -668,53 +652,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 100%;
-		margin: 0;
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.9em;
 		}
-
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	}
+	#duration-time {
+		font-size: 1em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -723,6 +705,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -752,53 +737,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 100%;
-		margin: 0;
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.9em;
 		}
-
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	}
+	#duration-time {
+		font-size: 1em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -807,6 +790,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -836,50 +822,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.8em;
 		}
-
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	}
+	#duration-time {
+		font-size: 1em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -888,6 +875,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -917,52 +907,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 98%;
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.8em;
 		}
-
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	}
+	#duration-time {
+		font-size: 1em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -977,7 +966,6 @@
 	#volume-bar {
 		width: 100%;
 	}
-
 	input[type="range"] {
 		width: 100%;
 	}
@@ -1008,52 +996,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 98%;
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.7em;
 		}
-
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	}
+	#duration-time {
+		font-size: 0.9em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 0.9em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -1062,6 +1049,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 
@@ -1091,52 +1081,51 @@
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
 
-		.player-button {
-			width: 33.3%;
+	.player-button {
+		width: 32%;
+	}
+	.dashicons-controls-pause:before,
+	.dashicons-controls-play:before,
+	.dashicons-controls-forward:before,
+	.dashicons-controls-back:before {
+		font-size: 1.9em;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			color: $color;
 		}
 	}
 
 	#progress {
-		width: 98%;
+		grid-area: 1 / 3 / 3 / 6;
+		background-color: $color;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
-
+		grid-area: 3 / 1 / 4 / 6;
 		span {
 			font-size: 0.7em;
 		}
-
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	}
+	#duration-time {
+		font-size: 0.9em;
 	}
 
-	label[for="seek"]l {
+	#current-time {
+		font-size: 0.9em;
+	}
+
+	label[for="seek"] {
 		width: 100%;
 	}
 
@@ -1145,6 +1134,9 @@
 		width: 100%;
 	}
 	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
 		width: 100%;
 	}
 

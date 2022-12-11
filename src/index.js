@@ -66,6 +66,12 @@ registerBlockType("clashplayer/media", {
 			selector: "source",
 			attribute: "preload",
 		},
+		cover: {
+			type: "string",
+			source: "attribute",
+			selector: "img",
+			attribute: "src",
+		},
 	},
 	supports: {
 		align: ["left", "right", "full"],
@@ -243,29 +249,19 @@ registerBlockType("clashplayer/media", {
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">
@@ -290,8 +286,8 @@ registerBlockType("clashplayer/media", {
 								id="seek"
 								title="seek"
 								min="0"
-								value="0"
-								max="0"
+								defaultValue="0"
+								max="100"
 							/>
 						</label>
 					</div>
@@ -367,18 +363,12 @@ registerBlockType("clashplayer/media", {
 			</video>
 		);
 
-		// eslint-disable-next-line no-console
-		console.log(types);
-
 		const switchType = () => {
 			if (types.includes("video")) {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
@@ -387,29 +377,19 @@ registerBlockType("clashplayer/media", {
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">
@@ -434,8 +414,8 @@ registerBlockType("clashplayer/media", {
 								id="seek"
 								title="seek"
 								min="0"
-								value="0"
-								max="0"
+								defaultValue="0"
+								max="100"
 							/>
 						</label>
 					</div>

@@ -119,6 +119,7 @@ function clashplayer_register_blocks()
 		filemtime(plugin_dir_path(__FILE__) . 'build/style.css')	// set version as file last modified time
 	);
 
+
 	// Loop through $blocks and register each block with the same script and styles.
 
 	register_block_type('clashplayer/media', array(

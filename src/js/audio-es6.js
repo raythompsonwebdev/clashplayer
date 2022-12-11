@@ -1,6 +1,7 @@
-(function audioPlayer() {
+// eslint-disable-next-line func-names
+(function () {
 	const audioControls = document.querySelector(".audio-controls");
-	const audio = document.querySelector("audio");
+	const audio = document.querySelector("#clashaudio-player");
 
 	// Stop if HTML5 video isn't supported
 	if (!document.createElement("audio").canPlayType) {
@@ -11,6 +12,7 @@
 	const playToggle = document.querySelector(".audio-toggle");
 
 	if (audio !== null) {
+		audio.style = "pointer-events: none;";
 		playToggle.addEventListener("click", (e) => {
 			const isPlaying =
 				audio.currentTime > 0 &&
@@ -20,40 +22,33 @@
 
 			if (!isPlaying) {
 				audio.play();
-				audio.preload = "metadata";
-				e.target.innerHTML =
-					'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+				e.target.classList.remove("dashicons-controls-play");
+				e.target.classList.add("dashicons-controls-pause");
 			} else {
 				audio.pause();
-				e.target.innerHTML =
-					'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+				e.target.classList.add("dashicons-controls-play");
+				e.target.classList.remove("dashicons-controls-pause");
 			}
 		});
-	}
-	// Rewind ============================//
-	const rewindBtn = document.querySelector(".audio-rewind");
 
-	rewindBtn.addEventListener("click", (e) => {
-		// eslint-disable-next-line no-invalid-this
-		e.target.innerHTML =
-			'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
-		if (audio !== null) {
+		// Rewind ============================//
+		const rewindBtn = document.querySelector(".audio-rewind");
+
+		rewindBtn.addEventListener("click", (e) => {
+			e.preventDefault();
 			audio.currentTime -= 10.0;
-		}
-	});
+		});
 
-	// Forward ============================//
-	const forwardBtn = document.querySelector(".audio-forward");
+		// Forward ============================//
+		const forwardBtn = document.querySelector(".audio-forward");
 
-	forwardBtn.addEventListener("click", (e) => {
-		// eslint-disable-next-line no-invalid-this
-		e.target.innerHTML =
-			'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
-		if (audio !== null) {
+		forwardBtn.addEventListener("click", (e) => {
+			// eslint-disable-next-line no-invalid-this
+			e.preventDefault();
+
 			audio.currentTime += 10.0;
-		}
-	});
-
+		});
+	}
 	// Play Progress ============================//
 	const playProgress = document.querySelector(".audio-play-progress");
 
@@ -119,16 +114,14 @@
 			// eslint-disable-next-line no-invalid-this
 			durationtime.innerHTML = formatTime(e.target.duration);
 		});
-	}
-	// volume =============================//
-	const volume = document.querySelector(".audio-volume");
 
-	volume.addEventListener("change", (event) => {
-		if (audio !== null) {
+		// volume =============================//
+		const volume = document.querySelector(".audio-volume");
+
+		volume.addEventListener("change", (event) => {
 			audio.volume = event.target.value;
-		}
-	});
-
+		});
+	}
 	// seeker =============================//
 	const seek = document.querySelector(".audio-seek");
 	const playback = document.querySelector(".audio-playback");
@@ -158,6 +151,7 @@
 		}
 		playback.value = event.target.value;
 	}
-
-	seek.addEventListener("change", seekhandler);
+	if (audio !== null) {
+		seek.addEventListener("change", seekhandler);
+	}
 })();
