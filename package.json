@@ -24,12 +24,12 @@
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
-		"watch": "node-sass src/sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+		"watch": "node-sass ./src/sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
 		"lint:js": "wp-scripts lint-js",
-		"lint:css:src": "wp-scripts lint-style 'src/sass/*.scss'",
+		"lint:css:src": "wp-scripts lint-style './src/sass/*.scss'",
 		"compile:css": "node-sass src/sass/ -o ./build/ && stylelint '*.scss' --fix || true && stylelint '*.scss' --fix"
 	},
 	"dependencies": {
