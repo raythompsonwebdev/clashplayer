@@ -10,22 +10,22 @@
  * @package clashplayer
  */
 
-defined('ABSPATH') || exit;
+
+// If this file is called directly, abort.
+if (!defined('WPINC')) {
+	die;
+}
 
 /**
- * Load translations (if any) for the plugin from the /languages/ folder.
- *
- * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
+ * Currently plugin version.
  */
-function clashplayer_load_textdomain()
-{
-	load_plugin_textdomain('clashplayer', false, basename(__DIR__) . '/languages');
-}
-add_action('init', 'clashplayer_load_textdomain');
-// Can only be loaded in the footer.
-// add_action('enqueue_block_assets', 'clashplayer_frontend_scripts');
-// Can be loaded in the both in head and footer.
-add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts');
+define('LIL_BP_VERSION', '1.0.0');
+
+/**
+ * Plugin URL
+ */
+define('LIL_BP_URL', plugin_dir_url(__FILE__)); // This include the trailing slash!
+
 
 /**
  * Enqueue block editor JavaScript and CSS.
@@ -33,8 +33,8 @@ add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts');
 function clashplayer_frontend_scripts()
 {
 	// Make paths variables so we don't write em twice 😉.
-	$block_path    = '/build/audio-es6.js';
-	$block_pathtwo = '/build/video-es6.js';
+	$block_path    = './build/audio-es6.js';
+	$block_pathtwo = './build/video-es6.js';
 
 	// Enqueue the bundled block JS file.
 	if (has_block('clashplayer/media')) {
@@ -54,6 +54,10 @@ function clashplayer_frontend_scripts()
 		);
 	}
 }
+// add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts');
+// Can be loaded in the both in head and footer.
+// Can only be loaded in the footer.
+// add_action('enqueue_block_assets', 'clashplayer_frontend_scripts');
 
 /**
  * Add custom "clashplayer" block category.
@@ -100,7 +104,7 @@ function clashplayer_register_blocks()
 		// script file.
 		plugins_url('build/index.js', __FILE__),
 		// dependencies.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'),
+		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data', "wp-hooks", "wp-components"),
 		// set version as file last modified time.
 		filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
 		true
@@ -126,7 +130,6 @@ function clashplayer_register_blocks()
 		filemtime(plugin_dir_path(__FILE__) . 'build/style.css')
 	);
 
-	// Loop through $blocks and register each block with the same script and styles.
 	// Calls registered styles and script above.
 	register_block_type(
 		'clashplayer/media',
@@ -138,14 +141,14 @@ function clashplayer_register_blocks()
 		)
 	);
 
-	if (function_exists('wp_set_script_translations')) {
-		/**
-		 * Adds internationalization support.
-		 *
-		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
-		 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-		 */
-		wp_set_script_translations('clashplayer-editor-script', 'clashplayer', plugin_dir_path(__FILE__) . '/languages');
-	}
+	// if (function_exists('wp_set_script_translations')) {
+	// 	/**
+	// 	 * Adds internationalization support.
+	// 	 *
+	// 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
+	// 	 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+	// 	 */
+	// 	wp_set_script_translations('clashplayer-editor-script', 'clashplayer', plugin_dir_path(__FILE__) . '/languages');
+	// }
 }
 add_action('init', 'clashplayer_register_blocks');

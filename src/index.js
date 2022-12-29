@@ -17,7 +17,6 @@ import {
 } from "@wordpress/components";
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
-import { ReactComponent as Logo } from "./bv-logo.svg";
 
 const replaceMediaUpload = () => MediaUpload;
 
@@ -29,7 +28,7 @@ addFilter(
 
 registerBlockType("clashplayer/media", {
 	title: __("ClashPlayer", "clashplayer"),
-	icon: { src: Logo },
+	icon: { src: "hammer" },
 	category: "media",
 	description: __("Audio & Video Player."),
 	attributes: {
@@ -66,12 +65,12 @@ registerBlockType("clashplayer/media", {
 			selector: "source",
 			attribute: "preload",
 		},
-		cover: {
-			type: "string",
-			source: "attribute",
-			selector: "img",
-			attribute: "src",
-		},
+		// cover: {
+		// 	type: "string",
+		// 	source: "attribute",
+		// 	selector: "img",
+		// 	attribute: "src",
+		// },
 	},
 	supports: {
 		align: ["left", "right", "full"],
@@ -162,6 +161,8 @@ registerBlockType("clashplayer/media", {
 			return audioTag;
 		};
 
+		switchType();
+
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
 				<BlockControls>
@@ -179,16 +180,6 @@ registerBlockType("clashplayer/media", {
 				</BlockControls>
 
 				<InspectorControls>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={onSelectAudio}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							value={id}
-							render={({ open }) => (
-								<Button onClick={open}>Open Media Library</Button>
-							)}
-						/>
-					</MediaUploadCheck>
 					<PanelBody title={__("Audio settings")}>
 						<TextControl
 							label="Audio or Video URL"
@@ -196,7 +187,6 @@ registerBlockType("clashplayer/media", {
 							value={src}
 							onChange={onChangeTextField}
 						/>
-
 						<ToggleControl
 							label={__("Autoplay")}
 							onChange={toggleAttribute("autoplay")}
@@ -243,8 +233,19 @@ registerBlockType("clashplayer/media", {
 						/>
 					</PanelBody>
 				</InspectorControls>
+				<BlockControls>
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={onSelectAudio}
+							allowedTypes={ALLOWED_MEDIA_TYPES}
+							value={id}
+							render={({ open }) => (
+								<Button onClick={open}>Open Media Library</Button>
+							)}
+						/>
+					</MediaUploadCheck>
+				</BlockControls>
 
-				{switchType()}
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
 						<button
@@ -370,9 +371,11 @@ registerBlockType("clashplayer/media", {
 			return audioTag;
 		};
 
+		// eslint-disable-next-line no-console
+		console.log(switchType);
+
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
-				{switchType()}
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
 						<button
