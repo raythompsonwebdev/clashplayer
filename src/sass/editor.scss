@@ -125,6 +125,20 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 2em;
+		text-align: center;
+		color: $color;
+
+		&:hover {
+			font-weight: bold;
+			color: $color;
+		}
+	}
+
 	#progress {
 		width: 100%;
 		display: inline-block;
@@ -272,6 +286,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 2em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		#play-progress {
 			display: block;
@@ -342,6 +367,17 @@
 					color: $color;
 				}
 			}
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.9em;
+
+		&:hover {
+			color: $color;
 		}
 	}
 
@@ -422,6 +458,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.8em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		#play-progress {
 			display: block;
@@ -494,6 +541,17 @@
 					color: $color;
 				}
 			}
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.7em;
+
+		&:hover {
+			color: $color;
 		}
 	}
 
@@ -575,6 +633,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.6em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		width: 100%;
 		margin: 0;
@@ -651,6 +720,17 @@
 					color: $color;
 				}
 			}
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+
+		&:hover {
+			color: $color;
 		}
 	}
 

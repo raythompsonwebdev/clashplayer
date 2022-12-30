@@ -16,13 +16,13 @@ playToggleVid.addEventListener("click", (e) => {
 		video.play();
 		video.preload = "metadata";
 
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
 	} else {
 		video.pause();
 
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 

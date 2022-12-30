@@ -152,14 +152,14 @@ registerBlockType("clashplayer/media", {
 		console.log(types);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
@@ -174,20 +174,20 @@ registerBlockType("clashplayer/media", {
 							onSelectURL={onSelectURL}
 							onError={onUploadError}
 						/>
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={onSelectAudio}
+								allowedTypes={ALLOWED_MEDIA_TYPES}
+								value={id}
+								render={({ open }) => (
+									<Button onClick={open}>Open Media Library</Button>
+								)}
+							/>
+						</MediaUploadCheck>
 					</Toolbar>
 				</BlockControls>
 
 				<InspectorControls>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={onSelectAudio}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							value={id}
-							render={({ open }) => (
-								<Button onClick={open}>Open Media Library</Button>
-							)}
-						/>
-					</MediaUploadCheck>
 					<PanelBody title={__("Audio settings")}>
 						<TextControl
 							label="Audio or Video URL"
@@ -248,29 +248,19 @@ registerBlockType("clashplayer/media", {
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">
@@ -376,14 +366,14 @@ registerBlockType("clashplayer/media", {
 		console.log(types);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>

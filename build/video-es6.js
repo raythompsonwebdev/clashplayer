@@ -1,11 +1,11 @@
 const videoControls = document.querySelector(".video-controls");
 
-const video = document.querySelector("video");
-
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
+
+const video = document.querySelector("video");
 
 // Play/Pause ============================//
 
@@ -16,13 +16,13 @@ playToggleVid.addEventListener("click", (e) => {
 		video.play();
 		video.preload = "metadata";
 
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
 	} else {
 		video.pause();
 
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 
@@ -93,14 +93,14 @@ function formatTimeVid(seconds) {
 	return `${minutes}:${seconds}`;
 }
 
-video.addEventListener("timeupdate", (e) => {
+video.addEventListener("timeupdate", () => {
 	// eslint-disable-next-line no-invalid-this
-	currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
+	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
 });
 
-video.addEventListener("durationchange", (e) => {
+video.addEventListener("durationchange", () => {
 	// eslint-disable-next-line no-invalid-this
-	durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	durationtimeVid.innerHTML = formatTimeVid(this.duration);
 });
 
 // volume =============================//

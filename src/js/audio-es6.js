@@ -20,12 +20,12 @@ playToggle.addEventListener("click", (e) => {
 	if (!isPlaying) {
 		audio.play();
 		audio.preload = "metadata";
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
 	} else {
 		audio.pause();
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 

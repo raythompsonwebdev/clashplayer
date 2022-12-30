@@ -266,6 +266,19 @@ a {
       .player-button svg.fa-backward:hover {
         font-weight: bold;
         color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 2em;
+    text-align: center;
+    color: #fff; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      font-weight: bold;
+      color: #fff; }
   #progress {
     width: 100%;
     display: inline-block;
@@ -375,6 +388,16 @@ a {
       #btns-box .player-button .fa-forward:hover,
       #btns-box .player-button .fa-backward:hover {
         color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 2em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress #play-progress {
     display: block; }
   #progress #load-progress {
@@ -417,6 +440,16 @@ a {
       #btns-box .player-button .fa-forward:hover,
       #btns-box .player-button .fa-backward:hover {
         color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 1.9em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress #play-progress {
     display: block; }
   #progress #load-progress {
@@ -462,6 +495,16 @@ a {
       #btns-box .player-button .fa-forward:hover,
       #btns-box .player-button .fa-backward:hover {
         color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 1.8em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress #play-progress {
     display: block; }
   #progress #load-progress {
@@ -506,6 +549,16 @@ a {
         #btns-box .player-button .fa-forward:hover,
         #btns-box .player-button .fa-backward:hover {
           color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 1.7em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress #play-progress {
     display: block; }
   #progress #load-progress {
@@ -554,6 +607,16 @@ a {
         #btns-box .player-button .fa-forward:hover,
         #btns-box .player-button .fa-backward:hover {
           color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 1.6em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress {
     width: 100%;
     margin: 0; }
@@ -603,6 +666,16 @@ a {
         #btns-box .player-button .fa-forward:hover,
         #btns-box .player-button .fa-backward:hover {
           color: #fff; }
+  .dashicons-controls-pause::before,
+  .dashicons-controls-play::before,
+  .dashicons-controls-forward::before,
+  .dashicons-controls-back::before {
+    font-size: 1.5em; }
+    .dashicons-controls-pause::before:hover,
+    .dashicons-controls-play::before:hover,
+    .dashicons-controls-forward::before:hover,
+    .dashicons-controls-back::before:hover {
+      color: #fff; }
   #progress {
     width: 100%;
     margin: 0; }
