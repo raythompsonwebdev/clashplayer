@@ -12,19 +12,17 @@
 
 
 // If this file is called directly, abort.
-if (!defined('WPINC')) {
-	die;
-}
+defined('ABSPATH') || exit;
 
 /**
  * Currently plugin version.
  */
-define('LIL_BP_VERSION', '1.0.0');
+define('CVWDO_VERSION', '1.0.0');
 
 /**
  * Plugin URL
  */
-define('LIL_BP_URL', plugin_dir_url(__FILE__)); // This include the trailing slash!
+define('CVWDOPATH', plugin_dir_url(__FILE__)); // This include the trailing slash!
 
 
 /**
@@ -104,7 +102,7 @@ function clashplayer_register_blocks()
 		// script file.
 		plugins_url('build/index.js', __FILE__),
 		// dependencies.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data', "wp-hooks", "wp-components"),
+		array('wp-blocks', 'wp-i18n', 'wp-editor', 'wp-data', "wp-components"),
 		// set version as file last modified time.
 		filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
 		true
@@ -141,14 +139,14 @@ function clashplayer_register_blocks()
 		)
 	);
 
-	// if (function_exists('wp_set_script_translations')) {
-	// 	/**
-	// 	 * Adds internationalization support.
-	// 	 *
-	// 	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
-	// 	 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-	// 	 */
-	// 	wp_set_script_translations('clashplayer-editor-script', 'clashplayer', plugin_dir_path(__FILE__) . '/languages');
-	// }
+	if (function_exists('wp_set_script_translations')) {
+		/**
+		 * Adds internationalization support.
+		 *
+		 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/internationalization/
+		 * @link https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+		 */
+		wp_set_script_translations('clashplayer-editor-script', 'clashplayer', plugin_dir_path(__FILE__) . '/languages');
+	}
 }
 add_action('init', 'clashplayer_register_blocks');
