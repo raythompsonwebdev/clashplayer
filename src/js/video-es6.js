@@ -1,57 +1,71 @@
 const videoControls = document.querySelector(".video-controls");
 
+const video = document.querySelector("#clashvideo-player");
+
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
 
-const video = document.querySelector("video");
-
 // Play/Pause ============================//
 
 const playToggleVid = document.querySelector(".video-toggle");
 
-playToggleVid.addEventListener("click", (e) => {
-	if (video.paused) {
-		video.play();
-		video.preload = "metadata";
+if (video !== null) {
+	video.style = "pointer-events: none;";
 
-		e.target.classList.remove("dashicons-controls-play");
-		e.target.classList.add("dashicons-controls-pause");
-	} else {
-		video.pause();
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			video.pause();
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			video.preload = "metadata";
 
-		e.target.classList.add("dashicons-controls-play");
-		e.target.classList.remove("dashicons-controls-pause");
-	}
-});
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			video.pause();
 
-// Rewind ============================//
-const rewindBtnVid = document.querySelector(".video-rewind");
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
 
-rewindBtnVid.addEventListener("click", (e) => {
-	e.target.innerHTML =
-		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
-	video.currentTime -= 10.0;
-});
+	// Rewind ============================//
+	const rewindBtnVid = document.querySelector(".video-rewind");
 
-// Forward ============================//
-const forwardBtnVid = document.querySelector(".video-forward");
+	rewindBtnVid.addEventListener("click", (e) => {
+		e.preventDefault();
 
-forwardBtnVid.addEventListener("click", (e) => {
-	e.target.innerHTML =
-		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
-	video.currentTime += 10.0;
-});
+		video.currentTime -= 10.0;
+	});
 
+	// Forward ============================//
+	const forwardBtnVid = document.querySelector(".video-forward");
+
+	forwardBtnVid.addEventListener("click", (e) => {
+		e.preventDefault();
+
+		video.currentTime += 10.0;
+	});
+}
 // Play Progress ============================//
 const playProgressVid = document.querySelector(".video-play-progress");
-
-video.addEventListener("timeupdate", (e) => {
-	const timePercentVid = (e.target.currentTime / e.target.duration) * 100;
-	playProgressVid.style.width = `${timePercentVid}%`;
-});
-
+if (video !== null) {
+	video.addEventListener("timeupdate", (e) => {
+		const timePercentVid = (e.target.currentTime / e.target.duration) * 100;
+		playProgressVid.style.width = `${timePercentVid}%`;
+	});
+}
 // Load Progress ============================//
 const loadProgressVid = document.querySelector(".video-load-progress");
 
@@ -61,20 +75,20 @@ function updateLoadProgressVid() {
 		loadProgressVid.style.width = `${percentVid}%`;
 	}
 }
-
-video.addEventListener("progress", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("loadeddata", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("canplaythrough", () => {
-	updateLoadProgressVid();
-});
-video.addEventListener("playing", () => {
-	updateLoadProgressVid();
-});
-
+if (video !== null) {
+	video.addEventListener("progress", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("loadeddata", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("canplaythrough", () => {
+		updateLoadProgressVid();
+	});
+	video.addEventListener("playing", () => {
+		updateLoadProgressVid();
+	});
+}
 // Time Display =============================//
 const durationtimeVid = document.querySelector(".video-duration");
 const currenttimeVid = document.querySelector(".video-current");
@@ -92,23 +106,24 @@ function formatTimeVid(seconds) {
 	seconds = seconds >= 10 ? seconds : `0${seconds}`;
 	return `${minutes}:${seconds}`;
 }
+if (video !== null) {
+	video.addEventListener("timeupdate", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
+	});
+	video.addEventListener("durationchange", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	});
 
-video.addEventListener("timeupdate", () => {
-	// eslint-disable-next-line no-invalid-this
-	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
-});
-
-video.addEventListener("durationchange", () => {
-	// eslint-disable-next-line no-invalid-this
-	durationtimeVid.innerHTML = formatTimeVid(this.duration);
-});
-
-// volume =============================//
-const volumeVid = document.querySelector(".video-volume");
-volumeVid.addEventListener("change", (event) => {
-	video.volume = event.target.value;
-});
-
+	// volume =============================//
+	const volumeVid = document.querySelector(".video-volume");
+	volumeVid.addEventListener("change", (event) => {
+		if (video !== null) {
+			video.volume = event.target.value;
+		}
+	});
+}
 // seeker =============================//
 const seekVid = document.querySelector(".video-seek");
 const playbackVid = document.querySelector(".video-playback");
@@ -126,14 +141,17 @@ function updateplaybackmaxVid(event) {
 		playbackVid.max = event.target.duration;
 	}
 }
-
-video.addEventListener("durationchange", updateseekmaxVid);
-video.addEventListener("durationchange", updateplaybackmaxVid);
-
+if (video !== null) {
+	video.addEventListener("durationchange", updateseekmaxVid);
+	video.addEventListener("durationchange", updateplaybackmaxVid);
+}
 // seeker hander =============================//
 function seekhandlerVid(event) {
-	video.currentTime = event.target.value;
+	if (video !== null) {
+		video.currentTime = event.target.value;
+	}
 	playbackVid.value = event.target.value;
 }
-
-seekVid.addEventListener("change", seekhandlerVid);
+if (video !== null) {
+	seekVid.addEventListener("change", seekhandlerVid);
+}

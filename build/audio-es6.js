@@ -1,62 +1,64 @@
+// eslint-disable-next-line func-names
+
 const audioControls = document.querySelector(".audio-controls");
+const audio = document.querySelector("#clashaudio-player");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
 
-const audio = document.querySelector("audio");
-
 // Play/Pause ============================//
 const playToggle = document.querySelector(".audio-toggle");
 
-playToggle.addEventListener("click", (e) => {
-	const isPlaying =
-		audio.currentTime > 0 &&
-		!audio.paused &&
-		!audio.ended &&
-		audio.readyState > 2;
+if (audio !== null) {
+	audio.style = "pointer-events: none;";
+	playToggle.addEventListener("click", (e) => {
+		const isPlaying =
+			audio.currentTime > 0 &&
+			!audio.paused &&
+			!audio.ended &&
+			audio.readyState > 2;
 
-	if (!isPlaying) {
-		audio.play();
-		audio.preload = "metadata";
-		e.target.classList.remove("dashicons-controls-play");
-		e.target.classList.add("dashicons-controls-pause");
-	} else {
-		audio.pause();
-		e.target.classList.add("dashicons-controls-play");
-		e.target.classList.remove("dashicons-controls-pause");
-	}
-});
+		if (!isPlaying) {
+			audio.play();
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			audio.pause();
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
 
-// Rewind ============================//
-const rewindBtn = document.querySelector(".audio-rewind");
+	// Rewind ============================//
+	const rewindBtn = document.querySelector(".audio-rewind");
 
-rewindBtn.addEventListener("click", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	e.target.innerHTML =
-		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
-	audio.currentTime -= 10.0;
-});
+	rewindBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		audio.currentTime -= 10.0;
+	});
 
-// Forward ============================//
-const forwardBtn = document.querySelector(".audio-forward");
+	// Forward ============================//
+	const forwardBtn = document.querySelector(".audio-forward");
 
-forwardBtn.addEventListener("click", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	e.target.innerHTML =
-		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
-	audio.currentTime += 10.0;
-});
+	forwardBtn.addEventListener("click", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		e.preventDefault();
 
+		audio.currentTime += 10.0;
+	});
+}
 // Play Progress ============================//
 const playProgress = document.querySelector(".audio-play-progress");
 
-audio.addEventListener("timeupdate", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	const timePercent = (e.target.currentTime / e.target.duration) * 100;
-	playProgress.style.width = `${timePercent}%`;
-});
+if (audio !== null) {
+	audio.addEventListener("timeupdate", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		const timePercent = (e.target.currentTime / e.target.duration) * 100;
+		playProgress.style.width = `${timePercent}%`;
+	});
+}
 
 // Load Progress ============================//
 
@@ -68,20 +70,21 @@ function updateLoadProgress() {
 		loadProgress.style.width = `${percent}%`;
 	}
 }
+if (audio !== null) {
+	audio.addEventListener("progress", () => {
+		updateLoadProgress();
+	});
 
-audio.addEventListener("progress", () => {
-	updateLoadProgress();
-});
-audio.addEventListener("loadeddata", () => {
-	updateLoadProgress();
-});
-audio.addEventListener("canplaythrough", () => {
-	updateLoadProgress();
-});
-audio.addEventListener("playing", () => {
-	updateLoadProgress();
-});
-
+	audio.addEventListener("loadeddata", () => {
+		updateLoadProgress();
+	});
+	audio.addEventListener("canplaythrough", () => {
+		updateLoadProgress();
+	});
+	audio.addEventListener("playing", () => {
+		updateLoadProgress();
+	});
+}
 // Time Display =============================//
 
 const durationtime = document.querySelector(".audio-duration");
@@ -101,23 +104,24 @@ function formatTime(seconds) {
 	return `${minutes}:${seconds}`;
 }
 
-audio.addEventListener("timeupdate", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	currenttime.innerHTML = formatTime(e.target.currentTime);
-});
+if (audio) {
+	audio.addEventListener("timeupdate", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		currenttime.innerHTML = formatTime(e.target.currentTime);
+	});
 
-audio.addEventListener("durationchange", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	durationtime.innerHTML = formatTime(e.target.duration);
-});
+	audio.addEventListener("durationchange", (e) => {
+		// eslint-disable-next-line no-invalid-this
+		durationtime.innerHTML = formatTime(e.target.duration);
+	});
 
-// volume =============================//
-const volume = document.querySelector(".audio-volume");
+	// volume =============================//
+	const volume = document.querySelector(".audio-volume");
 
-volume.addEventListener("change", (event) => {
-	audio.volume = event.target.value;
-});
-
+	volume.addEventListener("change", (event) => {
+		audio.volume = event.target.value;
+	});
+}
 // seeker =============================//
 const seek = document.querySelector(".audio-seek");
 const playback = document.querySelector(".audio-playback");
@@ -136,13 +140,17 @@ function updateplaybackmax(event) {
 	}
 }
 
-audio.addEventListener("durationchange", updateseekmax);
-audio.addEventListener("durationchange", updateplaybackmax);
-
+if (audio !== null) {
+	audio.addEventListener("durationchange", updateseekmax);
+	audio.addEventListener("durationchange", updateplaybackmax);
+}
 // seeker hander =============================//
 function seekhandler(event) {
-	audio.currentTime = event.target.value;
+	if (audio !== null) {
+		audio.currentTime = event.target.value;
+	}
 	playback.value = event.target.value;
 }
-
-seek.addEventListener("change", seekhandler);
+if (audio !== null) {
+	seek.addEventListener("change", seekhandler);
+}
