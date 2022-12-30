@@ -7,6 +7,8 @@ if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
 
+const video = document.querySelector("video");
+
 // Play/Pause ============================//
 
 const playToggleVid = document.querySelector(".video-toggle");
@@ -21,6 +23,20 @@ if (video !== null) {
 			e.target.classList.add("dashicons-controls-pause");
 		} else {
 			video.pause();
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			video.preload = "metadata";
+
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			video.pause();
+
 			e.target.classList.add("dashicons-controls-play");
 			e.target.classList.remove("dashicons-controls-pause");
 		}
@@ -100,6 +116,16 @@ if (video !== null) {
 	video.addEventListener("durationchange", (e) => {
 		// eslint-disable-next-line no-invalid-this
 		durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	});
+
+	video.addEventListener("timeupdate", () => {
+		// eslint-disable-next-line no-invalid-this
+		currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
+	});
+
+	video.addEventListener("durationchange", () => {
+		// eslint-disable-next-line no-invalid-this
+		durationtimeVid.innerHTML = formatTimeVid(this.duration);
 	});
 
 	// volume =============================//

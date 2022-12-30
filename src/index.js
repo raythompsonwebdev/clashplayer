@@ -155,14 +155,14 @@ registerBlockType("clashplayer/media", {
 		);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
@@ -177,6 +177,16 @@ registerBlockType("clashplayer/media", {
 							onSelectURL={onSelectURL}
 							onError={onUploadError}
 						/>
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={onSelectAudio}
+								allowedTypes={ALLOWED_MEDIA_TYPES}
+								value={id}
+								render={({ open }) => (
+									<Button onClick={open}>Open Media Library</Button>
+								)}
+							/>
+						</MediaUploadCheck>
 					</Toolbar>
 				</BlockControls>
 
@@ -366,14 +376,14 @@ registerBlockType("clashplayer/media", {
 		);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
