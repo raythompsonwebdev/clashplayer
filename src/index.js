@@ -15,7 +15,6 @@ import {
 } from "@wordpress/components";
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
-import { ReactComponent as Logo } from "./bv-logo.svg";
 
 const replaceMediaUpload = () => MediaUpload;
 
@@ -27,7 +26,7 @@ addFilter(
 
 registerBlockType("clashplayer/media", {
 	title: __("ClashPlayer", "clashplayer"),
-	icon: { src: Logo },
+	icon: { src: "hammer" },
 	category: "media",
 	attributes: {
 		src: {
