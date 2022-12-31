@@ -9,12 +9,11 @@
 .download-button {
 	width: 40%;
 	display: block;
-
 	height: auto;
 	line-height: 30px;
 	margin: 0 auto;
-	border: 2px solid $color2;
-	color: $color4;
+	border: 2px solid $yellow;
+	color: $black-red;
 	text-align: center;
 }
 
@@ -31,7 +30,7 @@
 	width: auto;
 	display: block;
 	margin: auto;
-	background-color: #000;
+	background-color: $black;
 	height: 100px;
 }
 
@@ -40,14 +39,13 @@
 	height: auto;
 	width: 100%;
 	margin: 0 auto;
-	border: $color11 solid 1px;
+	border: $black solid 1px;
 	padding: 0.5em;
-	background-color: $color4;
+	background-color: $black-red;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(4, 25px);
-	grid-column-gap: 2px;
-	grid-row-gap: 2px;
+	grid-gap: 2px;
 }
 
 .dashicons-controls-pause::before,
@@ -57,21 +55,28 @@
 	font-size: 1.5em;
 	text-align: center;
 	display: block;
-	color: $color;
+	color: $white;
 	line-height: 40px;
 	margin: auto;
 
 	&:hover {
 		font-weight: bold;
-		color: $color;
+		color: $white;
 	}
 }
 
 #btns-box {
 	grid-area: 1 / 1 / 3 / 3;
+	height: 45px;
+	width: 100%;
 }
 #progress {
 	grid-area: 1 / 3 / 3 / 6;
+	width: 100%;
+	display: inline-block;
+	background-color: $white;
+	position: relative;
+	height: 24px;
 }
 .audio-seek,
 .video-seek {
@@ -81,7 +86,7 @@
 label[for="seek"] {
 	width: 100%;
 	line-height: 25px;
-	color: $color4;
+	color: $black-red;
 	margin: 0;
 	padding: 0;
 	display: block;
@@ -93,18 +98,13 @@ label[for="seek"] {
 	margin: 0;
 	padding: 0;
 }
-#time {
-	grid-area: 3 / 1 / 4 / 6;
-}
+
 .audio-volume,
 .video-volume {
 	grid-area: 4 / 1 / 5 / 6;
-}
-
-#btns-box {
-	height: 45px;
 	width: 100%;
 }
+
 .player-button {
 	width: 33.3%;
 	display: block;
@@ -114,35 +114,29 @@ label[for="seek"] {
 	font-size: 1em;
 	transform-origin: 50% 50%;
 	transition: all 0.2s linear 0s;
-	color: $color4;
-	border: $color11 solid 1px;
-	background-color: $color7;
+	color: $black-red;
+	border: $black solid 1px;
+	background-color: $green;
 	float: left;
+	padding: 0;
 
 	&:hover {
-		background-color: $color4;
-		color: $color;
-		border: $color11 solid 1px;
+		background-color: $black-red;
+		color: $white;
+		border: $black solid 1px;
 		cursor: pointer;
 	}
 
 	&:active {
-		background-color: $color4;
+		background-color: $black-red;
 	}
 }
 
-#progress {
-	width: 100%;
-	display: inline-block;
-	background-color: $color;
-	position: relative;
-	height: 24px;
-}
 #play-progress {
 	position: absolute;
 	top: 0;
 	z-index: 2;
-	background-color: $color2;
+	background-color: $yellow;
 	height: 12px;
 	display: block;
 	margin: 0;
@@ -152,7 +146,7 @@ label[for="seek"] {
 }
 
 #load-progress {
-	background-color: $color8;
+	background-color: $yellow;
 	height: 12px;
 	display: block;
 	margin: 0;
@@ -160,43 +154,41 @@ label[for="seek"] {
 }
 
 #time {
+	grid-area: 3 / 1 / 4 / 6;
 	width: 100%;
-	color: $color4;
+	color: $black-red;
 	height: 25px;
 	display: flex;
-
-	span {
-		width: 25%;
+	text-align: center;
+	span:nth-of-type(odd) {
+		width: 15%;
 		line-height: 25px;
 		text-align: center;
 		font-size: 0.7em;
 		display: block;
-		background-color: $color;
-		color: $color4;
+		background-color: $white;
+		color: $black-red;
 		margin-right: 0;
 		float: left;
 	}
 }
+
 #duration-time {
 	font-size: 0.9em;
-	color: $color7;
-	background-color: $color4;
+	color: $green;
+	background-color: $black-red;
 	border: none;
-	text-shadow: 1px 1px rgb(53, 51, 51);
+	width: 20%;
+	line-height: 25px;
 }
 
 #current-time {
 	font-size: 0.9em;
-	color: $color7;
-	background-color: $color4;
+	color: $green;
+	background-color: $black-red;
 	border: none;
-
-	text-shadow: 1px 1px rgb(53, 51, 51);
-}
-
-.audio-volume,
-.video-volume {
-	width: 100%;
+	width: 20%;
+	line-height: 25px;
 }
 
 #volume-bar {
@@ -213,7 +205,7 @@ input[type="range"] {
 	height: 25px;
 }
 
-#video_player {
+#video-player {
 	width: 100%;
 	margin: 0 auto;
 	display: block;
@@ -225,7 +217,6 @@ iframe {
 	width: 100%;
 	margin: 1em auto;
 }
-
 @media screen and (min-width: 1920px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
@@ -260,8 +251,7 @@ iframe {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 25px);
-		grid-column-gap: 2px;
-		grid-row-gap: 2px;
+		grid-gap: 2px;
 	}
 
 	.dashicons-controls-pause::before,
@@ -278,9 +268,15 @@ iframe {
 
 	#btns-box {
 		grid-area: 1 / 1 / 3 / 3;
+		height: 45px;
+		width: 100%;
 	}
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
+		display: inline-block;
+		position: relative;
+		height: 24px;
+		background-color: $white;
 	}
 	.audio-seek,
 	.video-seek {
@@ -296,18 +292,12 @@ iframe {
 		display: block;
 		height: 25px;
 	}
-	#time {
-		grid-area: 3 / 1 / 4 / 6;
-	}
 	.audio-volume,
 	.video-volume {
 		grid-area: 4 / 1 / 5 / 6;
-	}
-
-	#btns-box {
-		height: 45px;
 		width: 100%;
 	}
+
 	.player-button {
 		width: 33.3%;
 		display: block;
@@ -320,19 +310,12 @@ iframe {
 		}
 
 		&:active {
-			background-color: $color4;
+			background-color: $black-red;
 		}
 	}
 
-	#progress {
-		width: 100%;
-		display: inline-block;
-		background-color: $color;
-		position: relative;
-		height: 24px;
-	}
-	progress#playback {
-		background-color: $color4;
+	#playback {
+		background-color: $black-red;
 		height: 12px;
 		display: block;
 		margin: 0;
@@ -344,7 +327,7 @@ iframe {
 		position: absolute;
 		top: 0;
 		z-index: 2;
-		background-color: $color2;
+		background-color: $yellow;
 		height: 12px;
 		display: block;
 		margin: 0;
@@ -354,7 +337,7 @@ iframe {
 	}
 
 	#load-progress {
-		background-color: $color8;
+		background-color: $yellow;
 		height: 12px;
 		display: block;
 		margin: 0;
@@ -362,42 +345,37 @@ iframe {
 	}
 
 	#time {
+		grid-area: 3 / 1 / 4 / 6;
 		width: 100%;
-		color: $color4;
+		color: $black-red;
 		height: 25px;
 		display: flex;
-		span {
-			width: 25%;
+		span:nth-of-type(odd) {
+			width: 15%;
 			line-height: 25px;
 			text-align: center;
 			font-size: 0.8em;
 			display: block;
-			background-color: $color;
-			color: $color4;
+			background-color: $white;
+			color: $black-red;
 			margin-right: 0;
 			float: left;
 		}
 	}
 	#duration-time {
-		color: $color7;
-		background-color: $color4;
+		color: $green;
+		background-color: $black-red;
 		border: none;
 		font-size: 1em;
-		text-shadow: 1px 1px rgb(53, 51, 51);
 	}
 
 	#current-time {
-		color: $color7;
-		background-color: $color4;
+		color: $green;
+		background-color: $black-red;
 		border: none;
 		font-size: 1em;
-		text-shadow: 1px 1px rgb(53, 51, 51);
 	}
 
-	.audio-volume,
-	.video-volume {
-		width: 100%;
-	}
 	#volume-bar {
 		width: 100%;
 		display: block;
@@ -412,7 +390,7 @@ iframe {
 		height: 25px;
 	}
 
-	#video_player {
+	#video-player {
 		width: 100%;
 		margin: 0 auto;
 		display: block;
@@ -461,12 +439,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 	}
 	#play-progress {
@@ -479,8 +459,8 @@ iframe {
 
 	#time {
 		display: flex;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -544,12 +524,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 	}
 	#play-progress {
@@ -562,8 +544,8 @@ iframe {
 
 	#time {
 		display: flex;
-		span {
-			width: 25%;
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -625,12 +607,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 	}
 	#play-progress {
@@ -643,8 +627,8 @@ iframe {
 
 	#time {
 		display: flex;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.7em;
 		}
 	}
@@ -704,12 +688,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 	}
 	#play-progress {
@@ -722,8 +708,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.75em;
 		}
 	}
@@ -784,12 +770,14 @@ iframe {
 	#btns-box {
 		width: 100%;
 		margin-bottom: 0.5em;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 		margin: 0;
 	}
@@ -803,8 +791,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.9em;
 		}
 	}
@@ -864,12 +852,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 		margin: 0;
 	}
@@ -883,9 +873,10 @@ iframe {
 
 	#time {
 		width: 100%;
-	}
-	span {
-		font-size: 0.9em;
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
+			font-size: 0.9em;
+		}
 	}
 
 	#duration-time {
@@ -943,12 +934,14 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 		margin: 0;
 	}
@@ -962,8 +955,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.9em;
 		}
 	}
@@ -1022,12 +1015,14 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
 	}
 	#play-progress {
@@ -1040,8 +1035,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -1100,12 +1095,14 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 98%;
 	}
 	#play-progress {
@@ -1118,8 +1115,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -1183,12 +1180,14 @@ iframe {
 
 	#btns-box {
 		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
 
 	#progress {
+		grid-area: 1 / 3 / 3 / 6;
 		width: 98%;
 	}
 	#play-progress {
@@ -1201,8 +1200,8 @@ iframe {
 
 	#time {
 		width: 100%;
-
-		span {
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
 			font-size: 0.7em;
 		}
 	}

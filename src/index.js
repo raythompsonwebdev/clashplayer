@@ -377,17 +377,17 @@ registerBlockType("clashplayer/media", {
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
 						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
 						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
 						/>
 					</div>

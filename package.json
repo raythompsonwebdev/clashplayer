@@ -1,8 +1,37 @@
 {
 	"name": "clashplayer",
-	"version": "1.0.0",
+	"url": "https://github.com/raythompsonwebdev/clashplayer/issues",
+	"email": "ray_thomp@hushmail.com",
+	"version": "2.0.0",
+	"description": "Audio and Video file player for clashvibes theme",
+	"author": "Raymond Thompson <raythompwebdev.co.uk> (http://raythompsonwebdev.co.uk/)",
 	"license": "GPL-3.0-or-later",
+	"keywords": [
+		"clashvibes",
+		"reggae sound clash",
+		"audio",
+		"video"
+	],
+	"homepage": "https://github.com/raythompsonwebdev/clashplayer#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/raythompsonwebdev/clashplayer"
+	},
 	"main": "src/index.js",
+	"dependencies": {
+		"@csstools/postcss-sass": "^5.0.1",
+		"@wordpress/block-editor": "^10.5.0",
+		"@wordpress/blocks": "^11.21.0",
+		"@wordpress/components": "^22.1.0",
+		"@wordpress/hooks": "^3.22.0",
+		"@wordpress/i18n": "^4.22.0",
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.19",
+		"postcss-preset-env": "^7.8.3",
+		"postcss-scss": "^4.0.6",
+		"react": "^17.0.2",
+		"stylelint": "^14.15.0"
+	},
 	"devDependencies": {
 		"@svgr/webpack": "^6.5.1",
 		"@wordpress/data": "^7.6.0",
@@ -27,24 +56,12 @@
 		"watch": "node-sass src/sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
-		"format:js": "wp-scripts format-js",
-		"lint:js": "wp-scripts lint-js",
+		"format:src": "wp-scripts format ./src",
+		"lint:js:src": "wp-scripts lint-js ./src",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"lint:css:src": "wp-scripts lint-style 'src/**/*.scss'",
-		"compile:css": "node-sass src/sass/ -o ./build/ && stylelint '*.scss' --fix || true && stylelint '*.scss' --fix"
-	},
-	"dependencies": {
-		"@csstools/postcss-sass": "^5.0.1",
-		"@wordpress/block-editor": "^10.5.0",
-		"@wordpress/blocks": "^11.21.0",
-		"@wordpress/components": "^22.1.0",
-		"@wordpress/hooks": "^3.22.0",
-		"@wordpress/i18n": "^4.22.0",
-		"autoprefixer": "^10.4.13",
-		"postcss": "^8.4.19",
-		"postcss-preset-env": "^7.8.3",
-		"postcss-scss": "^4.0.6",
-		"react": "^17.0.2",
-		"stylelint": "^14.15.0"
+		"compile:css": "node-sass src/sass/ -o ./build/ && stylelint && postcss '*.scss' --fix || true && stylelint && postcss '*.scss' --fix",
+		"plugin-zip": "wp-scripts plugin-zip"
 	},
 	"browserslist": [
 		"> 1%",

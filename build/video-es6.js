@@ -21,8 +21,8 @@ playToggleVid.addEventListener("click", (e) => {
 	} else {
 		video.pause();
 
-		e.target.classList.remove("dashicons-controls-play");
-		e.target.classList.add("dashicons-controls-pause");
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 
