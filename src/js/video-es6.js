@@ -16,31 +16,27 @@ playToggleVid.addEventListener("click", (e) => {
 		video.play();
 		video.preload = "metadata";
 
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	} else {
 		video.pause();
 
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 
 // Rewind ============================//
 const rewindBtnVid = document.querySelector(".video-rewind");
 
-rewindBtnVid.addEventListener("click", (e) => {
-	e.target.innerHTML =
-		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
+rewindBtnVid.addEventListener("click", () => {
 	video.currentTime -= 10.0;
 });
 
 // Forward ============================//
 const forwardBtnVid = document.querySelector(".video-forward");
 
-forwardBtnVid.addEventListener("click", (e) => {
-	e.target.innerHTML =
-		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
+forwardBtnVid.addEventListener("click", () => {
 	video.currentTime += 10.0;
 });
 
@@ -93,14 +89,14 @@ function formatTimeVid(seconds) {
 	return `${minutes}:${seconds}`;
 }
 
-video.addEventListener("timeupdate", () => {
+video.addEventListener("timeupdate", (e) => {
 	// eslint-disable-next-line no-invalid-this
-	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
+	currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
 });
 
-video.addEventListener("durationchange", () => {
+video.addEventListener("durationchange", (e) => {
 	// eslint-disable-next-line no-invalid-this
-	durationtimeVid.innerHTML = formatTimeVid(this.duration);
+	durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
 });
 
 // volume =============================//

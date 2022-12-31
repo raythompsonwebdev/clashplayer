@@ -5,7 +5,6 @@ import {
 	InspectorControls,
 	MediaReplaceFlow,
 	MediaUpload,
-	MediaUploadCheck,
 } from "@wordpress/block-editor";
 import {
 	PanelBody,
@@ -13,7 +12,6 @@ import {
 	ToggleControl,
 	TextControl,
 	Toolbar,
-	Button,
 } from "@wordpress/components";
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
@@ -164,8 +162,6 @@ registerBlockType("clashplayer/media", {
 		// eslint-disable-next-line no-console
 		console.log(switchType);
 
-		switchType();
-
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
 				<BlockControls>
@@ -183,16 +179,6 @@ registerBlockType("clashplayer/media", {
 				</BlockControls>
 
 				<InspectorControls>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={onSelectAudio}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							value={id}
-							render={({ open }) => (
-								<Button onClick={open}>Open Media Library</Button>
-							)}
-						/>
-					</MediaUploadCheck>
 					<PanelBody title={__("Audio settings")}>
 						<TextControl
 							label="Audio or Video URL"
@@ -248,21 +234,23 @@ registerBlockType("clashplayer/media", {
 					</PanelBody>
 				</InspectorControls>
 
+				{switchType()}
+
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
 						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
 						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
 						/>
 					</div>
@@ -381,8 +369,6 @@ registerBlockType("clashplayer/media", {
 
 		// eslint-disable-next-line no-console
 		console.log(switchType);
-
-		switchType();
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>

@@ -20,32 +20,26 @@ playToggle.addEventListener("click", (e) => {
 	if (!isPlaying) {
 		audio.play();
 		audio.preload = "metadata";
-		e.target.innerHTML =
-			'<i class="fa fa-pause" aria-hidden="true" title="Pause"></i>';
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
 	} else {
 		audio.pause();
-		e.target.innerHTML =
-			'<i class="fa fa-play" aria-hidden="true" title="Play"></i>';
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
 	}
 });
 
 // Rewind ============================//
 const rewindBtn = document.querySelector(".audio-rewind");
 
-rewindBtn.addEventListener("click", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	e.target.innerHTML =
-		'<i class="fa fa-backward" aria-hidden="true" title="Backward"></i>';
+rewindBtn.addEventListener("click", () => {
 	audio.currentTime -= 10.0;
 });
 
 // Forward ============================//
 const forwardBtn = document.querySelector(".audio-forward");
 
-forwardBtn.addEventListener("click", (e) => {
-	// eslint-disable-next-line no-invalid-this
-	e.target.innerHTML =
-		'<i class="fa fa-forward" aria-hidden="true" title="Forward"></i>';
+forwardBtn.addEventListener("click", () => {
 	audio.currentTime += 10.0;
 });
 
@@ -53,7 +47,6 @@ forwardBtn.addEventListener("click", (e) => {
 const playProgress = document.querySelector(".audio-play-progress");
 
 audio.addEventListener("timeupdate", (e) => {
-	// eslint-disable-next-line no-invalid-this
 	const timePercent = (e.target.currentTime / e.target.duration) * 100;
 	playProgress.style.width = `${timePercent}%`;
 });

@@ -1,9 +1,8 @@
 @import "partials/variables";
-@import "partials/mixins";
 @import "partials/base";
 
 .wp-block-clashplayer-media {
-	width: 90%;
+	width: 100%;
 	display: block;
 	margin: auto;
 }
@@ -51,6 +50,23 @@
 	grid-row-gap: 2px;
 }
 
+.dashicons-controls-pause::before,
+.dashicons-controls-play::before,
+.dashicons-controls-forward::before,
+.dashicons-controls-back::before {
+	font-size: 1.5em;
+	text-align: center;
+	display: block;
+	color: $color;
+	line-height: 40px;
+	margin: auto;
+
+	&:hover {
+		font-weight: bold;
+		color: $color;
+	}
+}
+
 #btns-box {
 	grid-area: 1 / 1 / 3 / 3;
 }
@@ -85,51 +101,33 @@ label[for="seek"] {
 	grid-area: 4 / 1 / 5 / 6;
 }
 
-.fa-pause,
-.fa-play,
-.fa-forward,
-.fa-backward {
-	font-size: 2em;
-	text-align: center;
-	display: block;
-	color: $color;
-	line-height: 53px;
-	margin: auto;
-
-	&:hover {
-		font-weight: bold;
-		color: $color;
-	}
-}
-
 #btns-box {
 	height: 45px;
 	width: 100%;
+}
+.player-button {
+	width: 33.3%;
+	display: block;
+	height: 100%;
+	outline: none;
+	text-align: center;
+	font-size: 1em;
+	transform-origin: 50% 50%;
+	transition: all 0.2s linear 0s;
+	color: $color4;
+	border: $color11 solid 1px;
+	background-color: $color7;
+	float: left;
 
-	.player-button {
-		width: 33.3%;
-		display: block;
-		height: 100%;
-		outline: none;
-		text-align: center;
-		font-size: 1em;
-		transform-origin: 50% 50%;
-		transition: all 0.2s linear 0s;
-		color: $color4;
+	&:hover {
+		background-color: $color4;
+		color: $color;
 		border: $color11 solid 1px;
-		background-color: $color7;
-		float: left;
+		cursor: pointer;
+	}
 
-		&:hover {
-			background-color: $color4;
-			color: $color;
-			border: $color11 solid 1px;
-			cursor: pointer;
-		}
-
-		&:active {
-			background-color: $color4;
-		}
+	&:active {
+		background-color: $color4;
 	}
 }
 
@@ -139,27 +137,26 @@ label[for="seek"] {
 	background-color: $color;
 	position: relative;
 	height: 24px;
+}
+#play-progress {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	background-color: $color2;
+	height: 12px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	left: 0;
+}
 
-	#play-progress {
-		position: absolute;
-		top: 0;
-		z-index: 2;
-		background-color: $color2;
-		height: 12px;
-		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		left: 0;
-	}
-
-	#load-progress {
-		background-color: $color8;
-		height: 12px;
-		display: block;
-		margin: 0;
-		padding: 0;
-	}
+#load-progress {
+	background-color: $color8;
+	height: 12px;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 
 #time {
@@ -179,29 +176,29 @@ label[for="seek"] {
 		margin-right: 0;
 		float: left;
 	}
+}
+#duration-time {
+	font-size: 0.9em;
+	color: $color7;
+	background-color: $color4;
+	border: none;
+	text-shadow: 1px 1px rgb(53, 51, 51);
+}
 
-	#duration-time {
-		font-size: 0.9em;
-		color: $color7;
-		background-color: $color4;
-		border: none;
-		text-shadow: 1px 1px rgb(53, 51, 51);
-	}
+#current-time {
+	font-size: 0.9em;
+	color: $color7;
+	background-color: $color4;
+	border: none;
 
-	#current-time {
-		font-size: 0.9em;
-		color: $color7;
-		background-color: $color4;
-		border: none;
-
-		text-shadow: 1px 1px rgb(53, 51, 51);
-	}
+	text-shadow: 1px 1px rgb(53, 51, 51);
 }
 
 .audio-volume,
 .video-volume {
 	width: 100%;
 }
+
 #volume-bar {
 	width: 100%;
 	display: block;
@@ -231,18 +228,13 @@ iframe {
 
 @media screen and (min-width: 1920px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
-		display: block;
-		margin: auto;
+		width: 100%;
 	}
 	.download-button {
 		display: block;
 		width: 30%;
 		height: auto;
 		line-height: 30px;
-		margin: 0 auto;
-		border: 2px solid $color2;
-		color: $color4;
 		text-align: center;
 	}
 	#clashaudio-player {
@@ -257,7 +249,6 @@ iframe {
 		width: auto;
 		display: block;
 		margin: auto;
-		background-color: #000;
 		height: 100px;
 	}
 
@@ -265,17 +256,26 @@ iframe {
 	.audio-controls,
 	.video-controls {
 		height: auto;
-		width: 100%;
-		margin: 0 auto;
-		border: $color11 solid 1px;
 		padding: 0.5em;
-		background-color: $color4;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 25px);
 		grid-column-gap: 2px;
 		grid-row-gap: 2px;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.9em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
 		grid-area: 1 / 1 / 3 / 3;
 	}
@@ -290,17 +290,11 @@ iframe {
 	label[for="seek"] {
 		width: 100%;
 		line-height: 25px;
-		color: $color4;
-		margin: 0;
-		padding: 0;
 		display: block;
 	}
 	#seek {
-		width: 100%;
 		display: block;
 		height: 25px;
-		margin: 0;
-		padding: 0;
 	}
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
@@ -313,52 +307,20 @@ iframe {
 	#btns-box {
 		height: 45px;
 		width: 100%;
+	}
+	.player-button {
+		width: 33.3%;
+		display: block;
+		text-align: center;
+		font-size: 1em;
+		float: left;
 
-		.player-button {
-			width: 33.3%;
-			display: block;
-			height: 100%;
-			outline: none;
-			text-align: center;
-			font-size: 1em;
-			transform-origin: 50% 50%;
-			transition: all 0.2s linear 0s;
-			color: $color4;
-			border: $color11 solid 1px;
-			background-color: $color7;
-			float: left;
+		&:hover {
+			cursor: pointer;
+		}
 
-			&:hover {
-				background-color: $color4;
-				color: $color;
-				border: $color11 solid 1px;
-				cursor: pointer;
-			}
-
-			&:active {
-				background-color: $color4;
-			}
-
-			.fa-pause,
-			svg.fa-pause,
-			.fa-play,
-			svg.fa-play,
-			.fa-forward,
-			svg.fa-forward,
-			.fa-backward,
-			svg.fa-backward {
-				font-size: 2em;
-				text-align: center;
-				display: block;
-				color: $color;
-				line-height: 53px;
-				margin: auto;
-
-				&:hover {
-					font-weight: bold;
-					color: $color;
-				}
-			}
+		&:active {
+			background-color: $color4;
 		}
 	}
 
@@ -368,36 +330,35 @@ iframe {
 		background-color: $color;
 		position: relative;
 		height: 24px;
+	}
+	progress#playback {
+		background-color: $color4;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
 
-		progress#playback {
-			background-color: $color4;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-		}
+	#play-progress {
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		background-color: $color2;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		left: 0;
+	}
 
-		#play-progress {
-			position: absolute;
-			top: 0;
-			z-index: 2;
-			background-color: $color2;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			left: 0;
-		}
-
-		#load-progress {
-			background-color: $color8;
-			height: 12px;
-			display: block;
-			margin: 0;
-			padding: 0;
-		}
+	#load-progress {
+		background-color: $color8;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
 	}
 
 	#time {
@@ -416,22 +377,21 @@ iframe {
 			margin-right: 0;
 			float: left;
 		}
+	}
+	#duration-time {
+		color: $color7;
+		background-color: $color4;
+		border: none;
+		font-size: 1em;
+		text-shadow: 1px 1px rgb(53, 51, 51);
+	}
 
-		#duration-time {
-			color: $color7;
-			background-color: $color4;
-			border: none;
-			font-size: 1em;
-			text-shadow: 1px 1px rgb(53, 51, 51);
-		}
-
-		#current-time {
-			color: $color7;
-			background-color: $color4;
-			border: none;
-			font-size: 1em;
-			text-shadow: 1px 1px rgb(53, 51, 51);
-		}
+	#current-time {
+		color: $color7;
+		background-color: $color4;
+		border: none;
+		font-size: 1em;
+		text-shadow: 1px 1px rgb(53, 51, 51);
 	}
 
 	.audio-volume,
@@ -467,7 +427,7 @@ iframe {
 }
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 30%;
@@ -486,46 +446,50 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
-	#btns-box {
-		.player-button {
-			width: 33.3%;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 2em;
-				line-height: 53px;
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.7em;
+		line-height: 40px;
 
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			font-weight: bold;
 		}
+	}
+
+	#btns-box {
+		width: 100%;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		width: 100%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		display: flex;
+
 		span {
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -547,7 +511,7 @@ iframe {
 }
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -565,46 +529,50 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
-	#btns-box {
-		.player-button {
-			width: 33.3%;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.6em;
+		line-height: 40px;
 
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			font-weight: bold;
 		}
+	}
+
+	#btns-box {
+		width: 100%;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		width: 100%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		display: flex;
 		span {
 			width: 25%;
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -627,7 +595,7 @@ iframe {
 }
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -643,45 +611,49 @@ iframe {
 		width: 100%;
 	}
 
-	#btns-box {
-		.player-button {
-			width: 33.3%;
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			font-weight: bold;
 		}
+	}
+
+	#btns-box {
+		width: 100%;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		width: 100%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
+		display: flex;
+
 		span {
 			font-size: 0.7em;
 		}
+	}
+	#duration-time {
+		font-size: 0.85em;
+	}
 
-		#duration-time {
-			font-size: 0.85em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	#current-time {
+		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
@@ -703,7 +675,7 @@ iframe {
 }
 @media screen and (min-width: 800px) and (max-width: 1023px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -717,33 +689,35 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
-	#btns-box {
-		width: 45%;
 
-		.player-button {
-			width: 33.3%;
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
 
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
+		&:hover {
+			font-weight: bold;
 		}
 	}
 
-	#progress {
-		#play-progress {
-			display: block;
-		}
+	#btns-box {
+		width: 100%;
+	}
+	.player-button {
+		width: 33.3%;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#progress {
+		width: 100%;
+	}
+	#play-progress {
+		display: block;
+	}
+
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -752,14 +726,13 @@ iframe {
 		span {
 			font-size: 0.75em;
 		}
+	}
+	#duration-time {
+		font-size: 0.9em;
+	}
 
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	#current-time {
+		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
@@ -782,7 +755,7 @@ iframe {
 }
 @media screen and (min-width: 667px) and (max-width: 799px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -796,35 +769,36 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
 	#btns-box {
 		width: 100%;
 		margin-bottom: 0.5em;
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		width: 100%;
 		margin: 0;
-		#play-progress {
-			display: block;
-		}
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -833,14 +807,13 @@ iframe {
 		span {
 			font-size: 0.9em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -862,7 +835,7 @@ iframe {
 }
 @media screen and (min-width: 640px) and (max-width: 666px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -876,52 +849,51 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
 		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		width: 100%;
 		margin: 0;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
 		width: 100%;
+	}
+	span {
+		font-size: 0.9em;
+	}
 
-		span {
-			font-size: 0.9em;
-		}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -943,7 +915,7 @@ iframe {
 }
 @media screen and (min-width: 536px) and (max-width: 639px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -957,36 +929,35 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
 	#btns-box {
 		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		width: 100%;
 		margin: 0;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -995,14 +966,13 @@ iframe {
 		span {
 			font-size: 0.9em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -1024,7 +994,7 @@ iframe {
 }
 @media screen and (min-width: 480px) and (max-width: 535px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -1038,33 +1008,34 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.3em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
 	#btns-box {
 		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
-		#play-progress {
-			display: block;
-		}
+		width: 100%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -1073,14 +1044,13 @@ iframe {
 		span {
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -1102,7 +1072,7 @@ iframe {
 }
 @media screen and (min-width: 414px) and (max-width: 479px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -1116,35 +1086,34 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.3em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
 	#btns-box {
 		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		width: 98%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -1153,14 +1122,13 @@ iframe {
 		span {
 			font-size: 0.8em;
 		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
 
-		#duration-time {
-			font-size: 1em;
-		}
-
-		#current-time {
-			font-size: 1em;
-		}
+	#current-time {
+		font-size: 1em;
 	}
 
 	label[for="seek"] {
@@ -1186,7 +1154,7 @@ iframe {
 }
 @media screen and (min-width: 360px) and (max-width: 413px) {
 	.wp-block-clashplayer-media {
-		width: 80%;
+		width: 100%;
 	}
 	.download-button {
 		width: 40%;
@@ -1200,35 +1168,35 @@ iframe {
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.3em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
 		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		width: 98%;
+	}
+	#play-progress {
+		display: block;
+	}
 
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
+	#load-progress {
+		display: block;
 	}
 
 	#time {
@@ -1237,14 +1205,13 @@ iframe {
 		span {
 			font-size: 0.7em;
 		}
+	}
+	#duration-time {
+		font-size: 0.9em;
+	}
 
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
+	#current-time {
+		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
