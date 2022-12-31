@@ -152,7 +152,10 @@ registerBlockType("clashplayer/media", {
 		console.log(types);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
@@ -160,6 +163,8 @@ registerBlockType("clashplayer/media", {
 
 		// eslint-disable-next-line no-console
 		console.log(switchType);
+
+		switchType();
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
@@ -243,34 +248,23 @@ registerBlockType("clashplayer/media", {
 					</PanelBody>
 				</InspectorControls>
 
-				{switchType()}
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
 						<button
 							id="play-toggle"
 							className="player-button audio-toggle video-toggle"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
 							className="player-button audio-rewind video-rewind"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
 							className="player-button audio-forward video-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">
@@ -376,7 +370,10 @@ registerBlockType("clashplayer/media", {
 		console.log(types);
 
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
@@ -384,6 +381,8 @@ registerBlockType("clashplayer/media", {
 
 		// eslint-disable-next-line no-console
 		console.log(switchType);
+
+		switchType();
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
@@ -394,27 +393,17 @@ registerBlockType("clashplayer/media", {
 							id="play-toggle"
 							className="player-button audio-toggle video-toggle"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
 							className="player-button audio-rewind video-rewind"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
 							className="player-button audio-forward video-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">

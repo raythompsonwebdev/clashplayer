@@ -1,11 +1,11 @@
 const videoControls = document.querySelector(".video-controls");
 
-const video = document.querySelector("video");
-
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
+
+const video = document.querySelector("video");
 
 // Play/Pause ============================//
 
@@ -93,14 +93,14 @@ function formatTimeVid(seconds) {
 	return `${minutes}:${seconds}`;
 }
 
-video.addEventListener("timeupdate", (e) => {
+video.addEventListener("timeupdate", () => {
 	// eslint-disable-next-line no-invalid-this
-	currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
+	currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
 });
 
-video.addEventListener("durationchange", (e) => {
+video.addEventListener("durationchange", () => {
 	// eslint-disable-next-line no-invalid-this
-	durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	durationtimeVid.innerHTML = formatTimeVid(this.duration);
 });
 
 // volume =============================//

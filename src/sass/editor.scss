@@ -2,81 +2,109 @@
 @import "partials/mixins";
 @import "partials/base";
 
-@media only screen and (max-width: 1920px) {
-	.wp-block-clashplayer-media {
-		width: 100%;
-		display: block;
-		margin: auto;
-	}
-	#result-player {
-		width: 100%;
-	}
-	.download-button {
-		display: block;
-		width: 30%;
-		height: auto;
-		line-height: 30px;
-		margin: 0 auto;
-		border: 2px solid $color2;
-		color: $color4;
-		text-align: center;
-	}
+.wp-block-clashplayer-media {
+	width: 90%;
+	display: block;
+	margin: auto;
+}
+.download-button {
+	width: 40%;
+	display: block;
 
-	.clashplayer-logo {
-		width: auto;
-		display: block;
-		margin: auto;
-		background-color: #000;
-		height: 100px;
-	}
+	height: auto;
+	line-height: 30px;
+	margin: 0 auto;
+	border: 2px solid $color2;
+	color: $color4;
+	text-align: center;
+}
 
-	/* controls -audio/video */
-	div.audio-controls,
-	.video-controls {
-		height: auto;
-		width: 100%;
-		margin: 0 auto;
-		border: $color11 solid 1px;
-		padding: 0.5em;
-		background-color: $color4;
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(4, 25px);
-		grid-column-gap: 2px;
-		grid-row-gap: 2px;
-	}
-	#btns-box {
-		grid-area: 1 / 1 / 3 / 3;
-	}
-	#progress {
-		grid-area: 1 / 3 / 3 / 6;
-	}
-	.audio-seek .video-seek {
-		grid-area: 2 / 3 / 2 / 6;
-		width: 100%;
-	}
-	label[for="seek"] {
-		width: 100%;
-		line-height: 25px;
-		margin: 0;
-		padding: 0;
-		display: block;
-	}
+#clashaudio-player {
+	width: 100%;
+}
 
-	#seek {
-		width: 100%;
-		display: block;
-		height: 25px;
-		margin: 0;
-		padding: 0;
+#clashvideo-player {
+	width: 85%;
+	height: 250px;
+}
+
+.clashplayer-logo {
+	width: auto;
+	display: block;
+	margin: auto;
+	background-color: #000;
+	height: 100px;
+}
+
+.audio-controls,
+.video-controls {
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	border: $color11 solid 1px;
+	padding: 0.5em;
+	background-color: $color4;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, 25px);
+	grid-column-gap: 2px;
+	grid-row-gap: 2px;
+}
+
+#btns-box {
+	grid-area: 1 / 1 / 3 / 3;
+}
+#progress {
+	grid-area: 1 / 3 / 3 / 6;
+}
+.audio-seek,
+.video-seek {
+	grid-area: 2 / 3 / 2 / 6;
+	width: 100%;
+}
+label[for="seek"] {
+	width: 100%;
+	line-height: 25px;
+	color: $color4;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#seek {
+	width: 100%;
+	display: block;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+#time {
+	grid-area: 3 / 1 / 4 / 6;
+}
+.audio-volume,
+.video-volume {
+	grid-area: 4 / 1 / 5 / 6;
+}
+
+.fa-pause,
+.fa-play,
+.fa-forward,
+.fa-backward {
+	font-size: 2em;
+	text-align: center;
+	display: block;
+	color: $color;
+	line-height: 53px;
+	margin: auto;
+
+	&:hover {
+		font-weight: bold;
+		color: $color;
 	}
-	#time {
-		grid-area: 3 / 1 / 4 / 6;
-	}
-	.audio-volume,
-	.video-volume {
-		grid-area: 4 / 1 / 5 / 6;
-	}
+}
+
+#btns-box {
+	height: 45px;
+	width: 100%;
 
 	.player-button {
 		width: 33.3%;
@@ -102,25 +130,234 @@
 		&:active {
 			background-color: $color4;
 		}
+	}
+}
 
-		.fa-pause,
-		svg.fa-pause,
-		.fa-play,
-		svg.fa-play,
-		.fa-forward,
-		svg.fa-forward,
-		.fa-backward,
-		svg.fa-backward {
-			font-size: 2em;
-			text-align: center;
+#progress {
+	width: 100%;
+	display: inline-block;
+	background-color: $color;
+	position: relative;
+	height: 24px;
+
+	#play-progress {
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		background-color: $color2;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		left: 0;
+	}
+
+	#load-progress {
+		background-color: $color8;
+		height: 12px;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+#time {
+	width: 100%;
+	color: $color4;
+	height: 25px;
+	display: flex;
+
+	span {
+		width: 25%;
+		line-height: 25px;
+		text-align: center;
+		font-size: 0.7em;
+		display: block;
+		background-color: $color;
+		color: $color4;
+		margin-right: 0;
+		float: left;
+	}
+
+	#duration-time {
+		font-size: 0.9em;
+		color: $color7;
+		background-color: $color4;
+		border: none;
+		text-shadow: 1px 1px rgb(53, 51, 51);
+	}
+
+	#current-time {
+		font-size: 0.9em;
+		color: $color7;
+		background-color: $color4;
+		border: none;
+
+		text-shadow: 1px 1px rgb(53, 51, 51);
+	}
+}
+
+.audio-volume,
+.video-volume {
+	width: 100%;
+}
+#volume-bar {
+	width: 100%;
+	display: block;
+	line-height: 25px;
+	margin: 0;
+}
+
+input[type="range"] {
+	width: 100%;
+	clear: both;
+	display: inline-block;
+	height: 25px;
+}
+
+#video_player {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	padding: 1em 0;
+}
+
+/* video */
+iframe {
+	width: 100%;
+	margin: 1em auto;
+}
+
+@media screen and (min-width: 1920px) {
+	.wp-block-clashplayer-media {
+		width: 80%;
+		display: block;
+		margin: auto;
+	}
+	.download-button {
+		display: block;
+		width: 30%;
+		height: auto;
+		line-height: 30px;
+		margin: 0 auto;
+		border: 2px solid $color2;
+		color: $color4;
+		text-align: center;
+	}
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
+	}
+
+	.clashplayer-logo {
+		width: auto;
+		display: block;
+		margin: auto;
+		background-color: #000;
+		height: 100px;
+	}
+
+	/* controls -audio/video */
+	.audio-controls,
+	.video-controls {
+		height: auto;
+		width: 100%;
+		margin: 0 auto;
+		border: $color11 solid 1px;
+		padding: 0.5em;
+		background-color: $color4;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(4, 25px);
+		grid-column-gap: 2px;
+		grid-row-gap: 2px;
+	}
+	#btns-box {
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	#progress {
+		grid-area: 1 / 3 / 3 / 6;
+	}
+	.audio-seek,
+	.video-seek {
+		grid-area: 2 / 3 / 2 / 6;
+		width: 100%;
+	}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+		color: $color4;
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+	#seek {
+		width: 100%;
+		display: block;
+		height: 25px;
+		margin: 0;
+		padding: 0;
+	}
+	#time {
+		grid-area: 3 / 1 / 4 / 6;
+	}
+	.audio-volume,
+	.video-volume {
+		grid-area: 4 / 1 / 5 / 6;
+	}
+
+	#btns-box {
+		height: 45px;
+		width: 100%;
+
+		.player-button {
+			width: 33.3%;
 			display: block;
-			color: $color;
-			line-height: 53px;
-			margin: auto;
+			height: 100%;
+			outline: none;
+			text-align: center;
+			font-size: 1em;
+			transform-origin: 50% 50%;
+			transition: all 0.2s linear 0s;
+			color: $color4;
+			border: $color11 solid 1px;
+			background-color: $color7;
+			float: left;
 
 			&:hover {
-				font-weight: bold;
+				background-color: $color4;
 				color: $color;
+				border: $color11 solid 1px;
+				cursor: pointer;
+			}
+
+			&:active {
+				background-color: $color4;
+			}
+
+			.fa-pause,
+			svg.fa-pause,
+			.fa-play,
+			svg.fa-play,
+			.fa-forward,
+			svg.fa-forward,
+			.fa-backward,
+			svg.fa-backward {
+				font-size: 2em;
+				text-align: center;
+				display: block;
+				color: $color;
+				line-height: 53px;
+				margin: auto;
+
+				&:hover {
+					font-weight: bold;
+					color: $color;
+				}
 			}
 		}
 	}
@@ -197,16 +434,6 @@
 		}
 	}
 
-	label[for="seek"] {
-		line-height: 25px;
-		color: $color4;
-	}
-
-	#seek {
-		width: 100%;
-		display: block;
-	}
-
 	.audio-volume,
 	.video-volume {
 		width: 100%;
@@ -238,16 +465,21 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 30%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 100%;
+	}
+
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
 	}
 
 	.audio-controls,
@@ -297,6 +529,7 @@
 	}
 
 	label[for="seek"] {
+		width: 100%;
 		line-height: 25px;
 	}
 
@@ -312,16 +545,20 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 100%;
+	}
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
 	}
 
 	.audio-controls,
@@ -372,6 +609,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -387,15 +625,15 @@
 		height: 360px;
 	}
 }
-@media only screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -446,8 +684,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -462,15 +701,15 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 1023px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -525,6 +764,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -540,15 +780,15 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 667px) {
+@media screen and (min-width: 667px) and (max-width: 799px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -603,8 +843,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -619,15 +860,15 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 640px) {
+@media screen and (min-width: 640px) and (max-width: 666px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -683,8 +924,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -699,15 +941,15 @@
 		width: 80%;
 	}
 }
-@media only screen and (max-width: 536px) {
+@media screen and (min-width: 536px) and (max-width: 639px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -763,8 +1005,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -779,15 +1022,15 @@
 		width: 80%;
 	}
 }
-@media only screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 535px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -840,8 +1083,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -856,15 +1100,15 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 414px) {
+@media screen and (min-width: 414px) and (max-width: 479px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -919,12 +1163,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
-	}
-
-	#seek {
-		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -943,15 +1184,15 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 360px) {
+@media screen and (min-width: 360px) and (max-width: 413px) {
 	.wp-block-clashplayer-media {
-		width: 100%;
+		width: 80%;
 	}
 	.download-button {
 		width: 40%;
 	}
 
-	#result-player {
+	#clashaudio-player {
 		width: 90%;
 	}
 
@@ -1006,87 +1247,9 @@
 		}
 	}
 
-	label[for="seek"]l {
+	label[for="seek"] {
 		width: 100%;
-	}
-
-	.audio-volume,
-	.video-volume {
-		width: 100%;
-	}
-	#volume-bar {
-		width: 100%;
-	}
-
-	iframe {
-		margin: 1em auto;
-	}
-}
-@media only screen and (max-width: 320px) {
-	.wp-block-clashplayer-media {
-		width: 100%;
-	}
-	.download-button {
-		width: 40%;
-	}
-
-	#result-player {
-		width: 96%;
-	}
-
-	.audio-controls,
-	.video-controls {
-		width: 100%;
-	}
-	#btns-box {
-		width: 100%;
-
-		.player-button {
-			width: 33.3%;
-
-			.fa-pause,
-			.fa-play,
-			.fa-forward,
-			.fa-backward {
-				font-size: 1.9em;
-
-				&:hover {
-					color: $color;
-				}
-			}
-		}
-	}
-
-	#progress {
-		width: 98%;
-
-		#play-progress {
-			display: block;
-		}
-
-		#load-progress {
-			display: block;
-		}
-	}
-
-	#time {
-		width: 100%;
-
-		span {
-			font-size: 0.7em;
-		}
-
-		#duration-time {
-			font-size: 0.9em;
-		}
-
-		#current-time {
-			font-size: 0.9em;
-		}
-	}
-
-	label[for="seek"]l {
-		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,

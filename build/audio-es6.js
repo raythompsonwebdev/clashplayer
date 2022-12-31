@@ -1,10 +1,11 @@
 const audioControls = document.querySelector(".audio-controls");
-const audio = document.querySelector("audio");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
+
+const audio = document.querySelector("audio");
 
 // Play/Pause ============================//
 const playToggle = document.querySelector(".audio-toggle");
