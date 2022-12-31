@@ -1,13 +1,224 @@
 @import "partials/variables";
 @import "partials/base";
 
-@media only screen and (max-width: 1920px) {
-	.wp-block-clashplayer-media {
-		width: 100%;
-		display: block;
-		margin: auto;
+.wp-block-clashplayer-media {
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+.download-button {
+	width: 40%;
+	display: block;
+	height: auto;
+	line-height: 30px;
+	margin: 0 auto;
+	border: 2px solid $yellow;
+	color: $black-red;
+	text-align: center;
+}
+
+#clashaudio-player {
+	width: 100%;
+}
+
+#clashvideo-player {
+	width: 85%;
+	height: 250px;
+}
+
+.clashplayer-logo {
+	width: auto;
+	display: block;
+	margin: auto;
+	background-color: $black;
+	height: 100px;
+}
+
+.audio-controls,
+.video-controls {
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	border: $black solid 1px;
+	padding: 0.5em;
+	background-color: $black-red;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, 25px);
+	grid-gap: 2px;
+}
+
+.dashicons-controls-pause::before,
+.dashicons-controls-play::before,
+.dashicons-controls-forward::before,
+.dashicons-controls-back::before {
+	font-size: 1.5em;
+	text-align: center;
+	display: block;
+	color: $white;
+	line-height: 40px;
+	margin: auto;
+
+	&:hover {
+		font-weight: bold;
+		color: $white;
 	}
-	#clashaudio-player {
+}
+
+#btns-box {
+	grid-area: 1 / 1 / 3 / 3;
+	height: 45px;
+	width: 100%;
+}
+#progress {
+	grid-area: 1 / 3 / 3 / 6;
+	width: 100%;
+	display: inline-block;
+	background-color: $white;
+	position: relative;
+	height: 24px;
+}
+.audio-seek,
+.video-seek {
+	grid-area: 2 / 3 / 2 / 6;
+	width: 100%;
+}
+label[for="seek"] {
+	width: 100%;
+	line-height: 25px;
+	color: $black-red;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#seek {
+	width: 100%;
+	display: block;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+.audio-volume,
+.video-volume {
+	grid-area: 4 / 1 / 5 / 6;
+	width: 100%;
+}
+
+.player-button {
+	width: 33.3%;
+	display: block;
+	height: 100%;
+	outline: none;
+	text-align: center;
+	font-size: 1em;
+	transform-origin: 50% 50%;
+	transition: all 0.2s linear 0s;
+	color: $black-red;
+	border: $black solid 1px;
+	background-color: $green;
+	float: left;
+	padding: 0;
+
+	&:hover {
+		background-color: $black-red;
+		color: $white;
+		border: $black solid 1px;
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: $black-red;
+	}
+}
+
+#play-progress {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	background-color: $red;
+	height: 12px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	left: 0;
+}
+
+#load-progress {
+	background-color: $yellow;
+	height: 12px;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#time {
+	grid-area: 3 / 1 / 4 / 6;
+	width: 100%;
+	color: $black-red;
+	height: 25px;
+	display: flex;
+	text-align: center;
+	span:nth-of-type(odd) {
+		width: 15%;
+		line-height: 25px;
+		text-align: center;
+		font-size: 0.7em;
+		display: block;
+		background-color: $white;
+		color: $black-red;
+		margin-right: 0;
+		float: left;
+	}
+}
+
+#duration-time {
+	font-size: 0.9em;
+	color: $green;
+	background-color: $black-red;
+	border: none;
+	width: 20%;
+	line-height: 25px;
+}
+
+#current-time {
+	font-size: 0.9em;
+	color: $green;
+	background-color: $black-red;
+	border: none;
+	width: 20%;
+	line-height: 25px;
+}
+
+#volume-bar {
+	width: 100%;
+	display: block;
+	line-height: 25px;
+	margin: 0;
+}
+
+input[type="range"] {
+	width: 100%;
+	clear: both;
+	display: inline-block;
+	height: 25px;
+}
+
+#video-player {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	padding: 1em 0;
+}
+
+/* video */
+iframe {
+	width: 100%;
+	margin: 1em auto;
+}
+@media screen and (min-width: 1920px) {
+	.wp-block-clashplayer-media {
 		width: 100%;
 	}
 	#clashvideo-player {
@@ -21,17 +232,20 @@
 		width: 30%;
 		height: auto;
 		line-height: 30px;
-		margin: 0 auto;
-		border: 2px solid $color2;
-		color: $color4;
 		text-align: center;
+	}
+	#clashaudio-player {
+		width: 100%;
+	}
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
 	}
 
 	.clashplayer-logo {
 		width: auto;
 		display: block;
 		margin: auto;
-		background-color: $color4;
 		height: 100px;
 	}
 
@@ -39,113 +253,91 @@
 	.audio-controls,
 	.video-controls {
 		height: auto;
-		width: 100%;
-		margin: 0 auto;
-		border: $color11 solid 1px;
 		padding: 0.5em;
-		background-color: $color4;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(4, 25px);
 		grid-gap: 2px;
 	}
 
-	/* controls -buttons */
-	#btns-box {
-		grid-area: 1 / 1 / 3 / 3;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 0.2em;
-	}
-	.player-button {
-		width: 32%;
-		flex: 1 0 auto;
-		outline: none;
-		text-align: center;
-		font-size: 1em;
-		transition: all 0.2s linear 0s;
-		color: $color4;
-		border: $color11 solid 1px;
-		background-color: $color7;
-		line-height: 50px;
-		height: 50px;
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.9em;
+		line-height: 40px;
 
 		&:hover {
-			background-color: $color4;
-			color: $color;
-			border: $color11 solid 1px;
+			font-weight: bold;
+		}
+	}
+
+	#btns-box {
+		grid-area: 1 / 1 / 3 / 3;
+		height: 45px;
+		width: 100%;
+	}
+	#progress {
+		grid-area: 1 / 3 / 3 / 6;
+		display: inline-block;
+		position: relative;
+		height: 24px;
+		background-color: $white;
+	}
+	.audio-seek,
+	.video-seek {
+		grid-area: 2 / 3 / 2 / 6;
+		width: 100%;
+	}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+		display: block;
+	}
+	#seek {
+		display: block;
+		height: 25px;
+	}
+	.audio-volume,
+	.video-volume {
+		grid-area: 4 / 1 / 5 / 6;
+		width: 100%;
+	}
+
+	.player-button {
+		width: 33.3%;
+		display: block;
+		text-align: center;
+		font-size: 1em;
+		float: left;
+
+		&:hover {
 			cursor: pointer;
 		}
 
 		&:active {
-			background-color: $color4;
-		}
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 2em;
-		text-align: center;
-		color: $color;
-
-		&:hover {
-			font-weight: bold;
-			color: $color;
-		}
-	}
-			&:hover {
-				font-weight: bold;
-				color: $color;
-			}
+			background-color: $black-red;
 		}
 	}
 
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 2em;
-		text-align: center;
-		color: $color;
-
-		&:hover {
-			font-weight: bold;
-			color: $color;
-		}
-	}
-
-	/* controls - progress bar */
-	#progress {
-		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
-		position: relative;
-		height: 24px;
-	}
 	#playback {
-		background-color: $color4;
+		background-color: $black-red;
 		height: 12px;
 		display: block;
 		margin: 0;
 		padding: 0;
 		width: 100%;
 	}
+
 	#play-progress {
 		position: absolute;
-		top: 0;
 		z-index: 2;
-		background-color: $color2;
 		height: 12px;
 		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		left: 0;
 	}
+
 	#load-progress {
-		background-color: $color8;
+		background-color: $yellow;
 		height: 12px;
 		display: block;
 		margin: 0;
@@ -176,52 +368,54 @@
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
 		width: 100%;
-		color: $color4;
+		color: $black-red;
 		height: 25px;
 		display: flex;
-		span {
-			width: 25%;
+		span:nth-of-type(odd) {
+			width: 15%;
 			line-height: 25px;
 			text-align: center;
 			font-size: 0.8em;
 			display: block;
-		}
-		span:nth-child(odd) {
-			color: $color4;
-			background-color: $color3;
+			background-color: $white;
+			color: $black-red;
+			margin-right: 0;
+			float: left;
 		}
 	}
 	#duration-time {
-		color: $color7;
-		background-color: $color4;
+		color: $green;
+		background-color: $black-red;
 		border: none;
 		font-size: 1em;
-		text-shadow: 1px 1px $color4;
-	}
-	#current-time {
-		color: $color7;
-		background-color: $color4;
-		border: none;
-		font-size: 1em;
-		text-shadow: 1px 1px $color4;
 	}
 
-	/* controls - volume */
-	.audio-volume,
-	.video-volume {
-		grid-area: 4 / 1 / 5 / 6;
-		width: 100%;
+	#current-time {
+		color: $green;
+		background-color: $black-red;
+		border: none;
+		font-size: 1em;
 	}
+
 	#volume-bar {
 		width: 100%;
 		display: block;
 		line-height: 25px;
 		margin: 0;
 	}
+
 	input[type="range"] {
 		width: 100%;
-		display: block;
+		clear: both;
+		display: inline-block;
 		height: 25px;
+	}
+
+	#video-player {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		padding: 1em 0;
 	}
 
 	/* video */
@@ -230,7 +424,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -246,43 +440,40 @@
 		height: 350px;
 	}
 
+	#clashvideo-player {
+		width: 85%;
+		height: 250px;
+	}
+
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.7em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
+		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 2em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 2em;
-
-		&:hover {
-			color: $color;
-		}
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
 	}
-
 	#play-progress {
 		display: block;
 	}
@@ -292,8 +483,9 @@
 	}
 
 	#time {
+		display: flex;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -306,6 +498,7 @@
 	}
 
 	label[for="seek"] {
+		width: 100%;
 		line-height: 25px;
 	}
 
@@ -324,7 +517,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 1280px) {
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -336,45 +529,38 @@
 		width: 100%;
 	}
 	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 85%;
+		height: 250px;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.6em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
+		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.8em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.9em;
-
-		&:hover {
-			color: $color;
-		}
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
 	}
 	#play-progress {
 		display: block;
@@ -385,9 +571,9 @@
 	}
 
 	#time {
+		display: flex;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
-			width: 25%;
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -401,6 +587,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -419,7 +606,7 @@
 		height: 360px;
 	}
 }
-@media only screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -428,11 +615,7 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
@@ -441,37 +624,29 @@
 		width: 100%;
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
+		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
 		width: 33.3%;
 	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.7em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.8em;
-
-		&:hover {
-			color: $color;
-		}
-	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
 	}
 	#play-progress {
 		display: block;
@@ -482,20 +657,23 @@
 	}
 
 	#time {
+		display: flex;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.7em;
 		}
 	}
 	#duration-time {
 		font-size: 0.85em;
 	}
+
 	#current-time {
 		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -505,15 +683,12 @@
 	#volume-bar {
 		width: 100%;
 	}
-	input[type="range"] {
-		width: 100%;
-	}
 
 	iframe {
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 1023px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -522,49 +697,37 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
 	#btns-box {
-		width: 45%;
+		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.6em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.7em;
-
-		&:hover {
-			color: $color;
-		}
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
 	}
 	#play-progress {
 		display: block;
@@ -577,7 +740,7 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.75em;
 		}
 	}
@@ -591,6 +754,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -609,7 +773,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 667px) {
+@media screen and (min-width: 667px) and (max-width: 799px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -618,16 +782,24 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
 	}
 	#btns-box {
 		width: 100%;
@@ -635,33 +807,13 @@
 		grid-area: 1 / 1 / 3 / 3;
 	}
 	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.5em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.6em;
-
-		&:hover {
-			color: $color;
-		}
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
+		margin: 0;
 	}
 	#play-progress {
 		display: block;
@@ -674,7 +826,7 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.9em;
 		}
 	}
@@ -688,6 +840,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -705,7 +858,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 640px) {
+@media screen and (min-width: 640px) and (max-width: 666px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -714,34 +867,12 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
-	}
-	#btns-box {
-		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
-	}
-
-	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.4em;
-
-		&:hover {
-			color: $color;
-		}
 	}
 
 	.dashicons-controls-pause::before,
@@ -749,15 +880,25 @@
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
 		font-size: 1.5em;
+		line-height: 40px;
 
 		&:hover {
-			color: $color;
+			font-weight: bold;
 		}
+	}
+
+	#btns-box {
+		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
+		margin: 0;
 	}
 	#play-progress {
 		display: block;
@@ -770,10 +911,11 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.9em;
 		}
 	}
+
 	#duration-time {
 		font-size: 1em;
 	}
@@ -784,6 +926,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -801,7 +944,7 @@
 		width: 80%;
 	}
 }
-@media only screen and (max-width: 536px) {
+@media screen and (min-width: 536px) and (max-width: 639px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -810,124 +953,120 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
+		line-height: 40px;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
 	#btns-box {
 		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
-
 	.player-button {
-		width: 32%;
+		width: 33.3%;
 	}
+
+	#progress {
+		grid-area: 1 / 3 / 3 / 6;
+		width: 100%;
+		margin: 0;
+	}
+	#play-progress {
+		display: block;
+	}
+
+	#load-progress {
+		display: block;
+	}
+
+	#time {
+		width: 100%;
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
+			font-size: 0.9em;
+		}
+	}
+	#duration-time {
+		font-size: 1em;
+	}
+
+	#current-time {
+		font-size: 1em;
+	}
+
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+	}
+
+	.audio-volume,
+	.video-volume {
+		width: 100%;
+	}
+	#volume-bar {
+		width: 100%;
+	}
+	input[type="range"] {
+		width: 100%;
+	}
+
+	iframe {
+		width: 80%;
+	}
+}
+@media screen and (min-width: 480px) and (max-width: 535px) {
+	.wp-block-clashplayer-media {
+		width: 100%;
+	}
+	.download-button {
+		width: 40%;
+	}
+
+	#clashaudio-player {
+		width: 90%;
+	}
+
+	.audio-controls,
+	.video-controls {
+		width: 100%;
+	}
+
 	.dashicons-controls-pause::before,
 	.dashicons-controls-play::before,
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
 		font-size: 1.3em;
+		line-height: 40px;
 
 		&:hover {
-			color: $color;
+			font-weight: bold;
 		}
-	}
-
-	#progress {
-		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
-	}
-	#play-progress {
-		display: block;
-	}
-
-	#load-progress {
-		display: block;
-	}
-
-	#time {
-		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
-		span {
-			font-size: 0.9em;
-		}
-	}
-	#duration-time {
-		font-size: 1em;
-	}
-
-	#current-time {
-		font-size: 1em;
-	}
-
-	label[for="seek"] {
-		width: 100%;
-	}
-
-	.audio-volume,
-	.video-volume {
-		width: 100%;
-	}
-	#volume-bar {
-		width: 100%;
-	}
-	input[type="range"] {
-		width: 100%;
-	}
-
-	iframe {
-		width: 80%;
-	}
-}
-@media only screen and (max-width: 480px) {
-	.wp-block-clashplayer-media {
-		width: 100%;
-	}
-	.download-button {
-		width: 40%;
-	}
-
-	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
-	}
-
-	.audio-controls,
-	.video-controls {
-		width: 100%;
 	}
 	#btns-box {
 		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
-
 	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1.2em;
-
-		&:hover {
-			color: $color;
-		}
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 100%;
 	}
 	#play-progress {
 		display: block;
@@ -940,7 +1079,7 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -954,6 +1093,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -971,7 +1111,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 414px) {
+@media screen and (min-width: 414px) and (max-width: 479px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -980,39 +1120,36 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
-	#btns-box {
-		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
-	}
 
-	.player-button {
-		width: 32%;
-	}
 	.dashicons-controls-pause::before,
 	.dashicons-controls-play::before,
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
-		font-size: 1.1em;
+		font-size: 1.3em;
+		line-height: 40px;
 
 		&:hover {
-			color: $color;
+			font-weight: bold;
 		}
+	}
+	#btns-box {
+		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 98%;
 	}
 	#play-progress {
 		display: block;
@@ -1025,7 +1162,7 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
@@ -1039,10 +1176,7 @@
 
 	label[for="seek"] {
 		width: 100%;
-	}
-
-	#seek {
-		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,
@@ -1056,87 +1190,6 @@
 		width: 100%;
 	}
 
-	iframe {
-		margin: 1em auto;
-	}
-}
-@media only screen and (max-width: 360px) {
-	.wp-block-clashplayer-media {
-		width: 100%;
-	}
-	.download-button {
-		width: 40%;
-	}
-
-	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
-	}
-
-	.audio-controls,
-	.video-controls {
-		width: 100%;
-	}
-	#btns-box {
-		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
-	}
-
-	.player-button {
-		width: 32%;
-	}
-	.dashicons-controls-pause::before,
-	.dashicons-controls-play::before,
-	.dashicons-controls-forward::before,
-	.dashicons-controls-back::before {
-		font-size: 1em;
-
-		&:hover {
-			color: $color;
-		}
-	}
-
-	#progress {
-		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
-	}
-	#play-progress {
-		display: block;
-	}
-
-	#load-progress {
-		display: block;
-	}
-
-	#time {
-		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
-		span {
-			font-size: 0.7em;
-		}
-	}
-	#duration-time {
-		font-size: 0.9em;
-	}
-
-	#current-time {
-		font-size: 0.9em;
-	}
-
-	label[for="seek"] {
-		width: 100%;
-	}
-
-	.audio-volume,
-	.video-volume {
-		width: 100%;
-	}
-	#volume-bar {
-		width: 100%;
-	}
 	input[type="range"] {
 		width: 100%;
 	}
@@ -1145,7 +1198,7 @@
 		margin: 1em auto;
 	}
 }
-@media only screen and (max-width: 320px) {
+@media screen and (min-width: 360px) and (max-width: 413px) {
 	.wp-block-clashplayer-media {
 		width: 100%;
 	}
@@ -1154,39 +1207,37 @@
 	}
 
 	#clashaudio-player {
-		width: 100%;
-	}
-	#clashvideo-player {
-		width: 100%;
-		height: 350px;
+		width: 90%;
 	}
 
 	.audio-controls,
 	.video-controls {
 		width: 100%;
 	}
-	#btns-box {
-		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
-	}
 
-	.player-button {
-		width: 32%;
-	}
 	.dashicons-controls-pause::before,
 	.dashicons-controls-play::before,
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
-		font-size: 1.9em;
+		font-size: 1.3em;
+		line-height: 40px;
 
 		&:hover {
-			color: $color;
+			font-weight: bold;
 		}
+	}
+
+	#btns-box {
+		width: 100%;
+		grid-area: 1 / 1 / 3 / 3;
+	}
+	.player-button {
+		width: 33.3%;
 	}
 
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
-		background-color: $color;
+		width: 98%;
 	}
 	#play-progress {
 		display: block;
@@ -1199,7 +1250,7 @@
 	#time {
 		width: 100%;
 		grid-area: 3 / 1 / 4 / 6;
-		span {
+		span:nth-of-type(odd) {
 			font-size: 0.7em;
 		}
 	}
@@ -1213,6 +1264,7 @@
 
 	label[for="seek"] {
 		width: 100%;
+		line-height: 25px;
 	}
 
 	.audio-volume,

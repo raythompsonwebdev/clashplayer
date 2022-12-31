@@ -5,7 +5,6 @@ import {
 	InspectorControls,
 	MediaReplaceFlow,
 	MediaUpload,
-	MediaUploadCheck,
 } from "@wordpress/block-editor";
 import {
 	PanelBody,
@@ -13,11 +12,9 @@ import {
 	ToggleControl,
 	TextControl,
 	Toolbar,
-	Button,
 } from "@wordpress/components";
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
-//import { ReactComponent as Logo } from "./bv-logo.svg";
 
 const replaceMediaUpload = () => MediaUpload;
 
@@ -174,16 +171,6 @@ registerBlockType("clashplayer/media", {
 							onSelectURL={onSelectURL}
 							onError={onUploadError}
 						/>
-						<MediaUploadCheck>
-							<MediaUpload
-								onSelect={onSelectAudio}
-								allowedTypes={ALLOWED_MEDIA_TYPES}
-								value={id}
-								render={({ open }) => (
-									<Button onClick={open}>Open Media Library</Button>
-								)}
-							/>
-						</MediaUploadCheck>
 					</Toolbar>
 				</BlockControls>
 
@@ -242,6 +229,8 @@ registerBlockType("clashplayer/media", {
 						/>
 					</PanelBody>
 				</InspectorControls>
+
+				{switchType()}
 
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
@@ -376,33 +365,24 @@ registerBlockType("clashplayer/media", {
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
+				{switchType()}
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle"
+							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
 							type="button"
-						>
-							<i className="fa fa-play" aria-hidden="true" title="Play" />
-						</button>
+						/>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind"
+							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
 							type="button"
-						>
-							<i
-								className="fa fa-backward"
-								aria-hidden="true"
-								title="Backward"
-							/>
-						</button>
+						/>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward"
+							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
 							type="button"
-						>
-							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
-						</button>
+						/>
 					</div>
 
 					<div id="progress">
