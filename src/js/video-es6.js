@@ -25,6 +25,20 @@ if (video !== null) {
 			e.target.classList.remove("dashicons-controls-pause");
 		}
 	});
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			video.preload = "metadata";
+
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			video.pause();
+
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
 
 	// Rewind ============================//
 	const rewindBtnVid = document.querySelector(".video-rewind");

@@ -96,6 +96,26 @@
 			color: $color;
 		}
 	}
+			&:hover {
+				font-weight: bold;
+				color: $color;
+			}
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 2em;
+		text-align: center;
+		color: $color;
+
+		&:hover {
+			font-weight: bold;
+			color: $color;
+		}
+	}
 
 	/* controls - progress bar */
 	#progress {
@@ -247,6 +267,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 2em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		background-color: $color;
@@ -324,6 +355,17 @@
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
 		font-size: 1.8em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.9em;
 
 		&:hover {
 			color: $color;
@@ -416,6 +458,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.8em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		background-color: $color;
@@ -492,6 +545,17 @@
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
 		font-size: 1.6em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.7em;
 
 		&:hover {
 			color: $color;
@@ -584,6 +648,17 @@
 		}
 	}
 
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.6em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		background-color: $color;
@@ -663,6 +738,17 @@
 	.dashicons-controls-forward::before,
 	.dashicons-controls-back::before {
 		font-size: 1.4em;
+
+		&:hover {
+			color: $color;
+		}
+	}
+
+	.dashicons-controls-pause::before,
+	.dashicons-controls-play::before,
+	.dashicons-controls-forward::before,
+	.dashicons-controls-back::before {
+		font-size: 1.5em;
 
 		&:hover {
 			color: $color;

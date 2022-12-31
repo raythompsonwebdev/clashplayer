@@ -25,6 +25,20 @@ if (video !== null) {
 			e.target.classList.remove("dashicons-controls-pause");
 		}
 	});
+	playToggleVid.addEventListener("click", (e) => {
+		if (video.paused) {
+			video.play();
+			video.preload = "metadata";
+
+			e.target.classList.remove("dashicons-controls-play");
+			e.target.classList.add("dashicons-controls-pause");
+		} else {
+			video.pause();
+
+			e.target.classList.add("dashicons-controls-play");
+			e.target.classList.remove("dashicons-controls-pause");
+		}
+	});
 
 	// Rewind ============================//
 	const rewindBtnVid = document.querySelector(".video-rewind");
@@ -100,6 +114,16 @@ if (video !== null) {
 	video.addEventListener("durationchange", (e) => {
 		// eslint-disable-next-line no-invalid-this
 		durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+	});
+
+	video.addEventListener("timeupdate", () => {
+		// eslint-disable-next-line no-invalid-this
+		currenttimeVid.innerHTML = formatTimeVid(this.currentTime);
+	});
+
+	video.addEventListener("durationchange", () => {
+		// eslint-disable-next-line no-invalid-this
+		durationtimeVid.innerHTML = formatTimeVid(this.duration);
 	});
 
 	// volume =============================//

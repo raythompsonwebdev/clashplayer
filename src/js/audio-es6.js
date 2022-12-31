@@ -30,6 +30,17 @@ if (audio !== null) {
 			e.target.classList.remove("dashicons-controls-pause");
 		}
 	});
+	if (!isPlaying) {
+		audio.play();
+		audio.preload = "metadata";
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
+	} else {
+		audio.pause();
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
+	}
+});
 
 	// Rewind ============================//
 	const rewindBtn = document.querySelector(".audio-rewind");
