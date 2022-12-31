@@ -17,6 +17,7 @@ import {
 } from "@wordpress/components";
 import React from "react";
 import { addFilter } from "@wordpress/hooks";
+//import { ReactComponent as Logo } from "./bv-logo.svg";
 
 const replaceMediaUpload = () => MediaUpload;
 
@@ -30,7 +31,6 @@ registerBlockType("clashplayer/media", {
 	title: __("ClashPlayer", "clashplayer"),
 	icon: { src: "hammer" },
 	category: "media",
-	description: __("Audio & Video Player."),
 	attributes: {
 		src: {
 			type: "string",
@@ -65,15 +65,9 @@ registerBlockType("clashplayer/media", {
 			selector: "source",
 			attribute: "preload",
 		},
-		// cover: {
-		// 	type: "string",
-		// 	source: "attribute",
-		// 	selector: "img",
-		// 	attribute: "src",
-		// },
 	},
 	supports: {
-		align: ["left", "right", "full"],
+		align: ["wide", "full", "none"],
 	},
 
 	edit: (props) => {
@@ -154,15 +148,18 @@ registerBlockType("clashplayer/media", {
 			</video>
 		);
 
+		// eslint-disable-next-line no-console
+		console.log(types);
+
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
@@ -177,6 +174,16 @@ registerBlockType("clashplayer/media", {
 							onSelectURL={onSelectURL}
 							onError={onUploadError}
 						/>
+						<MediaUploadCheck>
+							<MediaUpload
+								onSelect={onSelectAudio}
+								allowedTypes={ALLOWED_MEDIA_TYPES}
+								value={id}
+								render={({ open }) => (
+									<Button onClick={open}>Open Media Library</Button>
+								)}
+							/>
+						</MediaUploadCheck>
 					</Toolbar>
 				</BlockControls>
 
@@ -188,6 +195,7 @@ registerBlockType("clashplayer/media", {
 							value={src}
 							onChange={onChangeTextField}
 						/>
+
 						<ToggleControl
 							label={__("Autoplay")}
 							onChange={toggleAttribute("autoplay")}
@@ -234,18 +242,6 @@ registerBlockType("clashplayer/media", {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<BlockControls>
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={onSelectAudio}
-							allowedTypes={ALLOWED_MEDIA_TYPES}
-							value={id}
-							render={({ open }) => (
-								<Button onClick={open}>Open Media Library</Button>
-							)}
-						/>
-					</MediaUploadCheck>
-				</BlockControls>
 
 				<div className="audio-controls video-controls">
 					<div id="btns-box">
@@ -288,8 +284,8 @@ registerBlockType("clashplayer/media", {
 								id="seek"
 								title="seek"
 								min="0"
-								defaultValue="0"
-								max="100"
+								value="0"
+								max="0"
 							/>
 						</label>
 					</div>
@@ -365,15 +361,18 @@ registerBlockType("clashplayer/media", {
 			</video>
 		);
 
+		// eslint-disable-next-line no-console
+		console.log(types);
+
 		const switchType = () => {
-			if (types.includes("video")) {
+			if (types === "video/mp4") {
+				return videoTag;
+			}
+			if (types === "video/webm") {
 				return videoTag;
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>
@@ -381,19 +380,29 @@ registerBlockType("clashplayer/media", {
 					<div id="btns-box">
 						<button
 							id="play-toggle"
-							className="player-button audio-toggle video-toggle dashicons dashicons-controls-play"
+							className="player-button audio-toggle video-toggle"
 							type="button"
-						/>
+						>
+							<i className="fa fa-play" aria-hidden="true" title="Play" />
+						</button>
 						<button
 							id="rewind"
-							className="player-button audio-rewind video-rewind dashicons dashicons-controls-back"
+							className="player-button audio-rewind video-rewind"
 							type="button"
-						/>
+						>
+							<i
+								className="fa fa-backward"
+								aria-hidden="true"
+								title="Backward"
+							/>
+						</button>
 						<button
 							id="forward"
-							className="player-button audio-forward video-forward dashicons dashicons-controls-forward"
+							className="player-button audio-forward video-forward"
 							type="button"
-						/>
+						>
+							<i className="fa fa-forward" aria-hidden="true" title="Forward" />
+						</button>
 					</div>
 
 					<div id="progress">
@@ -418,8 +427,8 @@ registerBlockType("clashplayer/media", {
 								id="seek"
 								title="seek"
 								min="0"
-								defaultValue="0"
-								max="100"
+								value="0"
+								max="0"
 							/>
 						</label>
 					</div>

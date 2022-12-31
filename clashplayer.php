@@ -102,7 +102,7 @@ function clashplayer_register_blocks()
 		// script file.
 		plugins_url('build/index.js', __FILE__),
 		// dependencies.
-		array('wp-blocks', 'wp-i18n', 'wp-editor', 'wp-data', "wp-components"),
+		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
 		// set version as file last modified time.
 		filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
 		true
