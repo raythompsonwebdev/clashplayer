@@ -1,11 +1,11 @@
 const videoControls = document.querySelector(".video-controls");
 
+const video = document.querySelector("#clashvideo-player");
+
 // Stop if HTML5 video isn't supported
 if (!document.createElement("video").canPlayType) {
 	videoControls.style.display = "none";
 }
-
-const video = document.querySelector("video");
 
 // Play/Pause ============================//
 
@@ -93,6 +93,15 @@ video.addEventListener("timeupdate", (e) => {
 	// eslint-disable-next-line no-invalid-this
 	currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
 });
+video.addEventListener("durationchange", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	durationtimeVid.innerHTML = formatTimeVid(e.target.duration);
+});
+
+video.addEventListener("timeupdate", (e) => {
+	// eslint-disable-next-line no-invalid-this
+	currenttimeVid.innerHTML = formatTimeVid(e.target.currentTime);
+});
 
 video.addEventListener("durationchange", (e) => {
 	// eslint-disable-next-line no-invalid-this
@@ -129,6 +138,7 @@ video.addEventListener("durationchange", updateplaybackmaxVid);
 // seeker hander =============================//
 function seekhandlerVid(event) {
 	video.currentTime = event.target.value;
+
 	playbackVid.value = event.target.value;
 }
 

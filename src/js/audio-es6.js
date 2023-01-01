@@ -1,15 +1,17 @@
+// eslint-disable-next-line func-names
+
 const audioControls = document.querySelector(".audio-controls");
+const audio = document.querySelector("#clashaudio-player");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
 
-const audio = document.querySelector("audio");
-
 // Play/Pause ============================//
 const playToggle = document.querySelector(".audio-toggle");
 
+audio.style = "pointer-events: none;";
 playToggle.addEventListener("click", (e) => {
 	const isPlaying =
 		audio.currentTime > 0 &&
@@ -19,7 +21,6 @@ playToggle.addEventListener("click", (e) => {
 
 	if (!isPlaying) {
 		audio.play();
-		audio.preload = "metadata";
 		e.target.classList.remove("dashicons-controls-play");
 		e.target.classList.add("dashicons-controls-pause");
 	} else {
@@ -65,6 +66,7 @@ function updateLoadProgress() {
 audio.addEventListener("progress", () => {
 	updateLoadProgress();
 });
+
 audio.addEventListener("loadeddata", () => {
 	updateLoadProgress();
 });
@@ -135,6 +137,7 @@ audio.addEventListener("durationchange", updateplaybackmax);
 // seeker hander =============================//
 function seekhandler(event) {
 	audio.currentTime = event.target.value;
+
 	playback.value = event.target.value;
 }
 

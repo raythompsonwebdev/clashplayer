@@ -158,9 +158,6 @@ registerBlockType("clashplayer/media", {
 			return audioTag;
 		};
 
-		// eslint-disable-next-line no-console
-		console.log(switchType);
-
 		return (
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
 				<BlockControls>
@@ -365,9 +362,6 @@ registerBlockType("clashplayer/media", {
 			}
 			return audioTag;
 		};
-
-		// eslint-disable-next-line no-console
-		console.log(switchType);
 
 		return (
 			<div className={`${className} clashplayer-block clashplayer-static`}>

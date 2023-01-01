@@ -384,6 +384,11 @@ iframe {
 @media screen and (min-width: 1920px) {
   .wp-block-clashplayer-media {
     width: 100%; }
+  #clashvideo-player {
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin: 2em auto; }
   .download-button {
     display: block;
     width: 30%;
@@ -473,6 +478,23 @@ iframe {
     display: block;
     margin: 0;
     padding: 0; }
+  /* controls - seek */
+  .audio-seek .video-seek {
+    grid-area: 2 / 3 / 2 / 6;
+    width: 100%; }
+  label[for="seek"] {
+    width: 100%;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    display: block; }
+  #seek {
+    width: 100%;
+    display: block;
+    height: 25px;
+    margin: 0;
+    padding: 0; }
+  /* controls - time */
   #time {
     grid-area: 3 / 1 / 4 / 6;
     width: 100%;
@@ -527,6 +549,9 @@ iframe {
   #clashaudio-player {
     width: 100%; }
   #clashvideo-player {
+    width: 100%;
+    height: 350px; }
+  #clashvideo-player {
     width: 85%;
     height: 250px; }
   .audio-controls,
@@ -571,6 +596,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 100%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     margin: 1em auto; } }
@@ -627,6 +654,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 100%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     width: 75%;
@@ -737,6 +766,8 @@ iframe {
     margin: 0; }
   #volume-bar {
     width: 100%; }
+  input[type="range"] {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -792,6 +823,8 @@ iframe {
     width: 100%; }
   #volume-bar {
     width: 100%; }
+  input[type="range"] {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -845,6 +878,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 100%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     width: 80%; } }
@@ -900,6 +935,8 @@ iframe {
     width: 100%; }
   #volume-bar {
     width: 100%; }
+  input[type="range"] {
+    width: 100%; }
   iframe {
     width: 80%; } }
 
@@ -952,6 +989,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 100%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     margin: 1em auto; } }
@@ -1008,6 +1047,8 @@ iframe {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
+  input[type="range"] {
+    width: 100%; }
   iframe {
     margin: 1em auto; } }
 
@@ -1060,6 +1101,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 100%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     margin: 1em auto; } }
