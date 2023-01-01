@@ -65,6 +65,8 @@ registerBlockType("clashplayer/audio", {
 	},
 	supports: {
 		align: ["wide", "full", "none"],
+		ariaLabel: true,
+		color: true,
 	},
 
 	edit: (props) => {
@@ -111,7 +113,60 @@ registerBlockType("clashplayer/audio", {
 			setAttributes({ src: media.url, id: media.id });
 		};
 
-		return (
+		return [
+			<InspectorControls>
+				<PanelBody title={__("Audio settings")}>
+					<TextControl
+						label="Audio URL"
+						help="type audio url into this field"
+						value={src}
+						onChange={onChangeTextField}
+					/>
+
+					<ToggleControl
+						label={__("Autoplay")}
+						onChange={toggleAttribute("autoplay")}
+						checked={autoplay}
+						help={getAutoplayHelp}
+					/>
+					<ToggleControl
+						label={__("Loop")}
+						onChange={toggleAttribute("loop")}
+						checked={loop}
+					/>
+					<SelectControl
+						label={__("Preload")}
+						value={preload || ""}
+						// `undefined` is required for the preload attribute to be unset.
+						onChange={(value) =>
+							setAttributes({
+								preload: value || undefined,
+							})
+						}
+						options={[
+							{ value: "", label: __("Browser default") },
+							{ value: "auto", label: __("Auto") },
+							{ value: "metadata", label: __("Metadata") },
+							{ value: "none", label: __("None") },
+						]}
+					/>
+					<SelectControl
+						label={__("Format")}
+						value={types || ""}
+						// `undefined` is required for the types attribute to be unset.
+						onChange={(value) =>
+							setAttributes({
+								types: value || undefined,
+							})
+						}
+						options={[
+							{ value: "audio/mpeg", label: __("Browser default (mpeg)") },
+							{ value: "audio/ogg", label: __("ogg") },
+							{ value: "audio/m4a", label: __("m4a") },
+						]}
+					/>
+				</PanelBody>
+			</InspectorControls>,
 			<div className={`${className} clashplayer-block clashplayer-editable`}>
 				<BlockControls>
 					<Toolbar>
@@ -126,60 +181,6 @@ registerBlockType("clashplayer/audio", {
 						/>
 					</Toolbar>
 				</BlockControls>
-
-				<InspectorControls>
-					<PanelBody title={__("Audio settings")}>
-						<TextControl
-							label="Audio URL"
-							help="type audio url into this field"
-							value={src}
-							onChange={onChangeTextField}
-						/>
-
-						<ToggleControl
-							label={__("Autoplay")}
-							onChange={toggleAttribute("autoplay")}
-							checked={autoplay}
-							help={getAutoplayHelp}
-						/>
-						<ToggleControl
-							label={__("Loop")}
-							onChange={toggleAttribute("loop")}
-							checked={loop}
-						/>
-						<SelectControl
-							label={__("Preload")}
-							value={preload || ""}
-							// `undefined` is required for the preload attribute to be unset.
-							onChange={(value) =>
-								setAttributes({
-									preload: value || undefined,
-								})
-							}
-							options={[
-								{ value: "", label: __("Browser default") },
-								{ value: "auto", label: __("Auto") },
-								{ value: "metadata", label: __("Metadata") },
-								{ value: "none", label: __("None") },
-							]}
-						/>
-						<SelectControl
-							label={__("Format")}
-							value={types || ""}
-							// `undefined` is required for the types attribute to be unset.
-							onChange={(value) =>
-								setAttributes({
-									types: value || undefined,
-								})
-							}
-							options={[
-								{ value: "audio/mpeg", label: __("Browser default (mpeg)") },
-								{ value: "audio/ogg", label: __("ogg") },
-								{ value: "audio/m4a", label: __("m4a") },
-							]}
-						/>
-					</PanelBody>
-				</InspectorControls>
 
 				<audio
 					id="clashaudio-player"
@@ -270,8 +271,8 @@ registerBlockType("clashplayer/audio", {
 						/>
 					</div>
 				</div>
-			</div>
-		);
+			</div>,
+		];
 	},
 	save: (props) => {
 		const {

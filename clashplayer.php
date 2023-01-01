@@ -50,7 +50,7 @@ function clashplayer_frontend_scripts()
 		wp_enqueue_script(
 			'clashplayer-blocks-js',
 			plugins_url($blockPathAudio, __FILE__),
-			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
+			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
 			filemtime(plugin_dir_path(__FILE__) . $blockPathAudio),
 			true
 		);
@@ -59,7 +59,7 @@ function clashplayer_frontend_scripts()
 		wp_enqueue_script(
 			'clashplayer-blockstwo-js',
 			plugins_url($blockPathVideo, __FILE__),
-			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
+			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
 			filemtime(plugin_dir_path(__FILE__) . $blockPathVideo),
 			true
 		);
@@ -110,7 +110,7 @@ function clashplayer_register_blocks()
 	wp_register_script(
 		'clashplayer-editor-script',											// label
 		plugins_url('build/index.js', __FILE__),						// script file
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),		// dependencies
+		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),		// dependencies
 		filemtime(plugin_dir_path(__FILE__) . 'build/index.js')		// set version as file last modified time
 	);
 
