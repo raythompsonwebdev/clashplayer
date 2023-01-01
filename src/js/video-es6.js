@@ -133,3 +133,21 @@ function seekhandlerVid(event) {
 }
 
 seekVid.addEventListener("change", seekhandlerVid);
+
+const muteBtn = document.querySelector("#mute-volume");
+
+muteBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	video.muted = !video.muted;
+
+	if (video.muted) {
+		e.target.classList.remove("dashicons-controls-volumeon");
+		e.target.classList.add("dashicons-controls-volumeoff");
+		video.mute = true;
+	} else {
+		e.target.classList.add("dashicons-controls-volumeon");
+		e.target.classList.remove("dashicons-controls-volumeoff");
+		video.mute = false;
+	}
+});

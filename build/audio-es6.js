@@ -11,6 +11,8 @@ const audio = document.querySelector("audio");
 const playToggle = document.querySelector(".audio-toggle");
 
 playToggle.addEventListener("click", (e) => {
+	// eslint-disable-next-line no-console
+	console.log(e);
 	const isPlaying =
 		audio.currentTime > 0 &&
 		!audio.paused &&
@@ -139,3 +141,21 @@ function seekhandler(event) {
 }
 
 seek.addEventListener("change", seekhandler);
+
+const muteBtn = document.querySelector("#mute-volume");
+
+muteBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	audio.muted = !audio.muted;
+
+	if (audio.muted) {
+		e.target.classList.remove("dashicons-controls-volumeon");
+		e.target.classList.add("dashicons-controls-volumeoff");
+		audio.mute = true;
+	} else {
+		e.target.classList.add("dashicons-controls-volumeon");
+		e.target.classList.remove("dashicons-controls-volumeoff");
+		audio.mute = false;
+	}
+});
