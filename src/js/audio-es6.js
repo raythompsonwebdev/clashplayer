@@ -11,8 +11,6 @@ const audio = document.querySelector("audio");
 const playToggle = document.querySelector(".audio-toggle");
 
 playToggle.addEventListener("click", (e) => {
-	// eslint-disable-next-line no-console
-	console.log(e);
 	const isPlaying =
 		audio.currentTime > 0 &&
 		!audio.paused &&

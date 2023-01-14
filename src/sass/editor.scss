@@ -160,6 +160,15 @@ label[for="seek"] {
 	}
 }
 
+#playback {
+	background-color: $black-red;
+	height: 12px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
 #play-progress {
 	position: absolute;
 	top: 0;
@@ -366,12 +375,8 @@ iframe {
 	}
 
 	#playback {
-		background-color: $black-red;
 		height: 12px;
 		display: block;
-		margin: 0;
-		padding: 0;
-		width: 100%;
 	}
 
 	#play-progress {
@@ -499,6 +504,11 @@ iframe {
 		width: 33.3%;
 	}
 
+	#playback {
+		height: 12px;
+		display: block;
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
@@ -599,6 +609,11 @@ iframe {
 	}
 	.player-button {
 		width: 33.3%;
+	}
+
+	#playback {
+		height: 12px;
+		display: block;
 	}
 
 	#progress {
@@ -706,6 +721,11 @@ iframe {
 		width: 33.3%;
 	}
 
+	#playback {
+		height: 12px;
+		display: block;
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
@@ -807,6 +827,11 @@ iframe {
 	}
 	.player-button {
 		width: 33.3%;
+	}
+
+	#playback {
+		height: 12px;
+		display: block;
 	}
 
 	#progress {
@@ -913,6 +938,11 @@ iframe {
 		width: 33.3%;
 	}
 
+	#playback {
+		height: 12px;
+		display: block;
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
@@ -1015,6 +1045,11 @@ iframe {
 	}
 	.player-button {
 		width: 33.3%;
+	}
+
+	#playback {
+		height: 12px;
+		display: block;
 	}
 
 	#progress {
@@ -1120,6 +1155,11 @@ iframe {
 		width: 33.3%;
 	}
 
+	#playback {
+		height: 12px;
+		display: block;
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		width: 100%;
@@ -1221,6 +1261,11 @@ iframe {
 	}
 	.player-button {
 		width: 33.3%;
+	}
+
+	#playback {
+		height: 12px;
+		display: block;
 	}
 
 	#progress {
@@ -1325,6 +1370,11 @@ iframe {
 		width: 33.3%;
 	}
 
+	#playback {
+		height: 12px;
+		display: block;
+	}
+
 	#progress {
 		grid-area: 1 / 3 / 3 / 6;
 		width: 98%;
@@ -1426,6 +1476,11 @@ iframe {
 	}
 	.player-button {
 		width: 33.3%;
+	}
+
+	#playback {
+		height: 12px;
+		display: block;
 	}
 
 	#progress {
