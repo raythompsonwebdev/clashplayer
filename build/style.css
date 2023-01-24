@@ -108,7 +108,8 @@ body {
 #clashvideo-player {
   width: 100%;
   height: auto;
-  display: block; }
+  display: block;
+  background-color: #000; }
 
 .clashplayer-logo {
   width: auto;
