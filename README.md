@@ -15,5 +15,3 @@
 - [ESLint](https://marketplace.visualstudio.com/itemdetails?itemName=dbaeumer.vscode-eslint)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/itemdetails?itemName=esbenp.prettier-vscode)
 - [stylelint](https://marketplace.visualstudio.com/itemdetails?itemName=shinnn.stylelint)
-
-http://localhost/wordpress/wp-content/plugins/clashplayer/audio/bensound-cute

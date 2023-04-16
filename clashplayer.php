@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: Clashvibes Audio/Video Player Block
+ * Plugin Name: clashplayer Audio/Video Player Block
  * Plugin URI: https://github.com/
  * Description: Custom block plugin .
  * Version: 1.0.0
@@ -24,6 +24,19 @@ define('CVWDO_VERSION', '1.0.0');
  */
 define('CVWDOPATH', plugin_dir_url(__FILE__)); // This include the trailing slash!
 
+function clashplayer_load_textdomain()
+{
+	load_plugin_textdomain('clashplayer', false, basename(__DIR__) . '/languages');
+}
+
+/**
+ * Loads dashicons.
+ */
+function clashplayer_load_dashicons_front_end()
+{
+	wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'clashplayer_load_dashicons_front_end');
 
 /**
  * Enqueue block editor JavaScript and CSS.
@@ -34,20 +47,26 @@ function clashplayer_frontend_scripts()
 	$block_path    = './build/audio-es6.js';
 	$block_pathtwo = './build/video-es6.js';
 
-	// Enqueue the bundled block JS file.
-	if (has_block('clashplayer/media')) {
+	// Make paths variables so we don't write em twice
+	$blockPathAudio = '/build/audio-es6.js';
+	$blockPathVideo = '/build/video-es6.js';
+
+	//   // Enqueue the bundled block JS file
+	if (has_block('clashplayer/audio')) {
 		wp_enqueue_script(
-			'clashvibes-blocks-js',
-			plugins_url($block_path, __FILE__),
-			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'),
-			filemtime(plugin_dir_path(__FILE__) . $block_path),
+			'clashplayer-blocks-js',
+			plugins_url($blockPathAudio, __FILE__),
+			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
+			filemtime(plugin_dir_path(__FILE__) . $blockPathAudio),
 			true
 		);
+	}
+	if (has_block('clashplayer/video')) {
 		wp_enqueue_script(
-			'clashvibes-blockstwo-js',
-			plugins_url($block_pathtwo, __FILE__),
-			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-data'),
-			filemtime(plugin_dir_path(__FILE__) . $block_pathtwo),
+			'clashplayer-blockstwo-js',
+			plugins_url($blockPathVideo, __FILE__),
+			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
+			filemtime(plugin_dir_path(__FILE__) . $blockPathVideo),
 			true
 		);
 	}
@@ -97,15 +116,10 @@ function clashplayer_register_blocks()
 
 	// Retister the block editor script.
 	wp_register_script(
-		// label.
-		'clashplayer-editor-script',
-		// script file.
-		plugins_url('build/index.js', __FILE__),
-		// dependencies.
-		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-data"),
-		// set version as file last modified time.
-		filemtime(plugin_dir_path(__FILE__) . 'build/index.js'),
-		true
+		'clashplayer-editor-script',											// label
+		plugins_url('build/index.js', __FILE__),						// script file
+		array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),		// dependencies
+		filemtime(plugin_dir_path(__FILE__) . 'build/index.js')		// set version as file last modified time
 	);
 
 	// Register the block editor stylesheet.
@@ -136,8 +150,22 @@ function clashplayer_register_blocks()
 			'editor_style'  => 'clashplayer-editor-styles',
 			'style'         => 'clashplayer-front-end-styles',
 
-		)
-	);
+	// Array of block created in this plugin.
+	$blocks = [
+		'clashplayer/audio',
+		'clashplayer/video'
+
+	];
+
+	// Loop through $blocks and register each block with the same script and styles.
+	foreach ($blocks as $block) {
+		register_block_type($block, array(
+			'editor_script' => 'clashplayer-editor-script',					// Calls registered script above
+			'editor_style' => 'clashplayer-editor-styles',					// Calls registered stylesheet above
+			'style' => 'clashplayer-front-end-styles',					// Calls registered stylesheet above
+
+		));
+	}
 
 	if (function_exists('wp_set_script_translations')) {
 		/**

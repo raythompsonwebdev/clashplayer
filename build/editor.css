@@ -3,19 +3,11 @@
 *::before {
   box-sizing: border-box; }
 
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  max-width: 100% !important; }
-
 * html {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box; }
-
-* html .clearfix {
-  height: 1%; }
 
 html[xmlns] .clearfix {
   display: block; }
@@ -25,136 +17,41 @@ body {
   padding: 0;
   width: 100%; }
 
-/* *GENERAL CLASSES (alpha order)* */
-.left-col {
-  width: 66%;
-  float: left; }
-
-.right-col {
-  float: right;
-  width: 32%;
-  margin-left: 2%; }
-
-.left {
-  float: left;
-  display: block;
-  height: 40px;
-  margin: 0 5%;
-  color: #262626;
-  line-height: 40px; }
-  .left a {
-    margin: 0;
-    height: 100%;
-    line-height: 40px; }
-
-.right {
-  float: left;
-  display: block;
-  height: 40px;
-  color: #262626; }
-  .right a {
-    margin: 0;
-    height: 100%;
-    line-height: 40px; }
-
-.sticky {
-  margin: 0; }
-
 /* WordPress Image Classes */
 .centered {
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
-.alignright {
-  float: right;
-  width: auto;
-  height: auto; }
-
+/* Alignments
+	--------------------------------------------- */
 .alignleft {
+  /* rtl:ignore */
   float: left;
-  width: auto;
-  height: auto; }
+  /* rtl:ignore */
+  margin-right: 1.5em;
+  margin-bottom: 1.5em; }
+
+.alignright {
+  /* rtl:ignore */
+  float: right;
+  /* rtl:ignore */
+  margin-left: 1.5em;
+  margin-bottom: 1.5em; }
 
 .aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
-  height: auto; }
+  margin-bottom: 1.5em; }
 
-.wp-caption {
-  border: 1px solid #dddddd;
-  text-align: center;
-  background-color: #d4d4d4;
-  padding-top: 4px;
-  margin: 10px;
-  width: 100%;
-  clear: both; }
+.alignwide {
+  width: calc(50vw - 2rem);
+  margin: auto; }
 
-.wp-caption img {
-  margin: 0;
-  padding: 0;
-  border: 0 none; }
-
-.wp-caption .wp-caption-text {
-  font-size: 0.85em;
-  line-height: 1.214em;
-  padding: 0 4px 5px;
-  margin: 0; }
-
-/* self-clear floats */
-.clearfix {
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0; }
-
-.clearfix::after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0; }
-
-.clearfix::before,
-.group::before,
-.group::after {
-  content: "";
-  display: table; }
-
-.group::after {
-  clear: both; }
-
-.group {
-  *zoom: 1; }
-
-img {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  vertical-align: middle; }
-
-h1,
-h2,
-h3,
-h4 {
-  padding: 0;
-  font-weight: bold;
-  width: 100%;
-  font-family: "Titillium Web", arial, sans-serif, verdana, helvetica;
-  display: block; }
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1em;
-  display: block;
-  font-family: "Titillium Web", arial, sans-serif, verdana, helvetica; }
+.alignfull {
+  max-width: 80vw;
+  margin: auto; }
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -186,8 +83,13 @@ a {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
-.wp-block-clashplayer-media {
-  width: 100%;
+.dashicons {
+  width: auto;
+  display: block;
+  height: 100%; }
+
+.wp-block-clashplayer-audio,
+.wp-block-clashplayer-video {
   display: block;
   margin: auto; }
 
@@ -205,8 +107,10 @@ a {
   width: 100%; }
 
 #clashvideo-player {
-  width: 85%;
-  height: 250px; }
+  width: 100%;
+  height: auto;
+  margin: 0.25em auto;
+  display: block; }
 
 .clashplayer-logo {
   width: auto;
@@ -228,6 +132,28 @@ a {
   grid-template-rows: repeat(4, 25px);
   grid-gap: 2px; }
 
+.dashicons-controls-volumeon::before,
+.dashicons-controls-volumeoff::before {
+  display: block;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  line-height: 25px; }
+  .dashicons-controls-volumeon::before:hover,
+  .dashicons-controls-volumeoff::before:hover {
+    cursor: pointer; }
+
+.dashicons-controls-volumeoff::before {
+  color: #ed1010; }
+
+.dashicons-controls-pause,
+.dashicons-controls-play,
+.dashicons-controls-forward,
+.dashicons-controls-back {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
 .dashicons-controls-pause::before,
 .dashicons-controls-play::before,
 .dashicons-controls-forward::before,
@@ -237,7 +163,9 @@ a {
   display: block;
   color: #ffffff;
   line-height: 40px;
-  margin: auto; }
+  margin: auto;
+  height: 100%;
+  width: 100%; }
   .dashicons-controls-pause::before:hover,
   .dashicons-controls-play::before:hover,
   .dashicons-controls-forward::before:hover,
@@ -305,6 +233,14 @@ label[for="seek"] {
   .player-button:active {
     background-color: #262626; }
 
+#playback {
+  background-color: #262626;
+  height: 12px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
 #play-progress {
   position: absolute;
   top: 0;
@@ -359,16 +295,25 @@ label[for="seek"] {
   line-height: 25px; }
 
 #volume-bar {
-  width: 100%;
+  width: 93%;
   display: block;
+  float: left;
   line-height: 25px;
   margin: 0; }
 
 input[type="range"] {
   width: 100%;
-  clear: both;
-  display: inline-block;
+  display: block;
   height: 25px; }
+
+#mute-volume {
+  display: inline-block;
+  width: 6.5%;
+  text-align: center;
+  line-height: 25px;
+  border: none;
+  background-color: unset;
+  outline: none; }
 
 #video-player {
   width: 100%;
@@ -398,8 +343,8 @@ iframe {
   #clashaudio-player {
     width: 100%; }
   #clashvideo-player {
-    width: 85%;
-    height: 250px; }
+    width: 100%;
+    height: auto; }
   .clashplayer-logo {
     width: auto;
     display: block;
@@ -414,12 +359,21 @@ iframe {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 25px);
     grid-gap: 2px; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.9em;
-    line-height: 40px; }
+    font-size: 1.9em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -461,12 +415,8 @@ iframe {
     .player-button:active {
       background-color: #262626; }
   #playback {
-    background-color: #262626;
     height: 12px;
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%; }
+    display: block; }
   #play-progress {
     position: absolute;
     z-index: 2;
@@ -522,15 +472,11 @@ iframe {
     border: none;
     font-size: 1em; }
   #volume-bar {
-    width: 100%;
-    display: block;
+    width: 93%;
     line-height: 25px;
     margin: 0; }
   input[type="range"] {
-    width: 100%;
-    clear: both;
-    display: inline-block;
-    height: 25px; }
+    width: 100%; }
   #video-player {
     width: 100%;
     margin: 0 auto;
@@ -543,7 +489,7 @@ iframe {
 
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 30%; }
   #clashaudio-player {
@@ -557,12 +503,21 @@ iframe {
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.7em;
-    line-height: 40px; }
+    font-size: 1.7em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -573,6 +528,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%; }
@@ -596,6 +554,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -604,23 +564,32 @@ iframe {
 
 @media screen and (min-width: 1280px) and (max-width: 1439px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 100%; }
   #clashvideo-player {
-    width: 85%;
-    height: 250px; }
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.6em;
-    line-height: 40px; }
+    font-size: 1.6em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -631,6 +600,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%; }
@@ -654,6 +626,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -663,21 +637,33 @@ iframe {
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     padding: 0.25em;
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.5em;
-    line-height: 40px; }
+    font-size: 1.5em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -688,6 +674,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%; }
@@ -711,26 +700,40 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   iframe {
     margin: 1em auto; } }
 
 @media screen and (min-width: 800px) and (max-width: 1023px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.5em;
-    line-height: 40px; }
+    font-size: 1.5em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -741,6 +744,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%; }
@@ -765,6 +771,8 @@ iframe {
     width: 100%;
     margin: 0; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -773,20 +781,32 @@ iframe {
 
 @media screen and (min-width: 667px) and (max-width: 799px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.5em;
-    line-height: 40px; }
+    font-size: 1.5em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -798,6 +818,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%;
@@ -822,6 +845,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -830,20 +855,32 @@ iframe {
 
 @media screen and (min-width: 640px) and (max-width: 666px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.5em;
-    line-height: 40px; }
+    font-size: 1.5em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -854,6 +891,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%;
@@ -878,6 +918,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -886,20 +928,32 @@ iframe {
 
 @media screen and (min-width: 536px) and (max-width: 639px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.5em;
-    line-height: 40px; }
+    font-size: 1.5em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -910,6 +964,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%;
@@ -934,6 +991,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -942,20 +1001,32 @@ iframe {
 
 @media screen and (min-width: 480px) and (max-width: 535px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.3em;
-    line-height: 40px; }
+    font-size: 1.3em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -966,6 +1037,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 100%; }
@@ -989,6 +1063,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
@@ -997,20 +1073,32 @@ iframe {
 
 @media screen and (min-width: 414px) and (max-width: 479px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.3em;
-    line-height: 40px; }
+    font-size: 1.3em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -1021,6 +1109,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 98%; }
@@ -1054,20 +1145,32 @@ iframe {
 
 @media screen and (min-width: 360px) and (max-width: 413px) {
   .wp-block-clashplayer-media {
-    width: 100%; }
+    display: block; }
   .download-button {
     width: 40%; }
   #clashaudio-player {
     width: 90%; }
+  #clashvideo-player {
+    width: 100%;
+    height: auto; }
   .audio-controls,
   .video-controls {
     width: 100%; }
+  .dashicons-controls-volumeon::before,
+  .dashicons-controls-volumeoff::before {
+    width: 100%; }
+  .dashicons-controls-pause,
+  .dashicons-controls-play,
+  .dashicons-controls-forward,
+  .dashicons-controls-back {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .dashicons-controls-pause::before,
   .dashicons-controls-play::before,
   .dashicons-controls-forward::before,
   .dashicons-controls-back::before {
-    font-size: 1.3em;
-    line-height: 40px; }
+    font-size: 1.3em; }
     .dashicons-controls-pause::before:hover,
     .dashicons-controls-play::before:hover,
     .dashicons-controls-forward::before:hover,
@@ -1078,6 +1181,9 @@ iframe {
     grid-area: 1 / 1 / 3 / 3; }
   .player-button {
     width: 33.3%; }
+  #playback {
+    height: 12px;
+    display: block; }
   #progress {
     grid-area: 1 / 3 / 3 / 6;
     width: 98%; }
@@ -1101,6 +1207,8 @@ iframe {
   .video-volume {
     width: 100%; }
   #volume-bar {
+    width: 93%; }
+  input[type="range"] {
     width: 100%; }
   input[type="range"] {
     width: 100%; }
