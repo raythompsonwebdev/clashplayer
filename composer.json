@@ -1,0 +1,36 @@
+{
+	"name": "automattic/underscores",
+	"type": "wordpress-plugin",
+	"description": "Hi. I'm a starter plugin called clashvibes player, or underscores, if you like. I'm a plugin meant for hacking so don't use me as a plugin. Instead try turning me into the next, most awesome, WordPress plugin out there. That's what I'm here for.",
+	"keywords": [
+		"WordPress",
+		"Themes"
+	],
+	"homepage": "https://github.com/Automattic/clashvibes",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Contributors",
+			"homepage": "https://github.com/Automattic/clashvibes/graphs/contributors"
+		}
+	],
+	"require": {
+		"php": ">=5.6"
+	},
+	"require-dev": {
+		"wptrt/wpthemereview": "^0.2.1",
+		"php-parallel-lint/php-parallel-lint": "^1.2.0"
+	},
+	"scripts": {
+		"lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+		"make-pot": "wp i18n make-pot . languages/clashvibes.pot"
+	},
+	"support": {
+		"issues": "https://github.com/Automattic/clashvibes/issues",
+		"source": "https://github.com/Automattic/clashvibes"
+	},
+	"config": {
+		"optimize-autoloader": true
+	}
+}

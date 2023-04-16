@@ -1,0 +1,56 @@
+# Copyright (C) 2023 Ray Thompson
+# This file is distributed under the same license as the clashplayer Audio/Video Player Block plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: clashplayer Audio/Video Player Block 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/clashplayer\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-16T14:35:03+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: clashplayer\n"
+
+#. Plugin Name of the plugin
+msgid "clashplayer Audio/Video Player Block"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Custom block plugin ."
+msgstr ""
+
+#. Author of the plugin
+msgid "Ray Thompson"
+msgstr ""
+
+#: clashplayer.php:96
+#: build/index.js:1
+msgid "ClashPlayer"
+msgstr ""
+
+#: src/01-audio/index.js:28
+msgid "ClashPlayer Audio"
+msgstr ""
+
+#: src/01-video/index.js:28
+msgid "ClashPlayer Video"
+msgstr ""
+
+#: build/block.json
+#: src/block.json
+msgctxt "block title"
+msgid "Clashplayer"
+msgstr ""
+
+#: build/block.json
+#: src/block.json
+msgctxt "block description"
+msgid "Example block scaffolded with Create Block tool."
+msgstr ""

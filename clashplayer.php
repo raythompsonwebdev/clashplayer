@@ -142,14 +142,6 @@ function clashplayer_register_blocks()
 		filemtime(plugin_dir_path(__FILE__) . 'build/style.css')
 	);
 
-	// Calls registered styles and script above.
-	register_block_type(
-		'clashplayer/media',
-		array(
-			'editor_script' => 'clashplayer-editor-script',
-			'editor_style'  => 'clashplayer-editor-styles',
-			'style'         => 'clashplayer-front-end-styles',
-
 	// Array of block created in this plugin.
 	$blocks = [
 		'clashplayer/audio',
