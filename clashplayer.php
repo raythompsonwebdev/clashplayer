@@ -10,14 +10,19 @@
  * @package clashplayer
  */
 
+
+// If this file is called directly, abort.
 defined('ABSPATH') || exit;
 
 /**
- * Load translations (if any) for the plugin from the /languages/ folder.
- *
- * @link https://developer.wordpress.org/reference/functions/load_plugin_textdomain/
+ * Currently plugin version.
  */
-add_action('init', 'clashplayer_load_textdomain');
+define('CVWDO_VERSION', '1.0.0');
+
+/**
+ * Plugin URL
+ */
+define('CVWDOPATH', plugin_dir_url(__FILE__)); // This include the trailing slash!
 
 function clashplayer_load_textdomain()
 {
@@ -33,13 +38,14 @@ function clashplayer_load_dashicons_front_end()
 }
 add_action('wp_enqueue_scripts', 'clashplayer_load_dashicons_front_end');
 
-//add_action('enqueue_block_assets', 'clashplayer_frontend_scripts'); // Can only be loaded in the footer
-add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts'); // Can be loaded in the both in head and footer
 /**
- * Enqueue block editor JavaScript and CSS
+ * Enqueue block editor JavaScript and CSS.
  */
 function clashplayer_frontend_scripts()
 {
+	// Make paths variables so we don't write em twice 😉.
+	$block_path    = './build/audio-es6.js';
+	$block_pathtwo = './build/video-es6.js';
 
 	// Make paths variables so we don't write em twice
 	$blockPathAudio = '/build/audio-es6.js';
@@ -65,30 +71,35 @@ function clashplayer_frontend_scripts()
 		);
 	}
 }
+// add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts');
+// Can be loaded in the both in head and footer.
+// Can only be loaded in the footer.
+// add_action('enqueue_block_assets', 'clashplayer_frontend_scripts');
 
 /**
- * Add custom "clashplayer" block category
+ * Add custom "clashplayer" block category.
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#managing-block-categories
+ * @param array  $categories post categories.
+ * @param object $post post categories.
  */
-add_filter('block_categories', 'clashplayer_block_categories', 10, 2);
-
 function clashplayer_block_categories($categories, $post)
 {
-	if ($post->post_type !== 'post') {
+	if ('post' !== $post->post_type) {
 		return $categories;
 	}
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'clash-player',
+				'slug'  => 'clash-player',
 				'title' => __('ClashPlayer', 'clashplayer'),
 				'icon'  => 'microphone',
 			),
 		)
 	);
 }
+add_filter('block_categories', 'clashplayer_block_categories', 10, 2);
 
 /**
  * Registers all block assets so that they can be enqueued through the Block Editor in
@@ -96,11 +107,8 @@ function clashplayer_block_categories($categories, $post)
  *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/block-registration/
  */
-add_action('init', 'clashplayer_register_blocks');
-
 function clashplayer_register_blocks()
 {
-
 	// If Block Editor is not active, bail.
 	if (!function_exists('register_block_type')) {
 		return;
@@ -116,21 +124,31 @@ function clashplayer_register_blocks()
 
 	// Register the block editor stylesheet.
 	wp_register_style(
-		'clashplayer-editor-styles',											// label
-		plugins_url('build/editor.css', __FILE__),					// CSS file
-		array('wp-edit-blocks'),										// dependencies
-		filemtime(plugin_dir_path(__FILE__) . 'build/editor.css')	// set version as file last modified time
+		// label.
+		'clashplayer-editor-styles',
+		// CSS file.
+		plugins_url('build/editor.css', __FILE__),
+		// dependencies.
+		array('wp-edit-blocks'),
+		// set version as file last modified time.
+		filemtime(plugin_dir_path(__FILE__) . 'build/editor.css')
 	);
 
 	// Register the front-end stylesheet.
 	wp_register_style(
-		'clashplayer-front-end-styles',										// label
-		plugins_url('build/style.css', __FILE__),						// CSS file
-		array(),														// dependencies
-		filemtime(plugin_dir_path(__FILE__) . 'build/style.css')	// set version as file last modified time
+		'clashplayer-front-end-styles',
+		plugins_url('build/style.css', __FILE__),
+		array(),
+		filemtime(plugin_dir_path(__FILE__) . 'build/style.css')
 	);
 
-	// Loop through $blocks and register each block with the same script and styles.
+	// Calls registered styles and script above.
+	register_block_type(
+		'clashplayer/media',
+		array(
+			'editor_script' => 'clashplayer-editor-script',
+			'editor_style'  => 'clashplayer-editor-styles',
+			'style'         => 'clashplayer-front-end-styles',
 
 	// Array of block created in this plugin.
 	$blocks = [
@@ -159,3 +177,4 @@ function clashplayer_register_blocks()
 		wp_set_script_translations('clashplayer-editor-script', 'clashplayer', plugin_dir_path(__FILE__) . '/languages');
 	}
 }
+add_action('init', 'clashplayer_register_blocks');

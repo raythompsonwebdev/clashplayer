@@ -1,37 +1,34 @@
+// eslint-disable-next-line func-names
+
 const audioControls = document.querySelector(".audio-controls");
+const audio = document.querySelector("#clashaudio-player");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
 
-const audio = document.querySelector("audio");
-
-// Play/Pause //
+// Play/Pause ============================//
 const playToggle = document.querySelector(".audio-toggle");
 
-if (playToggle) {
-	playToggle.addEventListener("click", (e) => {
-		// eslint-disable-next-line no-console
-		console.log(e);
-		const isPlaying =
-			audio.currentTime > 0 &&
-			!audio.paused &&
-			!audio.ended &&
-			audio.readyState > 2;
+audio.style = "pointer-events: none;";
+playToggle.addEventListener("click", (e) => {
+	const isPlaying =
+		audio.currentTime > 0 &&
+		!audio.paused &&
+		!audio.ended &&
+		audio.readyState > 2;
 
-		if (!isPlaying) {
-			audio.play();
-			audio.preload = "metadata";
-			e.target.classList.remove("dashicons-controls-play");
-			e.target.classList.add("dashicons-controls-pause");
-		} else {
-			audio.pause();
-			e.target.classList.add("dashicons-controls-play");
-			e.target.classList.remove("dashicons-controls-pause");
-		}
-	});
-}
+	if (!isPlaying) {
+		audio.play();
+		e.target.classList.remove("dashicons-controls-play");
+		e.target.classList.add("dashicons-controls-pause");
+	} else {
+		audio.pause();
+		e.target.classList.add("dashicons-controls-play");
+		e.target.classList.remove("dashicons-controls-pause");
+	}
+});
 
 // Rewind //
 const rewindBtn = document.querySelector(".audio-rewind");
@@ -70,21 +67,22 @@ function updateLoadProgress() {
 	}
 }
 
-if (playProgress) {
-	audio.addEventListener("progress", () => {
-		updateLoadProgress();
-	});
-	audio.addEventListener("loadeddata", () => {
-		updateLoadProgress();
-	});
-	audio.addEventListener("canplaythrough", () => {
-		updateLoadProgress();
-	});
-	audio.addEventListener("playing", () => {
-		updateLoadProgress();
-	});
-}
-// Time Display //
+audio.addEventListener("progress", () => {
+	updateLoadProgress();
+});
+
+audio.addEventListener("loadeddata", () => {
+	updateLoadProgress();
+});
+audio.addEventListener("canplaythrough", () => {
+	updateLoadProgress();
+});
+audio.addEventListener("playing", () => {
+	updateLoadProgress();
+});
+
+// Time Display =============================//
+
 const durationtime = document.querySelector(".audio-duration");
 const currenttime = document.querySelector(".audio-current");
 
@@ -152,6 +150,7 @@ if (playback) {
 // seeker hander //
 function seekhandler(event) {
 	audio.currentTime = event.target.value;
+
 	playback.value = event.target.value;
 }
 if (playback && seek) {

@@ -269,6 +269,12 @@ iframe {
 	.wp-block-clashplayer-media {
 		display: block;
 	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
+		display: block;
+		margin: 2em auto;
+	}
 	.download-button {
 		display: block;
 		width: 30%;
@@ -395,6 +401,27 @@ iframe {
 		padding: 0;
 	}
 
+	/* controls - seek */
+	.audio-seek .video-seek {
+		grid-area: 2 / 3 / 2 / 6;
+		width: 100%;
+	}
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+		margin: 0;
+		padding: 0;
+		display: block;
+	}
+	#seek {
+		width: 100%;
+		display: block;
+		height: 25px;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* controls - time */
 	#time {
 		grid-area: 3 / 1 / 4 / 6;
 		width: 100%;
@@ -460,6 +487,10 @@ iframe {
 
 	#clashaudio-player {
 		width: 100%;
+	}
+	#clashvideo-player {
+		width: 100%;
+		height: 350px;
 	}
 
 	#clashvideo-player {
@@ -550,6 +581,9 @@ iframe {
 		width: 93%;
 	}
 
+	input[type="range"] {
+		width: 100%;
+	}
 	input[type="range"] {
 		width: 100%;
 	}
@@ -657,6 +691,9 @@ iframe {
 		width: 93%;
 	}
 
+	input[type="range"] {
+		width: 100%;
+	}
 	input[type="range"] {
 		width: 100%;
 	}
@@ -879,6 +916,9 @@ iframe {
 	input[type="range"] {
 		width: 100%;
 	}
+	input[type="range"] {
+		width: 100%;
+	}
 
 	iframe {
 		margin: 1em auto;
@@ -985,6 +1025,9 @@ iframe {
 		width: 93%;
 	}
 
+	input[type="range"] {
+		width: 100%;
+	}
 	input[type="range"] {
 		width: 100%;
 	}
@@ -1098,6 +1141,9 @@ iframe {
 	input[type="range"] {
 		width: 100%;
 	}
+	input[type="range"] {
+		width: 100%;
+	}
 
 	iframe {
 		width: 80%;
@@ -1202,6 +1248,9 @@ iframe {
 		width: 93%;
 	}
 
+	input[type="range"] {
+		width: 100%;
+	}
 	input[type="range"] {
 		width: 100%;
 	}
@@ -1312,6 +1361,9 @@ iframe {
 	input[type="range"] {
 		width: 100%;
 	}
+	input[type="range"] {
+		width: 100%;
+	}
 
 	iframe {
 		margin: 1em auto;
@@ -1414,6 +1466,9 @@ iframe {
 	}
 	#volume-bar {
 		width: 93%;
+	}
+	input[type="range"] {
+		width: 100%;
 	}
 
 	input[type="range"] {
@@ -1524,6 +1579,9 @@ iframe {
 		width: 93%;
 	}
 
+	input[type="range"] {
+		width: 100%;
+	}
 	input[type="range"] {
 		width: 100%;
 	}

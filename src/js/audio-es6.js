@@ -1,11 +1,12 @@
+// eslint-disable-next-line func-names
+
 const audioControls = document.querySelector(".audio-controls");
+const audio = document.querySelector("#clashaudio-player");
 
 // Stop if HTML5 video isn't supported
 if (!document.createElement("audio").canPlayType) {
 	audioControls.style.display = "none";
 }
-
-const audio = document.querySelector("audio");
 
 // Play/Pause //
 const playToggle = document.querySelector(".audio-toggle");
@@ -152,6 +153,7 @@ if (playback) {
 // seeker hander //
 function seekhandler(event) {
 	audio.currentTime = event.target.value;
+
 	playback.value = event.target.value;
 }
 if (playback && seek) {
