@@ -1,3 +1,5 @@
 node_modules/
 export.sh
 webpack.config.bak.js
+clashplayer.zip
+build/

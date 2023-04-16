@@ -41,7 +41,7 @@ add_action('wp_enqueue_scripts', 'clashplayer_frontend_scripts'); // Can be load
 function clashplayer_frontend_scripts()
 {
 
-	// Make paths variables so we don't write em twice 😉
+	// Make paths variables so we don't write em twice
 	$blockPathAudio = '/build/audio-es6.js';
 	$blockPathVideo = '/build/video-es6.js';
 

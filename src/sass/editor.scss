@@ -1,7 +1,8 @@
 @import "partials/variables";
 @import "partials/base";
 
-.wp-block-clashplayer-media {
+.wp-block-clashplayer-audio,
+.wp-block-clashplayer-video {
 	display: block;
 	margin: auto;
 }
