@@ -153,32 +153,10 @@ label[for="seek"] {
 	padding: 0;
 
 	&:hover {
-		background-color: $black;
-		color: $white;
-		border: $yellow solid 1px;
-		cursor: pointer;
-	}
-	&:hover {
 		background-color: $black-red;
 		color: $white;
 		border: $grey-yellow solid 1px;
 		cursor: pointer;
-	}
-
-	&:active {
-		background-color: $black;
-	}
-}
-.dashicons-controls-pause::before,
-.dashicons-controls-play::before,
-.dashicons-controls-forward::before,
-.dashicons-controls-back::before {
-	font-size: 2em;
-	text-align: center;
-	color: $white;
-	&:hover {
-		font-weight: bold;
-		color: $white;
 	}
 
 	&:active {
@@ -413,9 +391,6 @@ iframe {
 	}
 
 	#load-progress {
-		display: block;
-	}
-	#load-progress {
 		background-color: $yellow;
 		height: 12px;
 		display: block;
@@ -441,7 +416,6 @@ iframe {
 			float: left;
 		}
 	}
-
 	#duration-time {
 		color: $green;
 		background-color: $black-red;
@@ -472,9 +446,6 @@ iframe {
 		display: block;
 		padding: 1em 0;
 	}
-	input[type="range"] {
-		width: 100%;
-	}
 
 	/* video */
 	iframe {
@@ -496,11 +467,7 @@ iframe {
 
 	#clashvideo-player {
 		width: 100%;
-<<<<<<< HEAD
 		height: auto;
-=======
-		height: 350px;
->>>>>>> main
 	}
 
 	.dashicons-controls-volumeon::before,
@@ -585,9 +552,6 @@ iframe {
 	input[type="range"] {
 		width: 100%;
 	}
-	input[type="range"] {
-		width: 100%;
-	}
 
 	iframe {
 		margin: 1em auto;
@@ -605,14 +569,8 @@ iframe {
 		width: 100%;
 	}
 	#clashvideo-player {
-<<<<<<< HEAD
 		width: 100%;
 		height: auto;
-=======
-		width: 85%;
-		height: 250px;
-		width: 100%;
->>>>>>> main
 	}
 
 	.audio-controls,
@@ -688,6 +646,11 @@ iframe {
 	label[for="seek"] {
 		width: 100%;
 		line-height: 25px;
+	}
+
+	.audio-volume,
+	.video-volume {
+		width: 100%;
 	}
 	#volume-bar {
 		width: 93%;
@@ -1349,9 +1312,6 @@ iframe {
 	}
 
 	iframe {
-		input[type="range"] {
-			width: 100%;
-		}
 		margin: 1em auto;
 	}
 }
@@ -1364,20 +1324,15 @@ iframe {
 	}
 
 	#clashaudio-player {
-		width: 100%;
+		width: 90%;
 	}
 
 	#clashvideo-player {
 		width: 100%;
-<<<<<<< HEAD
 		height: auto;
 	}
 
 	.audio-controls,
-=======
-		height: 350px;
-	}
->>>>>>> main
 	.video-controls {
 		width: 100%;
 	}
@@ -1464,7 +1419,7 @@ iframe {
 	}
 
 	iframe {
-		width: 80%;
+		margin: 1em auto;
 	}
 }
 @media screen and (min-width: 360px) and (max-width: 413px) {
@@ -1489,7 +1444,6 @@ iframe {
 		width: 100%;
 	}
 
-<<<<<<< HEAD
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
@@ -1519,20 +1473,10 @@ iframe {
 		width: 100%;
 		grid-area: 1 / 1 / 3 / 3;
 	}
-=======
->>>>>>> main
 	.player-button {
-		width: 32%;
-		.player-button {
-			width: 33.3%;
-			.dashicons-controls-pause::before,
-			.dashicons-controls-play::before,
-			.dashicons-controls-forward::before,
-			.dashicons-controls-back::before {
-				font-size: 1.3em;
-				line-height: 40px;
+		width: 33.3%;
+	}
 
-<<<<<<< HEAD
 	#playback {
 		height: 12px;
 		display: block;
@@ -1545,54 +1489,34 @@ iframe {
 	#play-progress {
 		display: block;
 	}
-=======
-				&:hover {
-					font-weight: bold;
-				}
-			}
->>>>>>> main
 
-			#btns-box {
-				width: 100%;
-				grid-area: 1 / 1 / 3 / 3;
-			}
-			.player-button {
-				width: 33.3%;
-			}
+	#load-progress {
+		display: block;
+	}
 
-			#progress {
-				grid-area: 1 / 3 / 3 / 6;
-				width: 98%;
-			}
-			#play-progress {
-				display: block;
-			}
-
-			#load-progress {
-				display: block;
-			}
-
-			#time {
-				width: 100%;
-				grid-area: 3 / 1 / 4 / 6;
-				span:nth-of-type(odd) {
-					font-size: 0.7em;
-				}
-			}
-			#duration-time {
-				font-size: 0.9em;
-			}
-
-			#current-time {
-				font-size: 0.9em;
-			}
+	#time {
+		width: 100%;
+		grid-area: 3 / 1 / 4 / 6;
+		span:nth-of-type(odd) {
+			font-size: 0.7em;
 		}
-		#duration-time {
-			font-size: 0.9em;
-		}
-		#current-time {
-			font-size: 0.9em;
-		}
+	}
+	#duration-time {
+		font-size: 0.9em;
+	}
+
+	#current-time {
+		font-size: 0.9em;
+	}
+
+	label[for="seek"] {
+		width: 100%;
+		line-height: 25px;
+	}
+
+	.audio-volume,
+	.video-volume {
+		width: 100%;
 	}
 	#volume-bar {
 		width: 93%;
@@ -1604,9 +1528,5 @@ iframe {
 
 	iframe {
 		margin: 1em auto;
-	}
-
-	input[type="range"] {
-		width: 100%;
 	}
 }
