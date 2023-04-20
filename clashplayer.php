@@ -34,25 +34,25 @@ function clashplayer_frontend_scripts()
 {
 
 	// Make paths variables so we don't write em twice 😉
-	$blockPathAudio = 'build/audio-es6.js';
-	$blockPathVideo = 'build/video-es6.js';
+	$block_path_audio = 'build/audio-es6.js';
+	$block_path_video = 'build/video-es6.js';
 
 	//   // Enqueue the bundled block JS file
 	if (has_block('clashplayer/audio')) {
 		wp_enqueue_script(
 			'clashplayer-blocks-js',
-			plugins_url($blockPathAudio, __FILE__),
+			plugins_url($block_path_audio, __FILE__),
 			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
-			filemtime(plugin_dir_path(__FILE__) . $blockPathAudio),
+			filemtime(plugin_dir_path(__FILE__) . $block_path_audio),
 			true
 		);
 	}
 	if (has_block('clashplayer/video')) {
 		wp_enqueue_script(
 			'clashplayer-blockstwo-js',
-			plugins_url($blockPathVideo, __FILE__),
+			plugins_url($block_path_video, __FILE__),
 			array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', "wp-components"),
-			filemtime(plugin_dir_path(__FILE__) . $blockPathVideo),
+			filemtime(plugin_dir_path(__FILE__) . $block_path_video),
 			true
 		);
 	}
