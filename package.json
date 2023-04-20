@@ -53,7 +53,7 @@
 		"url-loader": "^4.1.1"
 	},
 	"scripts": {
-		"watch": "node-sass src/sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+		"watch": "node-sass src/sass/ -o ./build/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
 		"start": "wp-scripts start",
 		"build": "wp-scripts build",
 		"format:src": "wp-scripts format ./src",

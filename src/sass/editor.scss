@@ -45,9 +45,9 @@
 	padding: 0.5em;
 	background-color: $black-red;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(4, 25px);
-	grid-gap: 2px;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(3, 25px);
+	grid-gap: 5px;
 }
 
 .dashicons-controls-volumeon::before,
@@ -57,6 +57,7 @@
 	width: 100%;
 	height: 100%;
 	line-height: 25px;
+	font-size: 0.85em;
 	&:hover {
 		cursor: pointer;
 	}
@@ -95,12 +96,12 @@
 }
 
 #btns-box {
-	grid-area: 1 / 1 / 3 / 3;
+	grid-area: 1 / 1 / 3 / 4;
 	height: 45px;
 	width: 100%;
 }
 #progress {
-	grid-area: 1 / 3 / 3 / 6;
+	grid-area: 1 / 4 / 2 / 7;
 	width: 100%;
 	display: inline-block;
 	background-color: $white;
@@ -109,7 +110,7 @@
 }
 .audio-seek,
 .video-seek {
-	grid-area: 2 / 3 / 2 / 6;
+	grid-area: 2 / 4 / 3 / 7;
 	width: 100%;
 }
 label[for="seek"] {
@@ -130,7 +131,7 @@ label[for="seek"] {
 
 .audio-volume,
 .video-volume {
-	grid-area: 4 / 1 / 5 / 6;
+	grid-area: 3 / 4 / 5 / 7;
 	width: 100%;
 }
 
@@ -192,17 +193,17 @@ label[for="seek"] {
 }
 
 #time {
-	grid-area: 3 / 1 / 4 / 6;
+	grid-area: 3 / 1 / 5 / 4;
 	width: 100%;
 	color: $black-red;
-	height: 25px;
+	height: auto;
 	display: flex;
 	text-align: center;
 	span:nth-of-type(odd) {
-		width: 15%;
+		width: 33%;
 		line-height: 25px;
 		text-align: center;
-		font-size: 0.7em;
+		font-size: 0.55em;
 		display: block;
 		background-color: $white;
 		color: $black-red;
@@ -212,7 +213,7 @@ label[for="seek"] {
 }
 
 #duration-time {
-	font-size: 0.9em;
+	font-size: 0.55em;
 	color: $green;
 	background-color: $black-red;
 	border: none;
@@ -221,7 +222,7 @@ label[for="seek"] {
 }
 
 #current-time {
-	font-size: 0.9em;
+	font-size: 0.55em;
 	color: $green;
 	background-color: $black-red;
 	border: none;
@@ -233,7 +234,7 @@ label[for="seek"] {
 	width: 93%;
 	display: block;
 	float: left;
-	line-height: 25px;
+	line-height: 45px;
 	margin: 0;
 }
 
@@ -247,7 +248,7 @@ input[type="range"] {
 	display: inline-block;
 	width: 6.5%;
 	text-align: center;
-	line-height: 25px;
+	line-height: 45px;
 	border: none;
 	background-color: unset;
 	outline: none;
@@ -297,20 +298,15 @@ iframe {
 		height: 100px;
 	}
 
-	/* controls -audio/video */
 	.audio-controls,
 	.video-controls {
 		height: auto;
-		padding: 0.5em;
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(4, 25px);
-		grid-gap: 2px;
 	}
 
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.5em;
 	}
 
 	.dashicons-controls-pause,
@@ -334,12 +330,12 @@ iframe {
 	}
 
 	#btns-box {
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 		height: 45px;
 		width: 100%;
 	}
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		display: inline-block;
 		position: relative;
 		height: 24px;
@@ -347,7 +343,7 @@ iframe {
 	}
 	.audio-seek,
 	.video-seek {
-		grid-area: 2 / 3 / 2 / 6;
+		grid-area: 2 / 4 / 3 / 7;
 		width: 100%;
 	}
 	label[for="seek"] {
@@ -361,7 +357,7 @@ iframe {
 	}
 	.audio-volume,
 	.video-volume {
-		grid-area: 4 / 1 / 5 / 6;
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 
@@ -423,40 +419,25 @@ iframe {
 
 	/* controls - time */
 	#time {
-		grid-area: 3 / 1 / 4 / 6;
-		width: 100%;
-		color: $black-red;
-		height: 25px;
-		display: flex;
+		grid-area: 3 / 1 / 5 / 4;
+
 		span:nth-of-type(odd) {
-			width: 15%;
-			line-height: 25px;
-			text-align: center;
-			font-size: 0.8em;
-			display: block;
-			background-color: $white;
-			color: $black-red;
-			margin-right: 0;
-			float: left;
+			font-size: 0.9em;
 		}
 	}
 	#duration-time {
-		color: $green;
-		background-color: $black-red;
 		border: none;
 		font-size: 1em;
 	}
 
 	#current-time {
-		color: $green;
-		background-color: $black-red;
 		border: none;
 		font-size: 1em;
 	}
 
 	#volume-bar {
 		width: 93%;
-		line-height: 25px;
+		line-height: 45px;
 		margin: 0;
 	}
 
@@ -506,6 +487,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.4em;
 	}
 
 	.dashicons-controls-pause,
@@ -530,7 +512,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -542,7 +524,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 	}
 	#play-progress {
@@ -555,7 +537,7 @@ iframe {
 
 	#time {
 		display: flex;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
@@ -575,6 +557,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -616,6 +599,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.3em;
 	}
 
 	.dashicons-controls-pause,
@@ -640,7 +624,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -652,7 +636,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 	}
 	#play-progress {
@@ -665,17 +649,17 @@ iframe {
 
 	#time {
 		display: flex;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
 			font-size: 0.8em;
 		}
 	}
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 
 	label[for="seek"] {
@@ -685,6 +669,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -722,13 +707,13 @@ iframe {
 
 	.audio-controls,
 	.video-controls {
-		padding: 0.25em;
 		width: 100%;
 	}
 
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.2em;
 	}
 
 	.dashicons-controls-pause,
@@ -753,7 +738,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -765,7 +750,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 	}
 	#play-progress {
@@ -778,9 +763,9 @@ iframe {
 
 	#time {
 		display: flex;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.7em;
+			font-size: 0.65em;
 		}
 	}
 	#duration-time {
@@ -788,7 +773,7 @@ iframe {
 	}
 
 	#current-time {
-		font-size: 0.9em;
+		font-size: 0.85em;
 	}
 
 	label[for="seek"] {
@@ -798,6 +783,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -837,6 +823,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.2em;
 	}
 
 	.dashicons-controls-pause,
@@ -861,7 +848,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -873,7 +860,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 	}
 	#play-progress {
@@ -886,17 +873,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.75em;
+			font-size: 0.8em;
 		}
 	}
 	#duration-time {
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
 	#current-time {
-		font-size: 0.9em;
+		font-size: 0.8em;
 	}
 
 	label[for="seek"] {
@@ -906,6 +893,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 		margin: 0;
 	}
@@ -949,6 +937,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.1em;
 	}
 
 	.dashicons-controls-pause,
@@ -973,7 +962,7 @@ iframe {
 	#btns-box {
 		width: 100%;
 		margin-bottom: 0.5em;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -985,7 +974,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 		margin: 0;
 	}
@@ -999,17 +988,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.9em;
+			font-size: 0.75em;
 		}
 	}
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.75em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.75em;
 	}
 
 	label[for="seek"] {
@@ -1019,6 +1008,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -1061,6 +1051,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.2em;
 	}
 
 	.dashicons-controls-pause,
@@ -1085,7 +1076,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -1097,7 +1088,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 		margin: 0;
 	}
@@ -1111,18 +1102,18 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.9em;
+			font-size: 0.85em;
 		}
 	}
 
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	label[for="seek"] {
@@ -1132,6 +1123,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -1174,6 +1166,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.2em;
 	}
 
 	.dashicons-controls-pause,
@@ -1196,7 +1189,7 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -1208,7 +1201,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 		margin: 0;
 	}
@@ -1222,17 +1215,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.9em;
+			font-size: 0.85em;
 		}
 	}
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.85em;
 	}
 
 	label[for="seek"] {
@@ -1242,6 +1235,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -1284,6 +1278,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.1em;
 	}
 
 	.dashicons-controls-pause,
@@ -1307,7 +1302,7 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -1319,7 +1314,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 100%;
 	}
 	#play-progress {
@@ -1332,17 +1327,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.8em;
+			font-size: 0.65em;
 		}
 	}
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.65em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.65em;
 	}
 
 	label[for="seek"] {
@@ -1352,6 +1347,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -1394,6 +1390,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 1.1em;
 	}
 
 	.dashicons-controls-pause,
@@ -1417,7 +1414,7 @@ iframe {
 	}
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -1429,7 +1426,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 98%;
 	}
 	#play-progress {
@@ -1442,17 +1439,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.8em;
+			font-size: 0.6em;
 		}
 	}
 	#duration-time {
-		font-size: 1em;
+		font-size: 0.6em;
 	}
 
 	#current-time {
-		font-size: 1em;
+		font-size: 0.6em;
 	}
 
 	label[for="seek"] {
@@ -1462,6 +1459,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
@@ -1504,6 +1502,7 @@ iframe {
 	.dashicons-controls-volumeon::before,
 	.dashicons-controls-volumeoff::before {
 		width: 100%;
+		font-size: 0.9em;
 	}
 
 	.dashicons-controls-pause,
@@ -1528,7 +1527,7 @@ iframe {
 
 	#btns-box {
 		width: 100%;
-		grid-area: 1 / 1 / 3 / 3;
+		grid-area: 1 / 1 / 3 / 4;
 	}
 	.player-button {
 		width: 33.3%;
@@ -1540,7 +1539,7 @@ iframe {
 	}
 
 	#progress {
-		grid-area: 1 / 3 / 3 / 6;
+		grid-area: 1 / 4 / 2 / 7;
 		width: 98%;
 	}
 	#play-progress {
@@ -1553,17 +1552,17 @@ iframe {
 
 	#time {
 		width: 100%;
-		grid-area: 3 / 1 / 4 / 6;
+		grid-area: 3 / 1 / 5 / 4;
 		span:nth-of-type(odd) {
-			font-size: 0.7em;
+			font-size: 0.6em;
 		}
 	}
 	#duration-time {
-		font-size: 0.9em;
+		font-size: 0.6em;
 	}
 
 	#current-time {
-		font-size: 0.9em;
+		font-size: 0.6em;
 	}
 
 	label[for="seek"] {
@@ -1573,6 +1572,7 @@ iframe {
 
 	.audio-volume,
 	.video-volume {
+		grid-area: 3 / 4 / 5 / 7;
 		width: 100%;
 	}
 	#volume-bar {
