@@ -241,11 +241,11 @@ registerBlockType("clashplayer/audio", {
 					</div>
 
 					<div id="time" className="audio-time">
-						<span>current time</span>
+						<span>Time</span>
 						<span id="current-time" className="audio-current">
 							00:00
 						</span>
-						<span>duration</span>
+						<span>Duration</span>
 						<span id="duration-time" className="audio-duration">
 							00:00
 						</span>
@@ -341,11 +341,11 @@ registerBlockType("clashplayer/audio", {
 					</div>
 
 					<div id="time" className="audio-time">
-						<span>current time</span>
+						<span>Time</span>
 						<span id="current-time" className="audio-current">
 							00:00
 						</span>
-						<span>duration</span>
+						<span>Duration</span>
 						<span id="duration-time" className="audio-duration">
 							00:00
 						</span>

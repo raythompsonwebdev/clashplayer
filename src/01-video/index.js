@@ -240,11 +240,11 @@ registerBlockType("clashplayer/video", {
 					</div>
 
 					<div id="time" className="video-time">
-						<span>current time</span>
+						<span>Time</span>
 						<span id="current-time" className="video-current">
 							00:00
 						</span>
-						<span>duration</span>
+						<span>Duration</span>
 						<span id="duration-time" className="video-duration">
 							00:00
 						</span>
@@ -340,11 +340,11 @@ registerBlockType("clashplayer/video", {
 					</div>
 
 					<div id="time" className="video-time">
-						<span>current time</span>
+						<span>Time</span>
 						<span id="current-time" className="video-current">
 							00:00
 						</span>
-						<span>duration</span>
+						<span>Duration</span>
 						<span id="duration-time" className="video-duration">
 							00:00
 						</span>
