@@ -45,6 +45,7 @@ module.exports = {
 		eqeqeq: "error",
 		"no-with": "error",
 		"no-plusplus": "error",
-		"jsx-a11y/label-has-for": 0,
+		"jsx-a11y/label-has-for": "error",
+		"jsx-a11y/label-has-associated-control": "always",
 	},
 };

@@ -98,7 +98,7 @@ registerBlockType("clashplayer/video", {
 			checked
 				? __(
 						"Note: Autoplaying audio may cause usability issues for some visitors."
-				  )
+					)
 				: null;
 
 		const onChangeTextField = (newValue) => {
